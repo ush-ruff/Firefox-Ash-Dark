@@ -1,0 +1,280 @@
+/*! Alters the webextension Violentmonkey
+  IMPORTANT: change the Internal UUID */
+@-moz-document url-prefix("moz-extension://5aed58db-265d-4483-a6b4-60599c6b7ac5/") {
+  :root{
+    --back-1: #323030;
+    --back-2: #393838;
+    --back-3: #252525;
+    --border-1: #232323;
+    --border-2: #1e1e1e;
+    --border-3: #323030;
+    --text-1: #ccc;
+    --text-2: #555;
+    --accent-color: #F27121;
+  }
+  body, .tab, section > h3 {
+    color: var(--text-1) !important;
+    background-color: var(--back-2) !important;
+  }
+  .aside-content, .aside-toggle {
+  	border-color: var(--border-2) !important;
+  	background: var(--back-3) !important;
+  }
+  .aside-menu {
+  	border-color: var(--border-3) !important;
+  }
+  .aside-menu > a.active, .aside-menu > a:hover, .aside-toggle {
+  	color: var(--text-1) !important;
+  }
+  .aside-menu > a {
+    color: var(--text-2) !important;
+  }
+  .tab-installed header {
+  	border-color: var(--border-1) !important;
+  }
+  .filter-search > input {
+    margin-left: .5em !important;
+  }
+  input[type="password"], input[type="text"], textarea {
+    background-color: var(--back-1) !important;
+    border-color: var(--border-1) !important;
+  }
+  .script:not(.disabled) {
+  	border-color: var(--border-1) !important;
+  	background: var(--back-1) !important;
+    color: var(--text-1) !important;
+  }
+  .vl-dropdown-right .btn-ghost, .btn-ghost.trash-button {
+    margin-right: .5em !important;
+  }
+  .script-buttons, .btn-ghost.active, .vl-dropdown-down.active .btn-ghost {
+    color: var(--accent-color) !important;
+  }
+  .btn-ghost.active, .btn-ghost:hover, .vl-dropdown-down.active .btn-ghost {
+    border-color: var(--border-2) !important;
+  	background-color: var(--back-3) !important;
+    border-radius: 15px !important;
+  }
+  .script.disabled, .script.removed {
+  	background-color: var(--back-2) !important;
+  	color: var(--text-2) !important;
+    border-color:  var(--border-1) !important;
+  }
+  .script-buttons .disabled, .script.disabled .script-buttons .disabled,
+  .script.removed .script-buttons .disabled {
+    color: var(--text-2) !important;
+  }
+  .sep::after {
+    border-color: var(--border-1) !important;
+  }
+  button {
+  	border-color: var(--border-1) !important;
+    background-color: var(--back-3) !important;
+    color: var(--text-1) !important;
+    border-radius: 5px !important;
+  }
+  button:hover {
+    background: #131313 !important;
+  }
+  button[disabled] {
+    border-color: var(--border-3) !important;
+    background-color: var(--back-1) !important;
+    color: var(--text-2) !important;
+  }
+  section {
+    border-top: 1px solid var(--border-1) !important;
+  }
+  .show-advanced svg {
+    margin-left: 2px !important;
+    vertical-align: -2px !important;
+  }
+  .mb-1 a, p a, .text-right a {
+    color: #3498db !important;
+  }
+  .mb-1 a:not(:hover), p a:not(:hover), .text-right a:not(:hover) {
+    text-decoration: none !important;
+  }
+  .filter-search input, .filter-search select {
+    background-color: var(--back-1) !important;
+    border-color: var(--border-1) !important;
+  }
+  input[type="search"]:focus, .filter-search select:focus {
+    border-color: var(--border-1) !important;
+  }
+
+  /* Edit Page */
+  .frame {
+    background-color: var(--back-3) !important;
+  }
+  .edit-header {
+    background: var(--back-2) !important;
+    padding: 3px !important;
+    position: relative !important;
+  }
+  .edit-header::after {
+  	content: "" !important;
+  	position: absolute !important;
+  	background: var(--back-1) !important;
+  	height: 3px !important;
+  	width: 100% !important;
+  	bottom: 0 !important;
+  	right: 0 !important;
+  	z-index: 2 !important;
+  	border-top: 1px solid var(--border-2) !important;
+  }
+  .edit-nav-item {
+    color: #aaa !important;
+  }
+  .edit-nav-item.active, .edit-body {
+    background: var(--back-1) !important;
+    color: var(--text-1) !important;
+  }
+  .edit-nav-item.active, .edit-nav-item:hover, .edit-nav-item:not(.active):hover {
+  	box-shadow: 0 -1px 1px black !important;
+    border-top: 1px solid var(--accent-color) !important;
+  }
+  .edit-nav-item:not(.active):hover {
+    background-color: var(--back-2) !important;
+  }
+  .edit-nav-item.active {
+    position: relative !important;
+  }
+  .edit-nav-item.active::after {
+  	content: "" !important;
+  	position: absolute !important;
+  	height: 2px !important;
+  	width: 100% !important;
+  	background: var(--back-1) !important;
+  	bottom: 0 !important;
+  	right: 0 !important;
+  	z-index: 3 !important;
+  }
+  .edit-values-panel {
+    background-color: var(--back-2) !important;
+    box-shadow: -5px 0 5px var(--border-2) !important;
+  }
+  .edit-settings .form-group input[type="text"], .edit-settings .form-group > textarea {
+    background-color: var(--back-2) !important;
+    border-color: var(--border-1) !important;
+  }
+    /* Editor */
+    .CodeMirror {
+      border-color: var(--border-1) !important;
+    	background-color: var(--back-1) !important;
+      color: var(--text-1) !important;
+    }
+    .CodeMirror-gutters, .CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler {
+      border-color: var(--border-3) !important;
+    	background-color: var(--text-2) !important;
+    }
+    .cm-s-eclipse .CodeMirror-activeline-background {
+      background-color: var(--back-2) !important;
+    }
+    .cm-s-eclipse span.cm-comment, .cm-s-eclipse span.cm-number {
+    	color: #27ae60 !important;
+    }
+    .cm-s-eclipse span.cm-variable, .cm-s-eclipse span.cm-operator, .cm-s-eclipse span.cm-property {
+      color: var(--text-1) !important;
+    }
+    .cm-s-eclipse span.cm-string, .cm-s-eclipse span.cm-def,
+    .cm-s-eclipse span.cm-type, .cm-s-eclipse span.cm-variable-2,
+    .cm-s-eclipse span.cm-variable-3, .cm-s-eclipse span.cm-atom {
+      color: #75bfff !important;
+    }
+    .cm-s-eclipse span.cm-keyword {
+      color: #e06e95 !important;
+    }
+    div.CodeMirror span.CodeMirror-matchingbracket {
+      color: #2ecc71 !important;
+    }
+
+    /* --------------------------------------- */
+
+  .modal-content {
+    background-color: var(--back-2) !important;
+    box-shadow: 0 0 .2rem black !important;
+  }
+  .vl-dropdown-menu {
+    border-color: var(--border-2) !important;
+  	background: var(--back-3) !important;
+  }
+  .dropdown-menu-item:hover {
+    background: var(--back-2) !important;
+    color: var(--text-1) !important;
+  }
+  .dropdown-menu-item {
+    color: var(--text-1) !important;
+  }
+  input[disabled] ~ * {
+  	color: var(--text-2) !important;
+  }
+  .edit-values-btn {
+    background: var(--back-2) !important;
+    box-shadow: -5px 0 5px var(--back-2) !important;
+    cursor: pointer !important;
+  }
+  .edit-values-row, .edit-values-row > :not(:first-child) {
+    border-color: var(--border-1) !important;
+    background: var(--back-1) !important;
+    padding: 1px !important;
+  }
+  .edit-values-row > :not(:first-child) {
+    text-indent: 1em !important;
+  }
+  .edit-buttons button, .tab-settings > section:nth-child(3) > button:nth-child(3),
+  .tab-settings > div:nth-child(7) > section:nth-child(2) > button:nth-child(4),
+  .edit-values-panel > div:nth-child(1) > div:nth-child(2) > button {
+    margin-left: .5em !important;
+  }
+  .tab-settings > div:nth-child(7) > section:not(:first-child) button {
+    margin-top: .5em !important;
+  }
+  select option, select label {
+    background: var(--back-1) !important;
+  }
+  button:not([disabled]) {
+  	margin-right: .5em !important;
+  }
+
+  /* Popup Toolbar */
+  body, .page-popup body {
+    background-color: var(--back-2) !important;
+    color: var(--text-1) !important;
+  }
+  .menu-buttons, .menu.expand, .submenu-button {
+    background: var(--back-2) !important;
+  }
+  .menu, .submenu {
+    background: var(--back-2) !important;
+    border-color: var(--border-3) !important;
+  }
+  .menu:nth-child(2) > .menu-area:not(:hover) {
+    background: var(--back-1) !important;
+  }
+  .menu-area:hover {
+    background-color: var(--accent-color) !important;
+  }
+  .submenu-button, .submenu-button:hover {
+    background-color: var(--accent-color) !important;
+  }
+  .menu-area.disabled {
+    color: var(--text-2) !important;
+  }
+  footer {
+    background: var(--back-3) !important;
+  }
+  footer > span:hover {
+    color: #ddd !important;
+  }
+  .message {
+    background: var(--back-2) !important;
+    color: var(--text-1) !important;
+    border-color: var(--accent-color) !important;
+  }
+  .submenu-commands {
+    color: var(--text-2) !important;
+  }
+  .submenu .menu-item > .icon:first-child {
+    margin-left: 1em !important;
+  }
+}

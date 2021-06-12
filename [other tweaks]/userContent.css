@@ -1,0 +1,169 @@
+/* Change icon color of addons */
+/* IMPORTANT: Change the label to the adddon name */
+.toolbarbutton-badge-stack > .toolbarbutton-icon[label="Auto Tab Discard"] {
+  list-style-image: var(--webextension-toolbar-image-dark, inherit) !important;
+  filter: invert(.5) !important;
+  /* either one works to change it to dark */
+}
+
+/* Change icon image of addons */
+/* IMPORTANT: Change the label to the adddon name */
+.toolbarbutton-badge-stack > .toolbarbutton-icon[label="Auto Tab Discard"] {
+  list-style-image: url(https://image.flaticon.com/icons/png/512/54/54718.png) !important;
+}
+
+/* Another way to change icon of addons */
+/* to get the id for your extension :  go to about:support  and scroll down to extensions ,on the right side you will see the id to use
+ though doesnt seem to work with icons other than installed addons */
+/* ex: 2 for ext ids like 'jetpack-extension@dashlane.com' rename it as below and remove underscores from start and before '-brower-action'
+#jetpack-extension_dashlane_com-browser-action */
+
+#_1a046161-0874-46de-aeeb-b25104ea62bb_-browser-action {
+  list-style-image: url("Orb Wall.png") !important;
+  background: transparent !important;
+  -moz-image-region: rect(0px, 17px, 17px, 0px)!important;
+}
+
+/* Show action buttons (enable/disable, options etc.) in about:addons
+  * Contributor(s): BatDogOnBatMobile, MotherStylus
+*/
+@-moz-document url("chrome://mozapps/content/extensions/aboutaddons.html") {
+  :root {
+    --in-content-button-background: var(--back-1) !important;
+  }
+
+  panel-list {
+    border: none !important;
+    box-shadow: none !important;
+    display: inline !important;
+    min-width: unset !important;
+    padding: 0 !important;
+    right: 0px !important;
+    background: none !important;
+  }
+  addon-card:not([expanded]) > .addon.card[active="false"] {
+    opacity: 1 !important;
+    background-color: #20202399 !important;
+  }
+  addon-card:not([expanded]) > .addon.card[active="false"] .addon-card-collapsed>*:not(.more-options-menu) {
+    opacity: 0.6 !important;
+    transition: opacity 150ms !important;
+  }
+  panel-item {
+    display: inline-block !important;
+    margin-inline-start: 2px !important;
+  }
+  .more-options-menu {
+    margin: unset !important;
+  }
+
+  /* link + is needed to avoid styling check for updates buttons and tabs on add-on detail pages because shadowdom */
+  link+button {
+    background-color: var(--in-content-button-background) !important;
+    background-position: center !important;
+    border-radius: 2px !important;
+    cursor: pointer !important;
+    height: 32px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  link+button:hover {
+    background-color: var(--in-content-button-background-hover) !important;
+  }
+  link+button:hover:active {
+    background-color: var(--in-content-button-background-active) !important;
+  }
+  link+button:focus {
+    box-shadow: 0 0 0 1px var(--in-content-border-active) inset, 0 0 0 1px var(--in-content-border-active), 0 0 0 4px var(--in-content-border-active-shadow) !important;
+  }
+
+  /* dot badging on update button */
+  link+button::after {
+    left: 22px !important;
+    top: 4px !important;
+  }
+
+  /* use icons, remove text */
+  panel-item[action="remove"], panel-item[action="install-update"],
+  panel-item[action="always-activate"] {
+    font-size: 0px !important;
+    position: relative !important;
+    top: -6px !important;
+    fill: var(--in-content-page-color) !important;
+    width: 32px !important;
+  }
+
+  .more-options-button.ghost-button, .arrow.top, .arrow.bottom, panel-item-separator,
+  panel-item[action="report"], panel-item[action="expand"], panel-item[hidden] {
+    display: none !important;
+  }
+
+  panel-item[action="preferences"][hidden], panel-item[action="remove"][hidden] {
+    display: inline-block !important;
+    pointer-events: none !important;
+    opacity: 0.3;
+  }
+
+  div[current-view="list"] :-moz-any(.addon-description, .disco-description-main) {
+    width: calc(var(--section-width) - var(--card-padding) * 17 - var(--addon-icon-size)) !important;
+    white-space: normal !important;
+    -webkit-line-clamp: 2 !important;
+    display: -webkit-inline-box !important;
+    overflow: hidden !important;
+    -webkit-box-orient: vertical !important;
+  }
+
+  div[current-view="detail"] .addon-description {
+    width: calc(var(--section-width) - var(--card-padding) * 17 - var(--addon-icon-size)) !important;
+    white-space: normal !important;
+    -webkit-line-clamp: initial !important;
+    display: block !important;
+    -webkit-box-orient: initial !important;
+  }
+
+  .card-contents {
+    align-self: center !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Show count of "Enabled" and "Disabled" in about:addons
+  * Contributor(s): BatDogOnBatMobile
+*/
+@-moz-document url("chrome://mozapps/content/extensions/aboutaddons.html") {
+  addon-list[type="extension"] section[section="0"] > addon-card {
+    counter-increment: enabled;
+  }
+  addon-list[type="extension"] section[section="1"] > addon-card {
+      counter-increment: disabled;
+  }
+  section[section="0"] {
+    counter-reset: enabledpvt; /* define scope */
+  }
+  addon-list[type="extension"] section[section="0"] > addon-card .addon-badge-private-browsing-allowed {
+    counter-increment: enabledpvt;
+  }
+  addon-list[type="extension"] section[section="0"],
+  addon-list[type="extension"] section[section="1"] {
+    position: relative !important;
+  }
+  addon-list[type="extension"] section[section="0"] > .list-section-heading,
+  addon-list[type="extension"] section[section="1"] > .list-section-heading {
+    visibility: collapse !important;
+  }
+  addon-list[type="extension"] section[section="0"]::after,
+  addon-list[type="extension"] section[section="1"]::after {
+  	content: "Enabled: " counter(enabled) ". Allowed in Private Windows: " counter(enabledpvt) ".";
+      position: absolute !important;
+  	top: 0px !important;
+      font-size: 17px;
+      font-weight: 600;
+  }
+  addon-list[type="extension"] section[section="1"]::after {
+  	content: "Disabled: " counter(disabled) ".";
+  }
+	.recommended-heading {
+		margin-top: 45px !important;
+	}
+}

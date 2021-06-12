@@ -1,0 +1,27 @@
+/* extensions */
+@import "extensions/auto tab discard.css";
+@import "extensions/dashlane.css";
+@import "extensions/ublock origin.css";
+@import "extensions/violentmonkey.css";
+@import "extensions/facebook container.css";
+
+@import "about.css";
+/* about.css
+	* color vars of multiple elements in the about pages
+	* view-source pages
+	* file manager
+	* about:webrtc
+	* about:debugging
+*/
+
+@import "content_default.css";
+/* content_default.css
+	* Main menu remove shadow
+	* Remove white loading page
+	* Background image new tab
+	* Show action buttons in about:addons
+	* Show count of "Enabled" and "Disabled" in about:addons
+*/
+
+/* addons.mozilla.org */
+@import "amo.css";

@@ -1,0 +1,18 @@
+/*! Alters the webextension HTTPS Everywhere
+  IMPORTANT: change the Internal UUID */
+@-moz-document url-prefix("moz-extension://ed93362e-b970-4390-837c-cc264016f6f2/pages/popup") {
+  :root {
+  	--text-main: #ccc !important;
+  	--text-secondary: #aaa !important;
+    --light-grey: #3a3a3a !important;
+  }
+  body {
+    background: var(--light-grey) !important;
+  }
+  .settings_block {
+    border-bottom-color: #202020 !important;
+  }
+  header small {
+    color: var(--text-secondary) !important;
+  }
+}

@@ -1,0 +1,23 @@
+/* extensions */
+@import "extensions/auto tab discard.css";
+@import "extensions/clearurls.css";
+@import "extensions/dashlane.css";
+@import "extensions/https everywhere.css";
+@import "extensions/panorama tab groups.css";
+@import "extensions/ublock origin v2.css";
+@import "extensions/universal bypass.css";
+@import "extensions/violentmonkey.css";
+
+
+@import "con_default.css";
+/* con_default.css
+	* Remove white loading page
+  * about:addons Options tab white flash fix
+  * view-source pages
+  * about:newtab & about:home
+  * about:webrtc
+  * about:debugging
+*/
+
+/* addons.mozilla.org */
+/* @import "con_amo.css"; */

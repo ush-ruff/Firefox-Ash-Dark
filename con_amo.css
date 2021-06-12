@@ -1,0 +1,225 @@
+@-moz-document url-prefix("https://addons.mozilla.org") {
+  :root{
+    --back-1: #2f2f2f;
+    --back-2: #3f3f3f;
+    --back-3: #2a2a2a;
+    --back-4: #3a3a3a;
+		--back-5: #202020;
+    --back-6: #4a4a4a;
+
+    --border-1: #232323;
+    --border-2: #1e1e1e;
+    --border-3: #323030;
+		--border-4: #555;
+
+    --text-1: #ccc;
+    --text-2: #ddd;
+    --text-3: #aaa;
+
+    --accent-1: #3498db;
+		--accent-2: #0a8dff;
+    --accent-3: #3867d6;
+    --accent-4: #4b7bec;
+
+    --in-content-link-color-visited: #9b59b6 !important;
+  }
+  .Footer, .Footer-wrapper, .LanguageTools-header-row, .amo {
+    background: var(--in-content-category-header-background) !important;
+  }
+  h1, h2, h3 {
+    color: var(--text-2) !important;
+  }
+  .Guides-header, .HomeHeroGuides-sections .Hero-name-HomeHeroGuides {
+    border-color: var(--border-3) !important;
+  }
+  .App-content, .Home, .LandingPage, .LanguageTools-table-row:nth-child(2n),
+  .Paginate, .Page-content {
+    background: var(--back-3) !important;
+  }
+  .Select {
+    background-color: var(--back-3) !important;
+  }
+  .SearchForm-icon-magnifying-glass {
+    filter: invert(65%) !important;
+  }
+  .AddonDescription-more-addons--theme .Card-contents .AddonsCard-list,
+  .AddonDescription-more-addons:not(.AddonDescription-more-addons--theme) .Card-contents .AddonsCard-list,
+  .AddonsByAuthorsCard .Card-contents .AddonsCard-list,
+  .AddonsCard--horizontal .Card-contents, .AutoSearchInput-suggestions-item,
+  .Card--photon .Card-contents, .Card-contents, .Card-contents li, .Card-footer,
+  .Card-header, .Categories .Card-contents,
+  .DropdownMenu-items::after, .Hero .Card-contents, .Home-SubjectShelf .Card-contents,
+  .LandingPage-header, .MetadataCard, .Search .SearchResults .SearchResult,
+  .Search .SearchResults-message, .SearchForm-query,
+  .SearchForm-suggestions-item.SearchForm-suggestions-item,
+  .SectionLinks-dropdown .DropdownMenu-items, input.AutoSearchInput-query {
+    background: var(--back-4) !important;
+  }
+  .Addon-author, .Addon-author a, .Addon-author a:link .Button--action, .Addon-title,
+  .AddonBadges .Badge, .AddonTitle, .Button--action, .Button--action.Button--small:link,
+  .Button--action:link, .Button--neutral, .Button--neutral:link, .Card--photon .Card-contents,
+  .Card-contents, .Card-footer-text, .Definition-dt, .DropdownMenuItem, .DropdownMenuItem-link a,
+  .DropdownMenuItem-link a:link, .DropdownMenuItem-section, .ExpandableCard-ToggleLink:link,
+  .Footer a:active, .Footer a:hover, .Footer-links-header a:link, .GuidesAddonCard .AddonTitle a,
+  .GuidesAddonCard .GuidesAddonCard-content-header-title .AddonTitle-author,
+  .Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited, .Home-SubjectShelf-subheading,
+  .LandingPage-addonType-name, .LandingPage-heading-content, .MetadataCard-list dt,
+  .Paginate .Button.Paginate-item--current-page, .Paginate .Button.Paginate-item:first-child,
+  .Paginate .Button.Paginate-item:last-child, .Paginate .Button.Paginate-item:link:first-child,
+  .Paginate .Button.Paginate-item:link:last-child, .Paginate .Button.Paginate-item:visited:first-child,
+  .Paginate .Button.Paginate-item:visited:last-child .Paginate-page-number,
+  .PermissionsCard-subhead, .ReportAbuseButton-show-more, .SearchContextCard-header,
+  .SearchFilters-label, .SearchForm-query, .SearchResult--meta-section, .SearchResult-name,
+  .SearchResult-summary, .Select, input.AutoSearchInput-query, .SecondaryHero-message-description {
+    color: var(--text-2) !important;
+  }
+  .Paginate .Button.Paginate-item:active, .Paginate .Button.Paginate-item:hover {
+    background-color: var(--back-4) !important;
+  }
+  .SecondaryHero-module {
+    background-color: var(--back-4) !important;
+    color: var(--text-2) !important;
+
+  }
+  .SecondaryHero-module-icon {
+  	filter: invert(0.8) !important;
+  }
+  .AutoSearchInput-suggestions-item {
+    color: var(--text-2) !important;
+  }
+  .Card-header {
+    color: var(--text-1) !important;
+  }
+  .Card-contents li .Rating-star-group, .Paginate-next::after,
+  .Paginate-previous::before {
+    filter: invert(70%) !important;
+  }
+  .AddonMeta .MetadataCard-content a, .AddonMeta .MetadataCard-content a:link,
+  .AddonMeta .MetadataCard-content a.AddonMeta-reviews-content-link,
+  .AddonMeta .MetadataCard-content a.AddonMeta-reviews-content-link:link,
+  .AddonMeta .MetadataCard-content a.AddonMeta-reviews-content-link:visited,
+  .AddonMeta .MetadataCard-content a:visited, .AddonMeta .MetadataCard-title a,
+  .AddonMeta .MetadataCard-title a.AddonMeta-reviews-content-link,
+  .AddonMeta .MetadataCard-title a.AddonMeta-reviews-content-link:link,
+  .AddonMeta .MetadataCard-title a.AddonMeta-reviews-content-link:visited,
+  .AddonMeta .MetadataCard-title a:link, .AddonMeta .MetadataCard-title a:visited,
+  .RatingsByStar-count a:active, .RatingsByStar-count a:link, .RatingsByStar-count a:visited,
+  .RatingsByStar-star a:active, .RatingsByStar-star a:link, .RatingsByStar-star a:visited {
+    color: var(--text-2) !important;
+  }
+  .Rating-selected-star {
+    background: url("data:image/svg+xml,%3Csvg width='17px' height='16px' viewBox='0 0 17 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3C!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch --%3E %3Cdesc%3ECreated with Sketch.%3C/desc%3E %3Cdefs%3E%3C/defs%3E %3Cg id='Screens' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E %3Cg id='Extension-Detail---1366px' transform='translate(-1268.000000, -191.000000)' fill-rule='nonzero' fill='%23D7D7DB'%3E %3Cg id='Icon/Star/Off' transform='translate(1268.093458, 191.000000)'%3E %3Cpath d='M16.9387231,6.0134792 C16.8019739,5.62866693 16.4537759,5.34430427 16.0298163,5.27120279 L11.6315676,4.53095169 L9.55990532,0.617038533 C9.35975238,0.238957594 8.94965505,-8.43205013e-17 8.50094816,0 C8.05224128,5.62136675e-17 7.64214395,0.238957594 7.44199101,0.617038533 L5.36925312,4.53095169 L0.979609481,5.26917748 C0.55189384,5.33952054 0.199461709,5.62476632 0.0614173919,6.01232884 C-0.0766269256,6.39989135 0.0218952463,6.82750347 0.318097391,7.1263875 L3.46646469,10.3132141 L2.81140637,14.7283917 C2.74982246,15.1419679 2.93913032,15.5532305 3.30178728,15.7937216 C3.66444423,16.0342127 4.13951821,16.0635259 4.53241344,15.8696543 L8.50041035,13.9213053 L12.4694829,15.8726923 C12.8623781,16.0665639 13.3374521,16.0372507 13.7001091,15.7967596 C14.062766,15.5562685 14.2520739,15.1450059 14.19049,14.7314296 L13.534356,10.3132141 L16.6816477,7.12740015 C16.9779332,6.82862115 17.0766057,6.40106827 16.9387231,6.0134792 Z' id='Star-Copy'%3E%3C/path%3E %3C/g%3E %3C/g%3E %3C/g%3E %3C/svg%3E") 50%/contain no-repeat!important
+  }
+  .ShowMoreCard-contents::after {
+    background: linear-gradient(rgba(255,255,255,0),var(--back-4)) !important;
+  }
+  .SearchResult-link, .SearchResult-link:active, .SearchResult-link:link, .SearchResult-link:visited {
+    color: var(--text-2) !important;
+  }
+  .Addon-details .AddonDescription-contents a:link, .AddonMoreInfo-contents a:link,
+  .Card-footer-link a, .Card-footer-link a:hover, .Card-footer-link a:link,
+  .Card.ShowMoreCard.AddonDescription-version-notes a:link, .DropdownMenuItem-link a:hover,
+  .Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, .Home-SubjectShelf-link:hover,
+  .LanguageTools-table a:link, .SearchResult-link:focus .SearchResult-name,
+  .SearchResult-link:hover .SearchResult-name, .SearchResult-link:focus,
+  .SearchResult-link:hover, .DefinitionList a {
+    color: var(--accent-1) !important;
+  }
+  .Button--action.Button--outline-only {
+    border-color: var(--accent-2) !important;
+  }
+  input.AutoSearchInput-query {
+    border-color: var(--border-3) !important;
+  }
+  .Addon .InstallButton-button, .Button--action, .Button--action.Button--small,
+  .SearchForm-suggestions-item.SearchForm-suggestions-item--highlighted {
+    background: var(--accent-3) !important;
+  }
+  .Button--action.Button--outline-only:hover, .Button--action:hover,
+  .SearchForm-query:hover {
+    border-color: var(--accent-3) !important;
+  }
+  .SearchForm-query:focus {
+    box-shadow: 0 0 5px 0 var(--accent-2) !important;
+    border-color: var(--accent-3) !important;
+  }
+  .AddonRecommendations.AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper {
+  	padding: 1em !important;
+  }
+  .AddonsCard--horizontal ul.AddonsCard-list .SearchResult-link:hover,
+  .AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper:focus,
+  .AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper:hover {
+    background: var(--back-3) !important;
+    border-radius: 9px !important;
+  }
+  .Button--report {
+    text-shadow: none !important;
+  }
+  .Icon-arrow, .Icon-external {
+    filter: invert(20%) !important;
+  }
+  .Icon-magnifying-glass {
+    filter: invert(65%) !important;
+  }
+  .Icon-featured, .Icon-developer, .PermissionsCard-list li .Icon {
+    filter: invert(85%) !important;
+  }
+  .Icon-plus-dark, .Icon-delete,
+  .Button--neutral:link.Button--puffy .Icon.Icon-external-dark, .Icon-external-dark {
+    filter: invert(100%) !important;
+  }
+  .Button--neutral.Button--puffy,
+  .Button--neutral:link.Button--puffy {
+    background: var(--accent-3) !important;
+    color: var(--text-1) !important;
+  }
+  .Button--neutral.Button--puffy:hover,
+  .Button--neutral:link.Button--puffy:hover,
+  .Button--action.Button--micro:not(.Button--disabled):hover,
+  .Button--action:not(.Button--disabled):hover {
+    background: var(--accent-4) !important;
+  }
+  .LandingAddonsCard.AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper {
+    border-radius: 9px !important;
+  }
+  .SearchResult-summary, .Paginate-page-number, .Addon-details .AddonDescription-contents {
+    color: #aaa !important;
+  }
+  .SearchResult--meta-section {
+    color: var(--text-3) !important;
+  }
+  .RecommendedBadge-label {
+    color: #e67e22 !important;
+  }
+  .HomeHeroGuides-sections .Card-contents,
+  .Card.CardList.AddonsCard.LandingAddonsCard.AddonsCard--horizontal.Card--photon .Card-footer {
+    background: none !important;
+  }
+  .HomeHeroGuides-section .Card-contents {
+    background: var(--back-4) !important;
+  }
+  .Footer-language-picker .LanguagePicker-selector {
+    background: var(--back-4) !important;
+    color: var(--text-1) !important;
+  }
+  .AMInstallButton .AMInstallButton-loading-button {
+  	background-color: var(--back-3) !important;
+  }
+  .AddonReviewCard-reply, .AddonReviewCard-reply .ShowMoreCard-contents div,
+  .AddonReviewCard-reply .Card-footer {
+    background: var(--back-3) !important;
+  }
+  .UserReview-reply-header {
+    color: var(--text-1) !important;
+  }
+  .AddonReviewCard-reply .ShowMoreCard-contents::after {
+  	background: linear-gradient(transparent, var(--back-3)) !important;
+  }
+  .Addon a:visited {
+    color: var(--in-content-link-color-visited) !important;
+  }
+  .AutoSearchInput-suggestions-item--highlighted, .AutoSearchInput-suggestions-item:active,
+  .AutoSearchInput-suggestions-item:focus, .AutoSearchInput-suggestions-item:hover {
+    background: var(--back-3) !important;
+  }
+}

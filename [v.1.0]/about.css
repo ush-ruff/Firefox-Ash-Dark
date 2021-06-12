@@ -1,0 +1,269 @@
+@-moz-document url-prefix(about:),
+url-prefix(chrome://),
+url-prefix(chrome:/extensions),
+url-prefix(view-source),
+url-prefix("https://addons.mozilla.org"),
+url-prefix(https://raw.githubusercontent.com),
+regexp("^[file:///].*[^(html|svg)]$") {
+	:root{
+    --back-1: #2f2f2f;
+    --back-2: #3f3f3f;
+    --back-3: #2a2a2a;
+    --back-4: #3a3a3a;
+		--back-5: #202020;
+    --back-6: #4a4a4a;
+
+    --border-1: #232323;
+    --border-2: #1e1e1e;
+    --border-3: #323030;
+		--border-4: #555;
+
+    --text-1: #ccc;
+    --text-2: #ddd;
+    --text-3: #aaa;
+
+    --accent-1: #3498db;
+		--accent-2: #0a8dff;
+    --accent-3: #3867d6;
+    --accent-4: #4b7bec;
+
+    --in-content-page-color: var(--text-2) !important; /* header texts and icons */
+    --in-content-page-background: var(--back-3) !important; /* body background */
+    --in-content-text-color: var(--text-1) !important; /* normal text color */
+    --in-content-selected-text: var(--text-1) !important; /* other normal text color */
+		--in-content-border-color: var(--border-4) !important; /* border colors in pages */
+
+		--in-content-box-background: var(--back-4) !important; /* content boxes, search, dropdown */
+    --in-content-box-background-hover: var(--back-1) !important; /* content headers hover */
+    --in-content-box-background-active: var(--back-1) !important; /* content headers active */
+    --in-content-box-border-color: var(--border-3) !important; /* content boxes, search, dropdown */
+
+    --in-content-link-color: var(--accent-1) !important; /* links */
+    --in-content-link-color-hover: var(--accent-2) !important;
+    --in-content-link-color-active: var(--accent-2) !important;
+    --in-content-link-color-visited: #9b59b6 !important;
+
+    --in-content-primary-button-background: var(--accent-3) !important; /* colored buttons */
+    --in-content-primary-button-background-hover: var(--accent-4) !important;
+    --in-content-primary-button-background-active: var(--accent-4) !important;
+
+    --in-content-table-border-dark-color: var(--border-1) !important; /* info tables border eg: about:support */
+    --in-content-table-header-background: var(--accent-3) !important; /* info tables header */
+    --in-content-table-background: var(--back-2) !important; /* wide container about:support */
+    --in-content-button-background: var(--back-1) !important; /* wide container buttons about:support */
+
+    --in-content-deemphasized-text: var(--text-3) !important;
+    --in-content-warning-container: var(--border-2) !important;
+
+		--in-content-box-info-background: var(--back-5) !important; /* message boxes */
+
+		--in-content-dialog-header-background: var(--back-5) !important; /* dialog box header */
+
+		--in-content-button-background: var(--back-5) !important;
+    --in-content-button-background-hover: var(--back-6) !important;
+    --in-content-button-background-active: var(--back-6) !important;
+
+    --theme-highlight-pink: #ff7de9; /* view source colors */
+    --theme-highlight-blue: #75BFFF; /* view source colors */
+    --theme-highlight-purple: #B98EFF; /* view source colors */
+    --theme-highlight-red: #FF7DE9; /* view source colors */
+
+  }
+
+  /* about:addons */
+  addon-card:not([expanded]) .addon.card:hover {
+		box-shadow: 0px 0px 0px 5px var(--accent-4) !important;
+	}
+
+	/* about:preferences */
+  .dialogTitleBar {
+		background-color: var(--in-content-dialog-header-background) !important;
+		border-bottom: 1px solid var(--border-1) !important;
+	}
+
+  /* Tables in about pages */
+  table tr td {
+    background-color: var(--back-4) !important;
+  }
+  table, th, td, .notice-box {
+    border-color: var(--in-content-table-border-dark-color) !important;
+  }
+
+  /* Links for various about: pages */
+  .aboutPageWideContainer a, #outside a, #serviceworkers a, #UI_goUp a {
+    color: var(--accent-1) !important;
+  }
+  .aboutPageWideContainer a:hover, #outside a:hover, #serviceworkers a:hover, #UI_goUp a:hover,
+  .aboutPageWideContainer a:active, #outside a:active, #serviceworkers a:active, #UI_goUp a:active {
+    color: var(--accent-2) !important;
+  }
+
+	/* Selected items outline in tables and such */
+  richlistbox[seltype="multiple"]:focus > richlistitem[current="true"][selected="true"] {
+    outline: 1px dashed var(--accent-2) !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+
+/* CSS pages in firefox chrome */
+@-moz-document url-prefix(chrome://mozapps/content),
+url-prefix(https://raw.githubusercontent.com) {
+  /* chrome css pages */
+  body, html:not([dir]) pre {
+    background: var(--in-content-page-background) !important;
+    color: var(--in-content-text-color) !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+
+/* View-source pages */
+@-moz-document url-prefix(view-source) {
+	:root {
+    background-color: var(--back-3) !important;
+    color: var(--text-1) !important;
+  }
+  pre[id]:before, span[id]:before {
+    color: var(--text-3) !important;
+  }
+  .highlight .end-tag, .highlight .start-tag {
+    color: var(--theme-highlight-blue) !important;
+  }
+  .highlight .comment {
+    color: var(--theme-highlight-pink) !important;
+  }
+  .highlight .cdata {
+    color: #c06 !important;
+  }
+  .highlight .doctype {
+    color: #86DE74 !important;
+  }
+  .highlight .pi {
+    color: var(--theme-highlight-red) !important;
+  }
+  .highlight .entity {
+    color: #27ae60 !important;
+  }
+  .highlight .attribute-name {
+    color: var(--theme-highlight-pink) !important;
+  }
+  .highlight .attribute-value {
+    color: var(--theme-highlight-purple) !important;
+  }
+  .highlight .markupdeclaration {
+    color: #4682b4 !important;
+  }
+  .highlight .error,
+  .highlight .error > :-moz-any(.start-tag,.end-tag,.comment,.cdata,.doctype,.pi,.entity,.attribute-name,.attribute-value) {
+    color: #de7474 !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+
+/* File manager */
+@-moz-document regexp("^[file:///].*[^(html|svg)]$") {
+  :root {
+    background-color: var(--in-content-page-background) !important;
+  }
+  body {
+    border-color: var(--in-content-box-background) !important;
+    background-color: var(--in-content-box-background) !important;
+    color: var(--in-content-page-color) !important;
+  }
+  h1 {
+    border-color: var(--in-content-box-border-color) !important;
+  }
+  body > table > tbody > tr:hover {
+    outline-color: var(--in-content-box-background-hover) !important;
+    background-color: var(--in-content-box-background-hover) !important;
+  }
+  .dir, .file, .symlink, .up {
+    color: var(--in-content-link-color) !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+
+/* about:webrtc */
+@-moz-document url-prefix(about:webrtc) {
+	html {
+		background-color: var(--back-3) !important;
+		color: var(--text-1) !important;
+	}
+	#content > div, .peer-connection > h3 {
+		background-color: var(--back-4) !important;
+		border-color: var(--border-3) !important;
+	}
+	.section-heading > button:hover {
+    background-color: var(--back-1) !important;
+    border: 1px solid var(--border-2) !important;
+	}
+	.fold-trigger {
+		color: var(--text-1) !important;
+	}
+	table {
+		color: var(--text-1) !important;
+		background-color: var(--back-2) !important;
+	}
+	.peer-connection table tr {
+		background-color: var(--back-4) !important;
+	}
+	.trickled {
+		background-color: var(--back-2) !important;
+		color: var(--text-1) !important;
+	}
+	.peer-connection table tr:first-of-type {
+		background-color: var(--back-3) !important;
+		color: var(--text-1) !important;
+	}
+}
+
+/* ------------------------------------------------------------------ */
+
+/* about:debugging */
+@-moz-document url-prefix(about:debugging) {
+  html, body {
+  	color: var(--text-1) !important;
+  	background: var(--back-3) !important;
+  }
+  .card {
+  	background-color: var(--back-4) !important;
+  	box-shadow: 0 1px 4px var(--border-2) !important;
+  }
+  .connect-section__header {
+    color: var(--text-2) !important;
+  }
+  .sidebar-fixed-item__icon, .icon-label__icon {
+    fill: var(--text-1) !important;
+  }
+  .connect-section__header__icon, .sidebar__footer__icon {
+    filter: invert(0.8) !important;
+  }
+  .default-button {
+  	color: var(--text-2) !important;
+  	background-color: var(--back-1) !important;
+  }
+  .default-button:active, .default-button:hover {
+  	background-color: var(--border-2) !important;
+  }
+  .default-input {
+  	border-color: var(--border-3) !important;
+  	color: var(--text-1) !important;
+  	background-color: var(--back-2) !important;
+  }
+  .sidebar-item--selectable a, .sidebar__footer a {
+    color: var(--text-1) !important;
+  }
+  .separator, .connect-section__extra, .fieldpair,
+  .debug-target-item__additional_actions {
+    border-color: var(--border-2) !important;
+  }
+  .sidebar-item--selected a {
+    color: var(--accent-2) !important;
+  }
+  .sidebar-item--selected .sidebar-fixed-item__icon {
+    fill: var(--accent-2) !important;
+  }
+}

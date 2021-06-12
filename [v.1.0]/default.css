@@ -1,0 +1,160 @@
+/* Remove "Send Page to Device", "Send Link to Device",
+   "Send Tab to Device" from context menu.
+   * Contributor(s): PilzAdam
+   */
+#context-sendpagetodevice, #context-sep-sendpagetodevice,
+#context-sendlinktodevice, #context-sep-sendlinktodevice,
+#context_sendTabToDevice, #context_sendTabToDevice_separator, #context-sep-navigation, #context-navigation, #context-pocket {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Prevents White pre-load flash */
+#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels,
+browser[type=content-primary], browser[type=content] > html,
+.browserContainer, .tabbrowser tabpanels {
+  background-color: #2a2a2a !important;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* URL BAR */
+#urlbar {
+  border: none !important;
+  box-shadow: none !important;
+  /*max-width: 474px !important;*/
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Hide info icon for sites that don't have permissions */
+#urlbar :not(.grantedPermissions) #identity-icon {
+        transition: 300ms !important; /* Animate icon hiding */
+	opacity: 0 !important; /* Make icons transparent */
+	-moz-margin-end: -1.1em !important; /* Hide icons by offsetting them */
+}
+
+/* Show info icon on navbar hover, except for new tab page search icon */
+#urlbar[pageproxystate="valid"]:hover #identity-icon {
+        transition: 300ms !important; /* Animate icon showing */
+	opacity: 1 !important; /* Make icons opaque */
+	-moz-margin-end: initial !important; /* Use initial margins to show icons */
+}
+
+/* Remove border after info icon */
+#tracking-protection-icon-container {
+  border-inline-end: 1px solid transparent !important; /* Make border transparent */
+  border-image: 0% !important;
+}
+
+#pageActionSeparator {
+  visibility: hidden !important; /* Hide seperators on end of urlbar */
+}
+
+/* ------------------------------------------------------------------ */
+
+/* RESKIN FORWARD AND BACK BUTTONS */
+/* Make nav buttons background transparent */
+:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
+	background-color: transparent !important;
+	border: 1px solid transparent !important;
+}
+:root:not([uidensity="compact"]) #back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon,
+:root:not([uidensity="compact"]) #forward-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+	background-color: transparent !important;
+	box-shadow: 0 1px 6px transparent !important;
+	border-color: transparent !important;
+}
+/* Replacing the icons for back and forward */
+#back-button {
+	list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23575757' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+  opacity: 100% !important;
+/*  filter: invert(0.8) !important; */
+  transition: ease 0.3s all !important;
+}
+#back-button:not([disabled="true"]):hover {
+  list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23909090' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+  opacity: 100% !important
+}
+#forward-button {
+	list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23575757' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+  opacity: 100% !important;
+  transition: ease 0.3s all !important;
+}
+#forward-button:not([disabled="true"]):hover {
+  list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23909090' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+  opacity: 100% !important;
+}
+#back-button[disabled="true"], #forward-button[disabled="true"] {
+  opacity: 20% !important;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Main menubar remove shadow */
+@-moz-document url-prefix(chrome://) {
+	#main-menubar {
+	  text-shadow: none!important;
+    background-color: transparent !important;
+    color: #777 !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Tweaks for Ctrl+Tab
+ * Contributor(s): difool2nice, MotherStylus
+*/
+#ctrlTab-panel {
+  -moz-appearance: none !important;
+  color: #ccc !important;
+  border-style: none !important;
+  padding: 20px 10px 10px !important;
+  font-family: Fira Sans, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: normal !important;
+  text-shadow: 0 0 2px hsl(0, 0%, 8%), 0 0 2px hsl(0, 0%, 8%) !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.ctrlTab-preview:not(#ctrlTab-showAll)>*>.ctrlTab-preview-inner {
+  margin: -10px -10px 0 !important;
+  box-shadow: none !important;
+}
+.ctrlTab-canvas {
+  box-shadow: none !important;
+  background: transparent !important;
+  left: 100px !important;
+}
+.ctrlTab-preview-inner {
+  padding: 8px transparent !important;
+  border: 15px solid transparent !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.ctrlTab-preview:focus > .ctrlTab-preview-inner {
+  background-color: #454545 !important;
+  transition: all 0.15s ease 0s !important;
+  border: 1px solid #454545 !important;
+  font-size: 14px !important;
+  font-weight: bolder !important;
+  color: #fff !important;
+}
+.ctrlTab-preview > .ctrlTab-preview-inner {
+  background-color: transparent !important;
+  transition: all 0.4s ease 0s !important;
+  box-shadow: 0 0 0 2px transparent !important;
+}
+.ctrlTab-favicon-container {
+  -moz-box-align: start !important;
+  -moz-box-pack: start !important;
+  box-shadow: none !important;
+}
+.ctrlTab-favicon[src] {
+  background-color: transparent !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 2px !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,51 @@
+@import "chr_default.css";
+/* - DEFAULT -
+   * Context menu clean up
+   * Fix white flash
+   * Main menubar remove shadow
+   * Navbar bottom border
+   * Change forward and back arrows
+   * Ctrl-Tab tweaks
+   * Full screen message on HTML5 videos
+   * Rounded URLbar 
+   * Fix URLbar separators color
+   * Websites security level color indication
+*/
+
+@import "chr_tabs.css";
+/* - TABS -
+   * Close button opacity
+   * Close button auto-hide
+   * Centered text
+   * Reduce favicons opacity of inactive tabs
+   * Set minimum width
+   * Separator style
+   * Tab line colors
+ */
+
+@import "chr_menus.css";
+/* - MENUS -
+   * Buttons
+   * Tree
+   * Dialog Boxes
+   * List Boxes
+   * Dropdown Menus
+   * Checkboxes
+   * Radios
+   * Arrow Panels
+   * Context Menus
+   * Findbar
+   * Customize Menu
+   * Hamburger menu
+   * More Tools dropdown
+   * Sidebar
+   * Bookmarks Popup
+   * Alerts Popup
+   * Downloads Popup
+   * Protections Popup
+*/
+
+@import "chr_pages.css";
+/* - PAGES -
+   * Page Info
+*/

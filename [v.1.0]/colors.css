@@ -1,0 +1,64 @@
+:root{
+  --back-1: #2f2f2f;
+  --back-2: #3f3f3f;
+  --back-3: #2a2a2a;
+  --back-4: #3a3a3a;
+  --back-5: #202020;
+  --back-6: #4a4a4a;
+
+  --border-1: #232323;
+  --border-2: #1e1e1e;
+  --border-3: #323030;
+  --border-4: #555;
+
+  --text-1: #ccc;
+  --text-2: #ddd;
+  --text-3: #aaa;
+
+  --accent-1: #3498db;
+  --accent-2: #0a8dff;
+  --accent-3: #3867d6;
+  --accent-4: #4b7bec;
+
+  --in-content-page-color: var(--text-2) !important; /* header texts and icons */
+  --in-content-page-background: var(--back-3) !important; /* body background */
+  --in-content-text-color: var(--text-1) !important; /* normal text color */
+  --in-content-selected-text: var(--text-1) !important; /* other normal text color */
+  --in-content-border-color: var(--border-4) !important; /* border colors in pages */
+
+  --in-content-box-background: var(--back-4) !important; /* content boxes, search, dropdown */
+  --in-content-box-background-hover: var(--back-1) !important; /* content headers hover */
+  --in-content-box-background-active: var(--back-1) !important; /* content headers active */
+  --in-content-box-border-color: var(--border-3) !important; /* content boxes, search, dropdown */
+
+  --in-content-link-color: var(--accent-1) !important; /* links */
+  --in-content-link-color-hover: var(--accent-2) !important;
+  --in-content-link-color-active: var(--accent-2) !important;
+  --in-content-link-color-visited: #9b59b6 !important;
+
+  --in-content-primary-button-background: var(--accent-3) !important; /* colored buttons */
+  --in-content-primary-button-background-hover: var(--accent-4) !important;
+  --in-content-primary-button-background-active: var(--accent-4) !important;
+
+  --in-content-table-border-dark-color: var(--border-1) !important; /* info tables border eg: about:support */
+  --in-content-table-header-background: var(--accent-3) !important; /* info tables header */
+  --in-content-table-background: var(--back-2) !important; /* wide container about:support */
+  --in-content-button-background: var(--back-1) !important; /* wide container buttons about:support */
+
+  --in-content-deemphasized-text: var(--text-3) !important;
+  --in-content-warning-container: var(--border-2) !important;
+
+  --in-content-box-info-background: var(--back-5) !important; /* message boxes */
+
+  --in-content-dialog-header-background: var(--back-5) !important; /* dialog box header */
+
+  --in-content-button-background: var(--back-5) !important;
+  --in-content-button-background-hover: var(--back-6) !important;
+  --in-content-button-background-active: var(--back-6) !important;
+
+  --theme-highlight-pink: #ff7de9; /* view source colors */
+  --theme-highlight-blue: #75BFFF; /* view source colors */
+  --theme-highlight-purple: #B98EFF; /* view source colors */
+  --theme-highlight-red: #FF7DE9; /* view source colors */
+
+}

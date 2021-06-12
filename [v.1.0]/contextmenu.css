@@ -1,0 +1,54 @@
+menupopup,
+menupopup > menu > menupopup,
+menupopup scrollbox,
+popup, popup > menu > menupopup {
+  -moz-appearance: none !important;
+  background: #393838 !important;
+  border: none !important;
+  color: #ccc !important;
+}
+
+menuitem,
+menupopup menu {
+  -moz-appearance: none!important;
+  color: #ccc !important;
+  background: #393838 !important;
+  padding: 2px !important;
+}
+
+menuitem:hover,
+menupopup menu:hover {
+  color: #ccc !important;
+  background: #202020 !important;
+}
+
+menu[disabled=true],
+menuitem[disabled=true] {
+  color: #888 !important;
+  background-color: #393838 !important;
+}
+
+menu[disabled=true]:hover,
+menuitem:hover[disabled=true] {
+  color: #888 !important;
+  background-color: #202020 !important
+}
+
+menuseparator {
+	-moz-appearance: none !important;
+	padding: 1px !important;
+	border-top: none !important;
+	border-bottom: 1px solid #555 !important;
+}
+
+#toolbar-menubar menupopup, #toolbar-menubar panel {
+	padding: 5px 2px !important;
+}
+
+.menu-right {
+  filter: grayscale(1) brightness(1.4) !important;
+}
+
+menu[disabled="true"] .menu-right {
+  filter: grayscale(1) brightness(0.8) !important;
+}

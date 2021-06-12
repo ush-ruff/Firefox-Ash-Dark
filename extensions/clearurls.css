@@ -1,0 +1,61 @@
+/*! Alters the webextension ClearURLs
+  IMPORTANT: change the Internal UUID */
+@-moz-document url-prefix("moz-extension://f4870cda-50ff-47fe-b1ea-a6d44a9ce760/") {
+  body {
+  	color: #BBC5CE !important;
+  	background-color: #212529 !important;
+  }
+  .container-fluid {
+    background: url(https://i.imgur.com/CfLDAaX.png) #23282d !important;
+  }
+  input:checked + .slider {
+  	background-color: #a4ce25 !important;
+  }
+  #references_section a {
+    color: #2c92ff !important;
+  }
+  #references_section a:hover {
+  	color: #0051ec !important;
+  }
+  #loggingPage {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #fff !important;
+  }
+  #loggingPage:hover {
+    background-color: #218838 !important;
+    border-color: #1e7e34 !important;
+  }
+  /* Cleaning Tool & Settings */
+  body > .row {
+    margin: auto !important;
+  }
+  .offset-lg-4 {
+  	margin-left: 20% !important;
+  }
+  .col-lg-4 {
+  	flex: 0 0 60% !important;
+  	max-width: 60% !important;
+  }
+  .form-control, .form-control:focus {
+  	background: #495057 !important;
+  	color: #dae4ee !important;
+    border-color: #343a40 !important;
+  }
+  .form-control:focus {
+    box-shadow: 0 0 0 .2rem rgb(71, 92, 113) !important;
+  }
+  .input-group-text {
+    background-color: #6c757d !important;
+    border-color: #343a40 !important;
+  }
+  .popover-body {
+  	background: #6c757d !important;
+  }
+  .bs-popover-auto[x-placement^="top"] > .arrow::after, .bs-popover-top > .arrow::after {
+  	border-top-color: #6c757d !important;
+  }
+  .bs-popover-auto[x-placement^="bottom"] > .arrow::after, .bs-popover-bottom > .arrow::after {
+  	border-bottom-color: #6c757d !important;
+  }
+}
