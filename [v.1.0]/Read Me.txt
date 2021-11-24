@@ -1,8 +1,0 @@
-How to apply
-1.  Type 'about:profiles' in the Firefox urlbar and hit enter
-2.  Open the root directory folder of your profile
-3.  Open the 'chrome' folder, or create it if it doesn't exist
-4.  Copy all files into the chrome folder
-5.  Restart Firefox
-
-Note: [Firefox 69+, about:config] Set toolkit.legacyUserProfileCustomizations.stylesheets to true (default is false).
