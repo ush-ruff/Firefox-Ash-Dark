@@ -1,51 +1,43 @@
+@import "colors.css";
+
 @import "chr_default.css";
 /* - DEFAULT -
-   * Context menu clean up
-   * Fix white flash
-   * Main menubar remove shadow
-   * Navbar bottom border
-   * Change forward and back arrows
-   * Ctrl-Tab tweaks
-   * Full screen message on HTML5 videos
-   * Rounded URLbar 
+   * Hide unwanted context menu items
+   * White flash fix
+   * Rounded URLbar
+   * URLbar text selection fix for Dark Vintage Theme
    * Fix URLbar separators color
-   * Websites security level color indication
+   * Navbar bottom border
+   * Full screen message on HTML5 videos
+   * Ctrl-Tab tweaks
 */
-
-@import "chr_tabs.css";
-/* - TABS -
-   * Close button opacity
-   * Close button auto-hide
-   * Centered text
-   * Reduce favicons opacity of inactive tabs
-   * Set minimum width
-   * Separator style
-   * Tab line colors
- */
 
 @import "chr_menus.css";
 /* - MENUS -
-   * Buttons
-   * Tree
-   * Dialog Boxes
-   * List Boxes
-   * Dropdown Menus
+   * Tooltips
    * Checkboxes
    * Radios
+   * Auto Complete List Boxes
    * Arrow Panels
    * Context Menus
-   * Findbar
-   * Customize Menu
    * Hamburger menu
-   * More Tools dropdown
-   * Sidebar
    * Bookmarks Popup
+   * Customize Menu
+   * Sidebar
+   * Findbar
    * Alerts Popup
-   * Downloads Popup
-   * Protections Popup
 */
 
 @import "chr_pages.css";
 /* - PAGES -
    * Page Info
+*/
+
+@import "chr_tabs.css";
+/* - TABS -
+   * Centered text
+   * Close button opacity
+   * Close button auto-hide
+   * Reduce favicons opacity of inactive tabs
+   * Added tab separators
 */
