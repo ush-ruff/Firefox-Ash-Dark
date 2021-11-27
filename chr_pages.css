@@ -6,114 +6,160 @@
 */
 
 @-moz-document url(chrome://browser/content/pageinfo/pageInfo.xhtml) {
-  :root {
-    --context-background: #393838;
-    --context-background-2: #323030;
-    --context-border: #151515;
-    --context-disabled: #6d6d6d;
-    --context-text: #ccc;
-    --context-hover: #252525;
-    --context-separator: #555;
-    --context-link: #3498db;
-  }
-
   ::selection {
-    background: var(--context-disabled) !important;
+    background: var(--disabled) !important;
   }
 
   /* Header */
   #topBar {
     appearance: none !important;
-    background: var(--context-hover) !important;
-    border-color: var(--context-border) !important;
+    background: var(--bg-hover) !important;
+    border-color: var(--border) !important;
   }
 
-  #viewGroup>radio {
-    color: var(--context-text) !important;
+  #viewGroup > radio {
+    color: var(--text) !important;
   }
 
-  #viewGroup>radio[selected="true"],
-  #viewGroup>radio:hover {
-    background-color: var(--context-link) !important;
-    color: var(--context-border) !important;
+  #viewGroup > radio:is([selected="true"], :hover) {
+    background-color: var(--accent) !important;
+    color: var(--border) !important;
   }
 
   /* Body */
   #mainDeck {
-    background: var(--context-background) !important;
-    color: var(--context-text) !important;
+    background: var(--bg) !important;
+    color: var(--text) !important;
   }
 
   input {
-    color: var(--context-text) !important;
+    color: var(--text) !important;
   }
 
   separator.thin {
     margin-top: 8px;
-    border-top: 1px solid var(--context-separator);
+    border-top: 1px solid var(--separator);
   }
 
   /* Table tree */
   tree {
     appearance: none !important;
-    background: var(--context-background-2) !important;
-    border: 1px solid var(--context-border) !important;
-    color: var(--context-text) !important;
+    background: var(--bg-dark) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
     scrollbar-width: thin;
     scrollbar-color: var(--disabled) var(--bg-darkest);
   }
 
   treechildren::-moz-tree-row(multicol, odd) {
-    background-color: var(--context-background) !important;
+    background-color: var(--bg) !important;
   }
 
   treechildren::-moz-tree-row(selected) {
-    background-color: var(--bg-dark-hover) !important;
+    background-color: var(--accent-dark) !important;
+    color: var(--text) !important;
+  }
+  
+  treechildren::-moz-tree-row(selected, focus) {
+    background-color: var(--accent) !important;
+  }
+  
+  treechildren::-moz-tree-row(selected, current, focus) {
+    border-color: currentColor !important;
   }
 
   treecol {
     appearance: none !important;
     padding: 4px !important;
     padding-inline-start: 8px !important;
-    background: var(--context-hover) !important;
-    border-bottom: 1px solid var(--context-border) !important;
-    color: var(--context-text) !important;
+    background: var(--bg-hover) !important;
+    border-bottom: 1px solid var(--border) !important;
+    color: var(--text) !important;
   }
 
   treecol:first-of-type {
-    border-right: 1px solid var(--context-border) !important;
+    border-right: 1px solid var(--border) !important;
   }
 
   treecolpicker {
     appearance: none !important;
     border: 1px solid transparent !important;
-    color: var(--context-text) !important;
+    color: var(--text) !important;
+  }
+  
+  treechildren::-moz-tree-cell-text(selected),
+  treechildren::-moz-tree-image(selected),
+  treechildren::-moz-tree-twisty(selected) {
+    color: var(--text) !important;
   }
 
   /* Media Tab */
   #imagecontainerbox {
-    background: url(check-bg.png) var(--context-background-2) !important;
-    border-color: var(--context-border) !important;
+    background: url(check-bg.png) var(--bg-dark) !important;
+    border-color: var(--border) !important;
+  }
+  
+  #mediaSaveBox {
+    margin-block: 5px;
   }
 
   /* Permissions Tab */
   #permList {
     appearance: none !important;
-    color: var(--context-text) !important;
-    border: 1px solid var(--context-border) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
   }
 
   #permList vbox {
-    background-color: var(--context-background-2) !important;
-    color: var(--context-text) !important;
-    border-color: var(--context-separator) !important;
+    background-color: var(--bg-dark) !important;
+    color: var(--text) !important;
+    border-color: var(--separator) !important;
   }
 
   #permList vbox:hover {
-    background-color: var(--context-hover) !important;
+    background-color: var(--bg-hover) !important;
   }
 
   #permList radio {
-    color: var(--context-text) !important;
+    color: var(--text) !important;
+  }
+
+  /* Checkboxes */
+  .checkbox-check {
+    appearance: none !important;
+  }
+
+  checkbox:not([disabled="true"]):hover > .checkbox-check, 
+  .checkbox-check[checked] {
+    background-size: 10px;
+  }
+
+  /* Buttons */
+  button {
+    appearance: none;
+    min-width: 0;
+    font-weight: 600;
+    margin-inline: 8px 0;
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 4px;
+  }
+  
+  button:not([disabled]) {
+    background-color: var(--accent);
+    color: var(--text);
+  }
+  
+  button:not([disabled]):hover {
+    background-color: var(--accent-light);
+  }
+  
+  button:not([disabled]):active {
+    background-color: var(--accent-dark);
+  }
+  
+  button[disabled] {
+    background-color: var(--disabled);
+    color: var(--bg) !important;
   }
 }
