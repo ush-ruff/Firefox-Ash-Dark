@@ -1,6 +1,6 @@
 /*! Alters the webextension Panorama Tab Groups
   IMPORTANT: change the Internal UUID */
-@-moz-document url-prefix("moz-extension://b82b3f27-7896-4793-8480-16e30a375fc0/options") {
+@-moz-document url-prefix("moz-extension://e174e885-e716-4f14-b75c-b71b59fd087d/options") {
   html, body {
     background: #202023 !important;
     color: #ccc !important;
@@ -19,12 +19,12 @@
     color: #9b59b6 !important;
   }
   #saveBackupButton, #resetAddon {
-  	background: #3e3e42 !important;
-  	border-color: #3e3e42 !important;
+    background: #3e3e42 !important;
+    border-color: #3e3e42 !important;
     cursor: pointer !important;
   }
   #saveBackupButton:hover, #saveBackupButton:active,
   #resetAddon:active, #resetAddon:hover {
-  	background: rgba(249,249,250,0.15) !important;
+    background: rgba(249,249,250,0.15) !important;
   }
 }

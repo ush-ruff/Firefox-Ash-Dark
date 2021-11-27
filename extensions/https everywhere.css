@@ -1,6 +1,6 @@
 /*! Alters the webextension HTTPS Everywhere
   IMPORTANT: change the Internal UUID */
-@-moz-document url-prefix("moz-extension://ed93362e-b970-4390-837c-cc264016f6f2/pages/popup") {
+@-moz-document url-prefix("moz-extension://c078acb8-337e-4ce7-bc8d-769083637c67/pages/popup") {
   :root {
   	--text-main: #ccc !important;
   	--text-secondary: #aaa !important;

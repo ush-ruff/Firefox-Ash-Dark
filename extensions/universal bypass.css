@@ -1,14 +1,14 @@
 /*! Alters the webextension Universal Bypass
   IMPORTANT: change the Internal UUID */
-@-moz-document url-prefix("moz-extension://995b35f1-5afe-411b-8f16-4d8c0abb050a/") {
+@-moz-document url-prefix("moz-extension://6791278a-c8cd-47c5-bd7f-6315e50b80c4/") {
   .uk-background-secondary {
-  	background-color: #1d3557 !important;
+    background-color: #1d3557 !important;
   }
   .uk-alert-primary {
-  	background: #a9d4ff !important;
+    background: #a9d4ff !important;
   }
   .uk-alert-warning {
-  	background: #ffdbbb !important;
+    background: #ffdbbb !important;
     color: #e67721 !important;
   }
   .uk-card-primary.uk-card-body .uk-checkbox:checked,
@@ -39,8 +39,8 @@
   .uk-tile-secondary:not(.uk-preserve-color) .uk-checkbox:checked,
   .uk-tile-secondary:not(.uk-preserve-color) .uk-checkbox:indeterminate,
   .uk-tile-secondary:not(.uk-preserve-color) .uk-radio:checked {
-  	background-color: #1e87f0 !important;
-  	border-color: #1e87f0 !important;
+    background-color: #1e87f0 !important;
+    border-color: #1e87f0 !important;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A") !important;
   }
 }

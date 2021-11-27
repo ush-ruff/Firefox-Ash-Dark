@@ -1,6 +1,6 @@
 /*! Alters the webextension uBlock Origin
   IMPORTANT: change the Internal UUID */
-@-moz-document url-prefix("moz-extension://906e8f7d-09bf-4b26-ae90-c31f49bc66de/") {
+@-moz-document url-prefix("moz-extension://cd24c6af-6733-4eb5-b9a2-cfec4ccd89de/") {
   :root {
     /* Popup */
     --default-ink: /*#d3d3f7*/ #c5d0da !important; /* text & icons */

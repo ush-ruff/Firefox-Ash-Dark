@@ -1,6 +1,6 @@
 /*! Alters the webextension Violentmonkey
   IMPORTANT: change the Internal UUID */
-@-moz-document url-prefix("moz-extension://5aed58db-265d-4483-a6b4-60599c6b7ac5/") {
+@-moz-document url-prefix("moz-extension://da35a18a-74bc-438f-8c7c-e3d1eef31e9b/") {
   :root{
     --back-1: #323030;
     --back-2: #393838;
@@ -17,20 +17,20 @@
     background-color: var(--back-2) !important;
   }
   .aside-content, .aside-toggle {
-  	border-color: var(--border-2) !important;
-  	background: var(--back-3) !important;
+    border-color: var(--border-2) !important;
+    background: var(--back-3) !important;
   }
   .aside-menu {
-  	border-color: var(--border-3) !important;
+    border-color: var(--border-3) !important;
   }
   .aside-menu > a.active, .aside-menu > a:hover, .aside-toggle {
-  	color: var(--text-1) !important;
+    color: var(--text-1) !important;
   }
   .aside-menu > a {
     color: var(--text-2) !important;
   }
   .tab-installed header {
-  	border-color: var(--border-1) !important;
+    border-color: var(--border-1) !important;
   }
   .filter-search > input {
     margin-left: .5em !important;
@@ -40,8 +40,8 @@
     border-color: var(--border-1) !important;
   }
   .script:not(.disabled) {
-  	border-color: var(--border-1) !important;
-  	background: var(--back-1) !important;
+    border-color: var(--border-1) !important;
+    background: var(--back-1) !important;
     color: var(--text-1) !important;
   }
   .vl-dropdown-right .btn-ghost, .btn-ghost.trash-button {
@@ -52,12 +52,12 @@
   }
   .btn-ghost.active, .btn-ghost:hover, .vl-dropdown-down.active .btn-ghost {
     border-color: var(--border-2) !important;
-  	background-color: var(--back-3) !important;
+    background-color: var(--back-3) !important;
     border-radius: 15px !important;
   }
   .script.disabled, .script.removed {
-  	background-color: var(--back-2) !important;
-  	color: var(--text-2) !important;
+    background-color: var(--back-2) !important;
+    color: var(--text-2) !important;
     border-color:  var(--border-1) !important;
   }
   .script-buttons .disabled, .script.disabled .script-buttons .disabled,
@@ -68,7 +68,7 @@
     border-color: var(--border-1) !important;
   }
   button {
-  	border-color: var(--border-1) !important;
+    border-color: var(--border-1) !important;
     background-color: var(--back-3) !important;
     color: var(--text-1) !important;
     border-radius: 5px !important;
@@ -112,15 +112,15 @@
     position: relative !important;
   }
   .edit-header::after {
-  	content: "" !important;
-  	position: absolute !important;
-  	background: var(--back-1) !important;
-  	height: 3px !important;
-  	width: 100% !important;
-  	bottom: 0 !important;
-  	right: 0 !important;
-  	z-index: 2 !important;
-  	border-top: 1px solid var(--border-2) !important;
+    content: "" !important;
+    position: absolute !important;
+    background: var(--back-1) !important;
+    height: 3px !important;
+    width: 100% !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    z-index: 2 !important;
+    border-top: 1px solid var(--border-2) !important;
   }
   .edit-nav-item {
     color: #aaa !important;
@@ -130,7 +130,7 @@
     color: var(--text-1) !important;
   }
   .edit-nav-item.active, .edit-nav-item:hover, .edit-nav-item:not(.active):hover {
-  	box-shadow: 0 -1px 1px black !important;
+    box-shadow: 0 -1px 1px black !important;
     border-top: 1px solid var(--accent-color) !important;
   }
   .edit-nav-item:not(.active):hover {
@@ -140,14 +140,14 @@
     position: relative !important;
   }
   .edit-nav-item.active::after {
-  	content: "" !important;
-  	position: absolute !important;
-  	height: 2px !important;
-  	width: 100% !important;
-  	background: var(--back-1) !important;
-  	bottom: 0 !important;
-  	right: 0 !important;
-  	z-index: 3 !important;
+    content: "" !important;
+    position: absolute !important;
+    height: 2px !important;
+    width: 100% !important;
+    background: var(--back-1) !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    z-index: 3 !important;
   }
   .edit-values-panel {
     background-color: var(--back-2) !important;
@@ -160,18 +160,18 @@
     /* Editor */
     .CodeMirror {
       border-color: var(--border-1) !important;
-    	background-color: var(--back-1) !important;
+      background-color: var(--back-1) !important;
       color: var(--text-1) !important;
     }
     .CodeMirror-gutters, .CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler {
       border-color: var(--border-3) !important;
-    	background-color: var(--text-2) !important;
+      background-color: var(--text-2) !important;
     }
     .cm-s-eclipse .CodeMirror-activeline-background {
       background-color: var(--back-2) !important;
     }
     .cm-s-eclipse span.cm-comment, .cm-s-eclipse span.cm-number {
-    	color: #27ae60 !important;
+      color: #27ae60 !important;
     }
     .cm-s-eclipse span.cm-variable, .cm-s-eclipse span.cm-operator, .cm-s-eclipse span.cm-property {
       color: var(--text-1) !important;
@@ -196,7 +196,7 @@
   }
   .vl-dropdown-menu {
     border-color: var(--border-2) !important;
-  	background: var(--back-3) !important;
+    background: var(--back-3) !important;
   }
   .dropdown-menu-item:hover {
     background: var(--back-2) !important;
@@ -206,7 +206,7 @@
     color: var(--text-1) !important;
   }
   input[disabled] ~ * {
-  	color: var(--text-2) !important;
+    color: var(--text-2) !important;
   }
   .edit-values-btn {
     background: var(--back-2) !important;
@@ -233,7 +233,7 @@
     background: var(--back-1) !important;
   }
   button:not([disabled]) {
-  	margin-right: .5em !important;
+    margin-right: .5em !important;
   }
 
   /* Popup Toolbar */
