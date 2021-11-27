@@ -1,0 +1,36 @@
+/*
+*    ╔═╗╔═╗╦  ╔═╗╦═╗╔═╗
+*    ║  ║ ║║  ║ ║╠╦╝╚═╗
+*    ╚═╝╚═╝╩═╝╚═╝╩╚═╚═╝
+*    ----- Colors -----
+*/
+
+:root {
+  --bg: #383838;
+  --bg-dark: #303030;
+  --bg-darker: #282828;
+  --bg-darkest: #181818;
+  --bg-dim: #4e4e4e;
+  --bg-dimmer: #606060;
+  --bg-hover: #252525;
+  --bg-dark-hover: #1c1c1c;
+  --border: #151515;
+  --text: #ccc;
+  --text-light: #999;
+  --disabled: #6d6d6d;
+  --separator: #555;
+  --accent: #1e87f0;
+  --accent-light: #3E98F3;
+  --accent-dark: #0D6AC8;
+
+  --cb-bg: var(--bg-dim);
+  --cb-border: #777;
+  --cb-hover-bg: var(--bg);
+  --cb-hover-border: var(--text);
+  --cb-checked-bg: var(--accent);
+  --cb-checked-border: var(--accent);
+  --cb-checked-hover-bg: var(--accent-light);
+  --cb-disabled-bg: var(--bg);
+  --cb-disabled-border: var(--disabled);
+  --check: url("check.svg");
+}
