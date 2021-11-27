@@ -1,48 +1,48 @@
 /*
-*    ╔═╗╦  ╔═╗╔═╗╔═╗  ╔╗ ╦ ╦╔╦╗╔╦╗╔═╗╔╗╔
-*    ║  ║  ║ ║╚═╗║╣   ╠╩╗║ ║ ║  ║ ║ ║║║║
-*    ╚═╝╩═╝╚═╝╚═╝╚═╝  ╚═╝╚═╝ ╩  ╩ ╚═╝╝╚╝
-*/
-/* Close button opacity */
-#TabsToolbar .close-icon {
-  filter: opacity(0.4) !important;
-  transition: ease 0.6s all !important;
-}
-
-#TabsToolbar .close-icon:hover {
-  background-color:  transparent !important;
-  /*! fill-opacity: 0 !important; */
-  fill:  #ccc !important;
-  filter: opacity(1) !important;
-}
-
-/* Only show close buttons on background tabs when hovering with the mouse */
-.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
-  display: block !important;
-/*   stroke-opacity: 0 !important; */
-  fill-opacity: 0 !important;
-}
-
-.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
-/*   stroke-opacity: 1 !important; */
-  fill-opacity: 1 !important;
-}
-
-/* ------------------------------------------------------------------ */
-
-/*
 *    ╔╦╗╔═╗╔╗   ╔╦╗╦╔╦╗╦  ╔═╗
 *     ║ ╠═╣╠╩╗   ║ ║ ║ ║  ║╣
 *     ╩ ╩ ╩╚═╝   ╩ ╩ ╩ ╩═╝╚═╝
 */
 /* Centered text */
-.tab-text {
-  text-align: center !important;
+.tab-label-container { 
+  display: grid; 
+  justify-content: safe center;
 }
 
-.tab-label {
-  -moz-box-flex: 1 !important;
-  text-align: center !important;
+.tab-label, .tab-secondary-label {
+  overflow: hidden;
+}
+
+.tabbrowser-tab:not([pinned], :hover) .tab-label-container {
+  margin-inline-end: 7px !important;
+} /* Note 1 */
+
+
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔═╗╦  ╔═╗╔═╗╔═╗  ╔╗ ╦ ╦╔╦╗╔╦╗╔═╗╔╗╔
+*    ║  ║  ║ ║╚═╗║╣   ╠╩╗║ ║ ║  ║ ║ ║║║║
+*    ╚═╝╩═╝╚═╝╚═╝╚═╝  ╚═╝╚═╝ ╩  ╩ ╚═╝╝╚╝
+*/
+/* Close button opacity */
+/* Only show close buttons on background tabs when hovering with the mouse */
+.tabbrowser-tab:not([pinned]) > .tab-stack > .tab-content > .tab-close-button:not([selected="true"]) {
+  display: -moz-inline-box !important;
+  opacity: 0;
+} /* Note 1 */
+
+.tabbrowser-tab:not([pinned]):hover > .tab-stack > .tab-content > .tab-close-button:not([selected="true"]) {
+  opacity: 1;
+} /* Note 1 */
+
+.close-icon {
+  transition: filter 175ms ease-in-out !important;
+}
+
+.close-icon:hover {
+  background-color: transparent !important;
+  filter: brightness(1.6);
 }
 
 /* ------------------------------------------------------------------ */
@@ -53,20 +53,8 @@
 *    ╚  ╩ ╩ ╚╝ ╩╚═╝╚═╝╝╚╝╚═╝
 */
 /* Inactive tabs favicons */
-.tab-icon-image:not([selected="true"]):not([pinned]) {
+.tabbrowser-tab:not([selected="true"]):not([pinned]) .tab-icon-image {
   filter: opacity(0.5) !important;
-}
-
-/* ------------------------------------------------------------------ */
-
-/*
-*    ╔╦╗╔═╗╔╗   ╦ ╦╦╔╦╗╔╦╗╦ ╦
-*     ║ ╠═╣╠╩╗  ║║║║ ║║ ║ ╠═╣
-*     ╩ ╩ ╩╚═╝  ╚╩╝╩═╩╝ ╩ ╩ ╩
-*/
-/* Set tabs minimum width */
-.tabbrowser-tab {
-  --tab-min-width: 100px !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -76,33 +64,29 @@
 *    ╚═╗║╣ ╠═╝╠═╣╠╦╝╠═╣ ║ ║ ║╠╦╝
 *    ╚═╝╚═╝╩  ╩ ╩╩╚═╩ ╩ ╩ ╚═╝╩╚═
 */
-/* Separator Style - Smaller seperators with margin on top and bottom */
-.tabbrowser-tab:not(:-moz-any(:hover, [beforehovered="true"])):before,
-.tabbrowser-tab:not(:-moz-any(:hover, [beforehovered="true"])):after {
-  margin-block: 5px 4px !important;
+/* Tab separators */
+.tabbrowser-tab:not([pinned], [first-visible-unpinned-tab])::before {
+  content: "";
+  display: inherit;
+  position: absolute;
+  width: 1px;
+  background-image: linear-gradient(transparent 30%, currentColor 30%, currentColor 70%, transparent 70%);
+  opacity: 0.4;
+  transform: translateX(-2px);
+  transition: opacity 180ms linear;
 }
 
-.tabbrowser-tab:-moz-any(:hover, [beforehovered="true"]):before,
-.tabbrowser-tab:-moz-any(:hover, [beforehovered="true"]):after,
-#tabbrowser-tabs:not([movingtab])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[beforeselected-visible]::after,
-#tabbrowser-tabs[movingtab]>#tabbrowser-arrowscrollbox>.tabbrowser-tab[visuallyselected]::before,
-.tabbrowser-tab[visuallyselected]::after {
-  margin-top: 1px !important;
-  margin-bottom: 0px !important;
+.tabbrowser-tab:is(:hover, :hover + .tabbrowser-tab, :hover + .tabbrowser-tab[hidden] + .tabbrowser-tab,
+  [selected], [selected] + .tabbrowser-tab, [selected] + .tabbrowser-tab[hidden] + .tabbrowser-tab
+  [multiselected], [multiselected] + .tabbrowser-tab, [multiselected] + .tabbrowser-tab[hidden] + .tabbrowser-tab)::before {
+  opacity: 0;
 }
 
 /* ------------------------------------------------------------------ */
 
-/*
-*    ╔╦╗╔═╗╔╗   ╦  ╦╔╗╔╔═╗
-*     ║ ╠═╣╠╩╗  ║  ║║║║║╣
-*     ╩ ╩ ╩╚═╝  ╩═╝╩╝╚╝╚═╝
+/*   ---- Note 1 ----
+  In order to center the tab title all three of the rules need to be added.
+  If the close icon does not occupy space, there is a "jump" when hovering tabs with short titles.
+  Therefore, the close icon has a display area, but has been hidden with opacity only to be shown
+  when the tab is hovered (unless the tab is selected or pinned) 
 */
-/* Tab line color in normal mode and private mode*/
-#main-window #tabbrowser-tabs {
-  --tab-line-color: #3498db !important;
-}
-
-#main-window[privatebrowsingmode] #tabbrowser-tabs {
-  --tab-line-color: #8e44ad !important;
-}
