@@ -40,7 +40,9 @@
     --code-surface: #242B37 !important;
 
     /* CodeMirror */
-    --bg-code: #34455D !important; /* search bar background */
+    --cm-gutter-surface: #34455D !important; /* search bar background */
+    --cm-gutter-border: #0b0b0c !important; /* search bar border */
+    --cm-gutter-ink: var(--default-surface-hover) !important; /* search input border */
     --bg-code-pane: #272727 !important; /* code text area background */
     --bg-code-gutter: #0b0b0c !important;
     --bg-code-activeline: #3d4147 !important;
@@ -53,16 +55,24 @@
     --theme-highlight-green: #2d9f2d !important;
     --theme-highlight-search: #ffff0042 !important;
 
+    --sf-keyword-ink: var(--theme-highlight-purple) !important;
+    --df-allow-ink: var(--theme-highlight-green) !important;
+    --df-noop-ink: var(--theme-highlight-grey) !important;
+    --df-block-ink: var(--theme-highlight-red) !important;
+
     --selection-active: #607092d9 !important;
     --selection: #353b48 !important;
 
   }
 
   code, .code {
-  	background-color: var(--default-surface-hover) !important;
+    background-color: var(--default-surface-hover) !important;
   }
   #parsed {
-  	background-color: var(--bg-popup-cell-2) !important;
+    background-color: var(--bg-popup-cell-2) !important;
+  }
+  .cm-search-widget-input input {
+    background-color: var(--button-surface) !important;
   }
 
   /* ----- Popup ----- */
@@ -94,15 +104,15 @@
     background-color: var(--default-surface) !important;
   }
   .permatoolbar #info:hover {
-  	fill: #fff !important;
+    fill: #fff !important;
   }
   #netInspector #filterExprPicker {
     background-color: var(--secondary-hover) !important;
     border-color: var(--default-ink) !important;
   }
   #netInspector #filterExprPicker span[data-filtex]:hover {
-  	background-color: var(--default-surface-hover) !important;
-  	border-color: var(--popup-border) !important;
+    background-color: var(--default-surface-hover) !important;
+    border-color: var(--popup-border) !important;
   }
   /*! #modalOverlay */
   #modalOverlay > div > div:nth-of-type(1) {
@@ -123,21 +133,21 @@
   #netFilteringDialog[data-pane="details"] > .headers > [data-pane="details"],
   #netFilteringDialog[data-pane="dynamic"] > .headers > [data-pane="dynamic"],
   #netFilteringDialog[data-pane="static"] > .headers > [data-pane="static"] {
-  	background-color: var(--default-surface) !important;
-  	border-color: var(--popup-border) !important;
-  	border-bottom: 1px solid var(--default-surface) !important;
-  	color: var(--default-ink) !important;
+    background-color: var(--default-surface) !important;
+    border-color: var(--popup-border) !important;
+    border-bottom: 1px solid var(--default-surface) !important;
+    color: var(--default-ink) !important;
   }
   #netFilteringDialog > .headers > .header {
-  	background-color: var(--default-surface-hover) !important;
-  	border: 1px solid var(--popup-border) !important;
-  	border-bottom: 1px solid var(--popup-border) !important;
-  	color: var(--fg-0-50) !important;
+    background-color: var(--default-surface-hover) !important;
+    border: 1px solid var(--popup-border) !important;
+    border-bottom: 1px solid var(--popup-border) !important;
+    color: var(--fg-0-50) !important;
   }
   #netFilteringDialog > .panes > .details > div,
   #netFilteringDialog > div.panes > .dynamic .entry {
-  	background-color: var(--bg-popup-cell-2) !important;
-  	border-color: var(--default-surface) !important;
+    background-color: var(--bg-popup-cell-2) !important;
+    border-color: var(--default-surface) !important;
     color: var(--dark-text) !important;
   }
   #netFilteringDialog > .panes > .details > div > span:nth-of-type(1),
@@ -146,11 +156,11 @@
   }
   /*! #loggerExportDialog */
   #loggerExportDialog .options span[data-i18n]:hover {
-  	background-color: var(--secondary-hover) !important;
+    background-color: var(--secondary-hover) !important;
   }
   #loggerExportDialog .options span.on[data-i18n],
   #loggerExportDialog .options span.pushbutton:active {
-  	background-color: var(--default-surface-hover) !important;
+    background-color: var(--default-surface-hover) !important;
   }
   #loggerExportDialog .options span[data-i18n] {
     border-color: var(--default-surface-hover) !important;
@@ -168,8 +178,8 @@
     background-color: var(--bg-code-pane) !important;
   }
   .CodeMirror-gutters, .CodeMirror-merge-gap {
-  	border-color: var(--bg-code-gutter) !important;
-  	background-color: var(--bg-code-gutter) !important;
+    border-color: var(--bg-code-gutter) !important;
+    background-color: var(--bg-code-gutter) !important;
   }
   .CodeMirror-merge {
     border-color: var(--theme-highlight-grey) !important;
@@ -181,7 +191,7 @@
     background-color: var(--bg-code-activeline) !important;
   }
   .CodeMirror-cursor {
-  	border-color: #fff !important;
+    border-color: #fff !important;
   }
   /* code blocks */
   .cm-s-default .cm-def {
@@ -198,17 +208,17 @@
     color: var(--theme-highlight-grey) !important;
   }
   .cm-s-default .cm-keyword:not(.cm-comment) {
-  	color: var(--theme-highlight-green) !important;
+    color: var(--theme-highlight-green) !important;
   }
   /* .cm-staticnetAllow {
-  	color: var(--theme-highlight-green) !important;
+    color: var(--theme-highlight-green) !important;
   } */
   .cm-overlay {
     background-color: var(--theme-highlight-search) !important;
   }
   .cm-search-widget .fa-icon:not(.fa-icon-ro):hover,
   .cm-search-widget .cm-search-widget-button:hover {
-  	fill: var(--default-ink) !important;
+    fill: var(--default-ink) !important;
   }
   .CodeMirror pre {
     color: var(--theme-highlight-indigo) !important;
@@ -230,11 +240,11 @@
 /* ----- Element Picker ----- */
 @-moz-document url-prefix("about:blank") {
   html#ublock0-epicker, #ublock0-epicker body {
-  	color: #c5d0da !important;
+    color: #c5d0da !important;
   }
   #ublock0-epicker aside {
-  	background-color: #1F304B !important;
-  	border-color: #121A21 !important;
+    background-color: #1F304B !important;
+    border-color: #121A21 !important;
   }
   /* textarea */
   #ublock0-epicker section > div:first-child {
@@ -245,14 +255,14 @@
     color: #c5d0da !important;
   }
   #ublock0-epicker #resultsetCount {
-  	background-color: #fdee72 !important;
-  	color: #34455D !important;
+    background-color: #fdee72 !important;
+    color: #34455D !important;
   }
   /* cosmetic filters */
   #ublock0-epicker ul > li > span:nth-of-type(2) {
-  	color: #8686a4 !important;
+    color: #8686a4 !important;
   }
   #ublock0-epicker ul > li > ul > li:hover {
-  	background-color: #7EA0B7 !important;
+    background-color: #7EA0B7 !important;
   }
 }
