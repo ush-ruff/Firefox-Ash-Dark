@@ -3,18 +3,19 @@
 *    ║  ║ ║║║║ ║ ║╣ ╔╩╦╝ ║   ║║║║╣ ║║║║ ║  ║ ║ ║╣ ║║║╚═╗
 *    ╚═╝╚═╝╝╚╝ ╩ ╚═╝╩ ╚═ ╩   ╩ ╩╚═╝╝╚╝╚═╝  ╩ ╩ ╚═╝╩ ╩╚═╝
 */
-/* Remove "Send Page to Device", "Send Link to Device",
-   "Send Tab to Device", "Open Link in New Window",
+/* Remove Navigation & Bookmark Buttons, "Open Link in New Window", 
+   "Email Image", "Email Video", "Email Audio",
    "Inspect Accessibility Properties" from context menu.
 */
-#context-sendpagetodevice, #context-sep-sendpagetodevice,
-#context-sendlinktodevice, #context-sep-sendlinktodevice,
-#context_sendTabToDevice, #context_sendTabToDevice_separator,
-#context-sep-navigation, #context-navigation, #context-pocket,
-#context-openlink, #context-inspect-a11y,
-#pageAction-panel-bookmarkSeparator, #pageAction-panel-copyURL,
-#pageAction-panel-emailLink, #pageAction-panel-sendToDevice,
-#context-sendvideo, #context-sendaudio {
+/* Navigation & Bookmark */
+#context-sep-navigation, #context-navigation,
+/* Open Link in New Window*/ 
+#context-openlink, 
+/* Email Image, Video, Audio */
+#context-sendimage, #context-sendvideo, #context-sendaudio, 
+/* Inspect Accessibility Properties */ 
+#context-inspect-a11y 
+{
   display: none !important;
 }
 
@@ -35,15 +36,65 @@ browser[type=content-primary], browser[type=content] > html,
 /* ------------------------------------------------------------------ */
 
 /*
-*    ╔╦╗╔═╗╦╔╗╔  ╔╦╗╔═╗╔╗╔╦ ╦╔╗ ╔═╗╦═╗  ╔═╗╦ ╦╔═╗╔╦╗╔═╗╦ ╦
-*    ║║║╠═╣║║║║  ║║║║╣ ║║║║ ║╠╩╗╠═╣╠╦╝  ╚═╗╠═╣╠═╣ ║║║ ║║║║
-*    ╩ ╩╩ ╩╩╝╚╝  ╩ ╩╚═╝╝╚╝╚═╝╚═╝╩ ╩╩╚═  ╚═╝╩ ╩╩ ╩═╩╝╚═╝╚╩╝
+*    ╦ ╦╦═╗╦  ╔╗ ╔═╗╦═╗
+*    ║ ║╠╦╝║  ╠╩╗╠═╣╠╦╝
+*    ╚═╝╩╚═╩═╝╚═╝╩ ╩╩╚═
 */
-/* Main menubar remove shadow */
-#main-menubar {
-  text-shadow: none !important;
-  background-color: transparent !important;
-  color: #aaa !important;
+/* Rounded URLbar */
+#urlbar-background {
+  --toolbarbutton-border-radius: 100vw;
+}
+
+#urlbar[open="true"] #urlbar-background{
+  --toolbarbutton-border-radius: 0;
+}
+
+#urlbar:not([focused="true"]):not([open="true"])  {
+  padding-inline: calc((var(--urlbar-height) / 2) - 3px) !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  animation: none !important;
+  border-color: var(--lwt-toolbar-field-border-color, rgb(18, 18, 18)) !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: 100% !important;
+  padding-block: 0 !important;
+  padding-inline: calc((var(--urlbar-height) / 2) - 3px) !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container[pageproxystate="invalid"] {
+  height: var(--urlbar-height) !important;
+}
+
+#urlbar[breakout][breakout-extend][open] > #urlbar-input-container {
+  margin-bottom: 5px;
+}
+
+.urlbarView-row {
+  padding-inline: 3px !important;
+}
+
+#urlbar-results {
+  padding-block: 0 !important;
+}
+
+/* URLbar text selection fix for Dark Vintage Theme */
+#urlbar-input-container:focus-within #urlbar-input::selection {
+  background-color: var(--accent-dark) !important;
+  color: var(--text) !important;
+}
+
+/* URLbar Separators */
+:root {
+  --urlbar-separator-color: var(--urlbarView-button-background-hover) !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -54,48 +105,27 @@ browser[type=content-primary], browser[type=content] > html,
 *    ╝╚╝╩ ╩ ╚╝ ╚═╝╩ ╩╩╚═  ╚═╝╚═╝╩╚══╩╝╚═╝╩╚═
 */
 /* Navbar bottom border */
-#navigator-toolbox::after {
+#navigator-toolbox {
   border-bottom: 1px solid var(--toolbar-bgcolor) !important;
 }
 
 /* ------------------------------------------------------------------ */
 
 /*
-*    ╔╗╔╔═╗╦  ╦  ╔╗ ╦ ╦╔╦╗╔╦╗╔═╗╔╗╔╔═╗
-*    ║║║╠═╣╚╗╔╝  ╠╩╗║ ║ ║  ║ ║ ║║║║╚═╗
-*    ╝╚╝╩ ╩ ╚╝   ╚═╝╚═╝ ╩  ╩ ╚═╝╝╚╝╚═╝
+*    ╔═╗╦ ╦╦  ╦    ╔═╗╔═╗╦═╗╔═╗╔═╗╔╗╔  ╔╦╗╔═╗╔═╗
+*    ╠╣ ║ ║║  ║    ╚═╗║  ╠╦╝║╣ ║╣ ║║║  ║║║╚═╗║ ╦
+*    ╚  ╚═╝╩═╝╩═╝  ╚═╝╚═╝╩╚═╚═╝╚═╝╝╚╝  ╩ ╩╚═╝╚═╝
 */
-/* RESKIN FORWARD AND BACK BUTTONS */
-/* Make nav buttons background transparent */
-:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
-	background-color: transparent !important;
-	border: 1px solid transparent !important;
+/* Full screen message */
+#fullscreen-warning {
+  background-color: #323030 !important;
+  border-color: #131313 !important;
+  scale: 0.75 !important;
+  opacity: 0.7 !important;
 }
-:root:not([uidensity="compact"]) #back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon,
-:root:not([uidensity="compact"]) #forward-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
-	background-color: transparent !important;
-	box-shadow: 0 1px 6px transparent !important;
-	border-color: transparent !important;
-}
-/* Replacing the icons for back and forward */
-#back-button, #forward-button {
-  opacity: 100% !important;
-  transition: ease 0.3s all !important;
-}
-#back-button {
-	list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23575757' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
-}
-#back-button:not([disabled="true"]):hover {
-  list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23909090' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
-}
-#forward-button {
-	list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23575757' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
-}
-#forward-button:not([disabled="true"]):hover {
-  list-style-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 256 256' style='enable-background:new 0 0 256 256;' fill='%23909090' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpolygon points='79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128 '/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
-}
-#back-button[disabled="true"], #forward-button[disabled="true"] {
-  opacity: 20% !important;
+
+#fullscreen-exit-button {
+  display: none !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -107,211 +137,27 @@ browser[type=content-primary], browser[type=content] > html,
 */
 /* Tweaks for Ctrl+Tab */
 #ctrlTab-panel {
-  -moz-appearance: none !important;
-  color: #ccc !important;
-  border-style: none !important;
-  padding: 20px 10px 10px !important;
-  font-family: Fira Sans, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-  font-weight: normal !important;
-  text-shadow: 0 0 2px hsl(0, 0%, 8%), 0 0 2px hsl(0, 0%, 8%) !important;
-  box-shadow: none !important;
-  background-color: rgba(50, 48, 48, .85) !important;
+  --panel-background: hsla(0, 2%, 19.2%, 0.85) !important;
+  --panel-color: #ddd !important;
 }
-.ctrlTab-preview:not(#ctrlTab-showAll)>*>.ctrlTab-preview-inner {
-  margin: -10px -10px 0 !important;
-  box-shadow: none !important;
-}
-.ctrlTab-canvas {
-  box-shadow: none !important;
-  background: transparent !important;
-  left: 100px !important;
-}
+
 .ctrlTab-preview-inner {
-  padding: 8px transparent !important;
-  border: 15px solid transparent !important;
-  border-radius: 0px !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
+  padding: 8px !important;
 }
+
 .ctrlTab-preview:focus > .ctrlTab-preview-inner {
   background-color: #454545 !important;
-  transition: all 0.15s ease 0s !important;
-  border: 1px solid #454545 !important;
-  font-size: 14px !important;
-  font-weight: bolder !important;
+  border-color: transparent !important;
   color: #fff !important;
+  transform: scale(1.1);
+  transition: transform 150ms ease !important;
 }
+
 .ctrlTab-preview > .ctrlTab-preview-inner {
   background-color: transparent !important;
-  transition: all 0.4s ease 0s !important;
-  box-shadow: 0 0 0 2px transparent !important;
+  transition: transform 400ms ease !important;
 }
-.ctrlTab-favicon-container {
-  -moz-box-align: start !important;
-  -moz-box-pack: start !important;
-  box-shadow: none !important;
-}
+
 .ctrlTab-favicon[src] {
-  background-color: transparent !important;
-  width: 36px !important;
-  height: 36px !important;
-  padding: 2px !important;
-  box-shadow: none !important;
-}
-
-/* ------------------------------------------------------------------ */
-
-/*
-*    ╔═╗╦ ╦╦  ╦    ╔═╗╔═╗╦═╗╔═╗╔═╗╔╗╔  ╔╦╗╔═╗╔═╗
-*    ╠╣ ║ ║║  ║    ╚═╗║  ╠╦╝║╣ ║╣ ║║║  ║║║╚═╗║ ╦
-*    ╚  ╚═╝╩═╝╩═╝  ╚═╝╚═╝╩╚═╚═╝╚═╝╝╚╝  ╩ ╩╚═╝╚═╝
-*/
-/* Full screen message */
-@-moz-document url(chrome://browser/content/browser.xul),
-url(chrome://browser/content/browser.xhtml) {
-  #fullscreen-warning {
-    background-color: #323030 !important;
-    border-color: #131313 !important;
-    scale: 0.75 !important;
-    opacity: 0.7 !important;
-  }
-  #fullscreen-warning button {
-    -moz-appearance: none !important;
-    background-color: #202020 !important;
-    border: 2px solid #202020 !important;
-    border-radius: 3px !important;
-    color: #ccc !important;
-    padding: 3px !important;
-  }
-  #fullscreen-warning button:hover {
-    background-color: #151515 !important;
-    border-color: #151515 !important;
-  }
-}
-
-/* ------------------------------------------------------------------ */
-
-/*
-*    ╦ ╦╦═╗╦  ╔╗ ╔═╗╦═╗
-*    ║ ║╠╦╝║  ╠╩╗╠═╣╠╦╝
-*    ╚═╝╩╚═╩═╝╚═╝╩ ╩╩╚═
-*/
-/* Rounded URLbar */
-#urlbar:-moz-lwtheme > #urlbar-background{
-  border-radius: calc(var(--urlbar-height) / 2) !important;
-}
-#urlbar[open="true"] #urlbar-background{
-  border-radius: 0 !important;
-}
-#urlbar:not([focused="true"]):not([open="true"])  {
-  padding-left: calc((var(--urlbar-height) / 2) - 3px) !important;
-  padding-right: calc((var(--urlbar-height) / 2) - 3px) !important;
-}
-#urlbar[breakout][breakout-extend] > #urlbar-background {
-  animation: none !important;
-  border-color: var(--lwt-toolbar-field-border-color, rgb(18, 18, 18)) !important;
-}
-#urlbar[breakout][breakout-extend] {
-  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
-  left: 0 !important;
-  width: 100% !important;
-}
-#urlbar[breakout][breakout-extend] > #urlbar-input-container {
-  height: 100% !important;
-  padding-block: 0 !important;
-  padding-inline: calc((var(--urlbar-height) / 2) - 3px) !important;
-}
-#urlbar[breakout][breakout-extend] > #urlbar-input-container[pageproxystate="invalid"] {
-  height: var(--urlbar-height) !important;
-}
-#urlbar[breakout][breakout-extend][open] > #urlbar-input-container {
-  margin-bottom: 5px;
-}
-.urlbarView-row {
-  padding-inline: 3px !important;
-}
-#urlbar-results {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* URLbar Separators */
-:root {
-  --urlbar-separator-color: var(--urlbarView-button-background-hover) !important;
-}
-
-/* URLbar Color */
-/* :root {
-	--toolbar-bgcolor: #2a2a2a !important;
-	--lwt-accent-color: transparent !important;
-	--lwt-text-color: #aaa !important;
-  --lwt-toolbarbutton-icon-fill: #ccc !important;
-	--lwt-header-image: url("moz-extension://fac4e67a-629e-4e5f-86cd-e96b15e89a92/add5cf700972feb36334ca691fadb06f(crop).jpg") !important;
-
-
-  --lwt-toolbar-field-background-color: var(--context-background) !important;
-  --lwt-toolbar-field-border-color: var(--context-border) !important;
-	--lwt-toolbar-field-color: #ccc !important;
-  --urlbar-separator-color: var(--context-separator) !important;
-	--lwt-toolbar-field-focus: var(--context-background) !important;
-	--lwt-toolbar-field-focus-color: #ccc !important;
-  --autocomplete-popup-highlight-background: var(--context-hover) !important;
-  --arrowpanel-dimmed: var(--context-hover) !important;
-  --arrowpanel-dimmed-further: var(--context-hover) !important;
-  --urlbar-popup-url-color: #249ee8 !important;
-
-}
-input::-moz-text-control-editing-root, input::placeholder {
-  background: red !important;
-}
-:root[tabsintitlebar][sizemode="normal"] #titlebar {
-	-moz-appearance: none !important;
-  background-color: #2a2a2a !important;
-  background-image: var(--lwt-header-image) !important;
-}
-#navigator-toolbox:-moz-lwtheme {
-  --tabs-border-color: transparent !important;
-} */
-
-
-
-/* ------------------------------------------------------------------ */
-
-/*
-*    ╦ ╦╔═╗╔╗ ╔═╗╦╔╦╗╔═╗  ╔═╗╔═╗╔═╗╦ ╦╦═╗╦╔╦╗╦ ╦
-*    ║║║║╣ ╠╩╗╚═╗║ ║ ║╣   ╚═╗║╣ ║  ║ ║╠╦╝║ ║ ╚╦╝
-*    ╚╩╝╚═╝╚═╝╚═╝╩ ╩ ╚═╝  ╚═╝╚═╝╚═╝╚═╝╩╚═╩ ╩  ╩
-*/
-/* Website Security Color Indication */
-/* GREY: about:devtools */
-#urlbar[pageproxystate='valid'] #identity-box.unknownIdentity > #identity-icon {
-  fill: grey !important;
-}
-/* BLUE: about:config */
-#urlbar[pageproxystate='valid'] #identity-box.chromeUI > #identity-icon {
-  fill: dodgerblue !important;
-}
-/* TEAL: moz-extension */
-#urlbar[pageproxystate='valid'] #identity-box.extensionPage > #identity-icon {
-  fill: teal !important;
-}
-/* GREEN: Secure */
-#urlbar[pageproxystate='valid'] #identity-box.verifiedIdentity > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.verifiedDomain > #identity-icon {
-  fill: #00bb00 !important;
-}
-/* YELLOW: Mixed */
-#urlbar[pageproxystate='valid'] #identity-box.mixedActiveBlocked > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContent > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContentLoadedActiveBlocked > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.certErrorPage > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.certUserOverridden > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.weakCipher > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.mixedActiveContent > #identity-icon {
-  fill: #ffa500 !important;
-}
-/* RED: Insecure */
-#urlbar[pageproxystate='valid'] #identity-box.insecureLoginForms > #identity-icon,
-#urlbar[pageproxystate='valid'] #identity-box.notSecure > #identity-icon {
-  fill: #ed3622 !important;
+  background-color: var(--panel-background) !important;
 }
