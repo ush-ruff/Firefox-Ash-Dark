@@ -24,7 +24,7 @@
 		border-bottom-color: var(--border) !important; 
 	}
 	span[data-cmd]:hover svg {
-		stroke: var(--text-bright);
+		stroke: var(--text-bright) !important;
 	}
 	[data-cmd="close"]::before, [data-cmd="close"]::after, .mlt span:last-child::before {
 		background-color: var(--separator) !important;
