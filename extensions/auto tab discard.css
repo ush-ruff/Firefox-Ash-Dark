@@ -3,125 +3,142 @@
 
 /* Popup */
 @-moz-document url-prefix("moz-extension://57ab5f62-ff54-46ac-b76a-f82c15140ed5/") {
-	body {
-		background-color: #393838 !important;
-		color: #ccc !important;
-		overflow: hidden;
+	:root {
+		--bg: #383838 !important;
+		--clr: #ccc !important;
+		--text-bright: #fff;
+		--dark: #303030 !important;
+		--button: #303030 !important;
+		--button-hover: #252525;
+		--border: #151515;
+		--separator: #555;
+		--input-bg: #4e4e4e;
+		--input-border: #777;
+		--accent: #1e87f0;
+		--accent-light: #3E98F3;
+		--a: var(--accent) !important;
+		--check: url("../check.svg");
 	}
+
 	header {
-		border-bottom-color: #151515 !important;
+		border-bottom-color: var(--border) !important; 
 	}
-	.button {
-		background-color: #323030 !important;
-		border-top: 1px solid #151515 !important;
-	}
-	.nav > span, .mlt > span[data-cmd] {
-		background-color: #323030 !important;
-	}
-	li span[data-cmd^="release"] {
-		width: 24px !important;
-		background-image: url("data:image/svg+xml,%3Csvg version='1.0' xmlns='http://www.w3.org/2000/svg' width='16.000000pt' height='16.000000pt' viewBox='0 0 512.000000 512.000000' preserveAspectRatio='xMidYMid meet'%3E%3Cg transform='translate(0.000000,512.000000) scale(0.100000,-0.100000)'%0Afill='%23ccc' stroke='none'%3E%3Cpath d='M960 4176 c-43 -13 -76 -71 -65 -114 4 -18 251 -272 748 -769 l742%0A-743 -737 -737 c-431 -432 -742 -750 -748 -767 -24 -65 27 -136 98 -136 35 0%0A67 30 784 747 l748 748 748 -748 c686 -686 750 -747 780 -747 86 0 136 76 98%0A148 -8 15 -343 355 -745 757 l-731 730 508 510 c279 280 615 619 746 752 l239%0A242 -6 41 c-3 23 -13 50 -23 61 -20 23 -69 37 -102 31 -15 -3 -307 -289 -765%0A-749 l-741 -744 -741 741 c-519 519 -749 743 -770 749 -20 5 -43 4 -65 -3z'/%3E%3C/g%3E%3C/svg%3E") !important;
-	}
-	[data-cmd="move-previous"]::before, [data-cmd="move-next"]::after {
-		filter: invert(1) !important;
+	span[data-cmd]:hover svg {
+		stroke: var(--text-bright);
 	}
 	[data-cmd="close"]::before, [data-cmd="close"]::after, .mlt span:last-child::before {
-		background-color: #555 !important;
+		background-color: var(--separator) !important;
 	}
 	.button:hover, [data-cmd]:hover, .hbox:not([data-disabled="true"]):hover,
 	.nav > span:hover, .mlt > span[data-cmd]:hover {
-		background-color: #252525 !important;
+		background-color: var(--button-hover) !important;
 	}
 	.hbox:not([data-disabled="true"]) .flex:hover {
 		cursor: pointer !important;
 	}
 	#rate {
-		color: #3498db !important;
+		color: var(--accent) !important;
 	}
 
-
+	/* Number Input */
 	input[type="number"] {
-		-moz-appearance: none !important;
-		border: 1px solid #252525 !important;
-		background: #323030 !important;
-		padding: 2px !important;
-		border-radius: 2px !important;
+		appearance: none !important;
+		padding: 4px 0 4px 4px;
+		background: var(--input-bg);
+		border: 1px solid var(--input-border);
+		border-radius: 2px;
+		color: var(--clr);
+	}
+	input[type="number"]:focus-visible {
+		outline: 2px solid var(--accent);
 	}
 
 	/* Checkbox */
 	input[type="checkbox"] {
-		-moz-appearance: none !important;
-		border: 1px solid #666 !important;
-		background-color: #444 !important;
-		transition: color 0.3s;
-		min-width: 14px;
-		min-height: 14px;
+		appearance: none !important;
+		min-width: 16px;
+		aspect-ratio: 1;
+		background-color: var(--input-bg);
+		border: 1px solid var(--input-border);
+		border-radius: 2px;
 	}
 	input[type="checkbox"]:hover, .hbox:hover input[type="checkbox"] {
-		box-shadow: 0 0 4px #0084ff !important;
-		border-color: #0084ff !important;
+		background: var(--bg) var(--check) no-repeat center / 11px;
 	}
 	input[type="checkbox"]:checked {
-		background-color: #444 !important;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12px' height='16px' viewBox='0 0 12 16' version='1.1'%3E%3Cg id='check' fill='%23fff'%3E%3Cpath id='Shape' d='M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z'/%3E%3C/g%3E%3C/svg%3E") !important;
-		background-size: 10px !important;
-		background-repeat: no-repeat !important;
-		background-position: center center !important;
+		background: var(--accent) var(--check) no-repeat center / 11px;
+		border-color: var(--accent);
 	}
+
 	/* Radio button */
 	input[type="radio"] {
-		-moz-appearance: none !important;
-		margin-top: 0 !important;
-		border: 1px solid #666 !important;
-		list-style-image: none !important;
-		border-radius: 10em;
-		background-color: #444 !important;
-		transition: color 0.3s;
-		min-width: 12px;
-		min-height: 12px;
+		appearance: none !important;
+		min-width: 16px;
+		aspect-ratio: 1;
+		padding: 6px;
+		background: var(--input-bg);
+		border: 1px solid var(--input-border);
+		border-radius: 50%;
+		box-shadow: inset 0 0 0 2px var(--input-bg);
 	}
-	input[type="radio"]:hover,
-	#printPageSetupDialog radio:not([disabled]):hover .radio-check {
-		box-shadow: 0 0 4px #0084ff !important;
-		border-color: #0084ff !important;
+	input[type="radio"]:hover {
+		background-color: var(--input-bg);
+		border-color: var(--accent);
 	}
 	input[type="radio"]:checked {
-		background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important;
+		background-color: var(--accent);
+		border-color: var(--clr);
 	}
 	radio[disabled], checkbox[disabled] {
 		opacity: 0.8;
 	}
 
 	/* Text area  */
-	textarea {
-		-moz-appearance: none !important;
-		border: 1px solid #252525 !important;
-		background: #323030 !important;
-		color: #ccc !important;
+	textarea, input[type="text"] {
+		appearance: none !important;
+		background: var(--dark);
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		color: #ccc;
 	}
-	textarea:hover {
-		border-color: #151515 !important;
+	input[type="text"] {
+		padding: 4px;
+	}
+	textarea:hover, input[type="text"]:hover {
+		border-color: var(--accent);
 	}
 
 	/* Buttons */
-	[type="button"] {
-		-moz-appearance: none !important;
-		background-color: #252525 !important;
-		border: 1px solid #151515 !important;
-		border-radius: 3px !important;
-		color: #ccc !important;
-		padding: 5px !important;
+	input[type="button"] {
+		appearance: none !important;
+		padding: 16px 10px;
+		background: var(--accent) !important;
+		border: 1px solid var(--accent) !important;
+		border-radius: 4px;
+		color: #fff !important;
+		text-shadow: none !important;
+		box-shadow: none !important;
+		line-height: 0;
 	}
-	[type="button"]:hover {
-		background-color: #151515 !important;
+	input[type="button"]:hover {
+		background: var(--accent-light) !important;
 	}
 
 	/* Options Page */
 	th {
-		background-color: #323030 !important;
+		background-color: var(--button-hover) !important;
 	}
 	.admin {
-		color: #222 !important;
 		background-color: #e6e6c8 !important;
+		color: var(--border);
+	}
+	#explore {
+		background-color: var(--dark) !important;
+		border-color: var(--border) !important;
+		color: var(--clr) !important;
+		box-shadow: 0 0 4px var(--border) !important;
+	}
+	#explore a {
+		color: var(--clr) !important;
 	}
 }
