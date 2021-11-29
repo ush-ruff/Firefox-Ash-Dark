@@ -37,3 +37,6 @@
 
   2. Remove the domain name from this pref => extensions.webextensions.restrictedDomains
 
+/* Disable Accessibility - Helps reduce memory usage? */
+  accessibility.force_disabled = 1
+
