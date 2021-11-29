@@ -52,6 +52,31 @@
 	input[type="number"]:focus-visible {
 		outline: 2px solid var(--accent);
 	}
+	input[type=number]::-moz-number-spin-box {
+		height: 100%;
+	}
+	input[type=number]::-moz-number-spin-up, 
+	input[type=number]::-moz-number-spin-down {
+		appearance: none !important;
+		width: 16px;
+		background-repeat: no-repeat;
+		background-size: 10px 5px;
+		background-color: var(--accent);
+		border-color: var(--separator);
+		border-radius: 0;
+	}
+	input[type=number]::-moz-number-spin-up {
+		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="5"><path d="M1,4 L3,0 5,4" fill="%23fff"/></svg>');
+		background-position: center bottom 1px;
+	}
+	input[type=number]::-moz-number-spin-down {
+		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="5"><path d="M1,1 L3,5 5,1" fill="%23fff"/></svg>');
+		background-position: center top 1px;
+	}
+	input[type=number]::-moz-number-spin-up:hover, 
+	input[type=number]::-moz-number-spin-down:hover {
+		background-color: var(--accent-light);
+	}
 
 	/* Checkbox */
 	input[type="checkbox"] {
