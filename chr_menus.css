@@ -19,30 +19,30 @@ tooltip {
 *    ╔═╗╦ ╦╔═╗╔═╗╦╔═╔╗ ╔═╗═╗ ╦╔═╗╔═╗
 *    ║  ╠═╣║╣ ║  ╠╩╗╠╩╗║ ║╔╩╦╝║╣ ╚═╗
 *    ╚═╝╩ ╩╚═╝╚═╝╩ ╩╚═╝╚═╝╩ ╚═╚═╝╚═╝
-*		 ----- Checkboxes -----  
+*		     ----- Checkboxes -----  
 */
 
-.checkbox-check {
+:is(#editBookmarkPanel, #unknownContentTypeWindow) .checkbox-check {
   --checkbox-border-color: var(--cb-border);
   --checkbox-unchecked-bgcolor: var(--cb-bg);
 }
 
-checkbox:not([disabled="true"]):hover > .checkbox-check {
+:is(#editBookmarkPanel, #unknownContentTypeWindow) checkbox:not([disabled="true"]):hover > .checkbox-check {
   background: var(--cb-hover-bg) var(--check) no-repeat center / 11px;
 }
 
-.checkbox-check[checked] {
+:is(#editBookmarkPanel, #unknownContentTypeWindow) .checkbox-check[checked] {
   --checkbox-checked-border-color: var(--cb-checked-border);
   --checkbox-checked-bgcolor: var(--cb-checked-bg);
   background-image: var(--check) !important;
   background-size: 11px;
 }
 
-checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
+:is(#editBookmarkPanel, #unknownContentTypeWindow) checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
   --checkbox-checked-hover-bgcolor: var(--cb-checked-hover-bg);
 }
 
-.checkbox-check[disabled] {
+:is(#editBookmarkPanel, #unknownContentTypeWindow) .checkbox-check[disabled] {
   background-color: var(--cb-disabled-background);
   border-color: var(--cb-disabled-border);
 }
@@ -56,7 +56,7 @@ checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
 *   ----- Radios -----  
 */
 
-.radio-check {
+:is(#unknownContentTypeWindow) .radio-check {
   appearance: none !important;
   margin-right: 2px !important;
   padding: 6px;
@@ -66,12 +66,12 @@ checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
   box-shadow: inset 0 0 0 2px var(--cb-bg);
 }
 
-.radio-check[selected] {
+:is(#unknownContentTypeWindow) .radio-check[selected] {
   background-color: var(--cb-checked-bg);
   border-color: var(--cb-hover-border);
 }
 
-radio:hover .radio-check {
+:is(#unknownContentTypeWindow) radio:hover .radio-check {
   background: var(--cb-checked-bg);
   border-color: var(--cb-hover-border);
 }
@@ -113,7 +113,7 @@ radio:hover .radio-check {
 *    ╔═╗╦═╗╦═╗╔═╗╦ ╦  ╔═╗╔═╗╔╗╔╔═╗╦  ╔═╗
 *    ╠═╣╠╦╝╠╦╝║ ║║║║  ╠═╝╠═╣║║║║╣ ║  ╚═╗
 *    ╩ ╩╩╚═╩╚═╚═╝╚╩╝  ╩  ╩ ╩╝╚╝╚═╝╩═╝╚═╝
-*		  ----- Arrow Panels ----- 
+*		     ----- Arrow Panels ----- 
 */
 
 panel[type="arrow"] {
@@ -156,10 +156,10 @@ panel[type="arrow"] {
 *    ╔═╗╔═╗╔╗╔╔╦╗╔═╗═╗ ╦╔╦╗  ╔╦╗╔═╗╔╗╔╦ ╦╔═╗
 *    ║  ║ ║║║║ ║ ║╣ ╔╩╦╝ ║   ║║║║╣ ║║║║ ║╚═╗
 *    ╚═╝╚═╝╝╚╝ ╩ ╚═╝╩ ╚═ ╩   ╩ ╩╚═╝╝╚╝╚═╝╚═╝
-*		   ----- Context Menus ----- 
+*		       ----- Context Menus ----- 
 */
 
-menupopup {
+:is(#mainPopupSet, #main-menubar) menupopup {
   --panel-background: var(--bg) !important;
   --panel-color: var(--text) !important;
   appearance: none !important;
@@ -174,19 +174,19 @@ menupopup#contentAreaContextMenu {
   min-width: 240px !important;
 }
 
-menupopup > :is(menuitem, menu) {
+:is(#mainPopupSet, #main-menubar) menupopup > :is(menuitem, menu) {
   appearance: none !important;
   min-height: 22px !important;
   margin: 0 !important;
   padding: 2px 0 !important;
 }
 
-menupopup > menugroup {
+:is(#mainPopupSet, #main-menubar) menupopup > menugroup {
   padding: 0 !important;
   background-color: transparent !important;
 }
 
-menupopup menuseparator {
+:is(#mainPopupSet, #main-menubar) menupopup menuseparator {
   appearance: none !important;
   margin: 3px 5px !important;
   padding: 0 !important;
@@ -195,17 +195,17 @@ menupopup menuseparator {
 }
 
 /* Disabled */
-menupopup :is(menuitem, menu)[disabled="true"] {
+:is(#mainPopupSet, #main-menubar) menupopup :is(menuitem, menu)[disabled="true"] {
   background-color: var(--panel-background) !important;
   color: var(--disabled) !important;
 }
 
-menupopup :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) {
+:is(#mainPopupSet, #main-menubar) menupopup :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) {
   background-color: var(--bg-dark) !important;
 }
 
 /* Hover */
-menupopup :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) {
+:is(#mainPopupSet, #main-menubar) menupopup :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) {
   background-color: var(--bg-hover) !important;
   color: currentColor !important;
 }
@@ -216,12 +216,12 @@ menupopup :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled
 }
 
 /* Keyboard Shortcut Text */
-.menu-accel, .menu-iconic-accel {
+:is(#mainPopupSet, #main-menubar) menupopup :is(.menu-accel, .menu-iconic-accel) {
   color: var(--disabled);
 }
 
 /* Checkbox & Radio */
-menuitem[checked="true"][type="checkbox"]>.menu-iconic-left {
+:is(#mainPopupSet, #main-menubar) menupopup menuitem[checked="true"][type="checkbox"]>.menu-iconic-left {
   appearance: none !important;
   margin-inline: 7px 6px !important;
   padding: 7px 0 0 !important;
@@ -230,7 +230,7 @@ menuitem[checked="true"][type="checkbox"]>.menu-iconic-left {
   transform: rotate(-45deg) scale(.75);
 }
 
-menuitem[checked="true"][type="radio"] > .menu-iconic-left {
+:is(#mainPopupSet, #main-menubar) menupopup menuitem[checked="true"][type="radio"] > .menu-iconic-left {
   appearance: none !important;
   height: 17px !important;
   margin-inline: 7px 6px !important;
@@ -241,14 +241,14 @@ menuitem[checked="true"][type="radio"] > .menu-iconic-left {
 }
 
 /* Menu Left Icon */
-.menuitem-iconic:not([hidden="true"]) .menu-iconic-left {
+:is(#mainPopupSet, #main-menubar) menupopup .menuitem-iconic:not([hidden="true"]) .menu-iconic-left {
   appearance: none !important;
   padding-block: 3px !important;
   padding-inline: 8px 6px !important;
 }
 
 /* Menu Right Arrow Icon */
-menupopup .menu-right {
+:is(#mainPopupSet, #main-menubar) menupopup .menu-right {
   appearance: none !important;
   margin-right: 6px !important;
   padding: 7.5px !important;
@@ -264,7 +264,7 @@ menupopup .menu-right {
 *    ╦ ╦╔═╗╔╦╗╔╗ ╦ ╦╦═╗╔═╗╔═╗╦═╗  ╔╦╗╔═╗╔╗╔╦ ╦
 *    ╠═╣╠═╣║║║╠╩╗║ ║╠╦╝║ ╦║╣ ╠╦╝  ║║║║╣ ║║║║ ║
 *    ╩ ╩╩ ╩╩ ╩╚═╝╚═╝╩╚═╚═╝╚═╝╩╚═  ╩ ╩╚═╝╝╚╝╚═╝
-*		    ----- Hamburger menu -----
+*		        ----- Hamburger menu -----
 */
 #appMenu-multiView panelview {
   min-width: 300px !important;
@@ -324,7 +324,7 @@ menupopup .menu-right {
 *    ╔╗ ╔═╗╔═╗╦╔═╔╦╗╔═╗╦═╗╦╔═╔═╗  ╔═╗╔═╗╔═╗╦ ╦╔═╗
 *    ╠╩╗║ ║║ ║╠╩╗║║║╠═╣╠╦╝╠╩╗╚═╗  ╠═╝║ ║╠═╝║ ║╠═╝
 *    ╚═╝╚═╝╚═╝╩ ╩╩ ╩╩ ╩╩╚═╩ ╩╚═╝  ╩  ╚═╝╩  ╚═╝╩
-*		    ----- Bookmarks Popup -----
+*		        ----- Bookmarks Popup -----
 */
 #editBookmarkPanelFavicon[src] {
   background-color: var(--bg) !important;
@@ -433,7 +433,7 @@ menupopup .menu-right {
 *    ╔═╗╦ ╦╔═╗╔╦╗╔═╗╔╦╗╦╔═╗╔═╗  ╔╦╗╔═╗╔╗╔╦ ╦
 *    ║  ║ ║╚═╗ ║ ║ ║║║║║╔═╝║╣   ║║║║╣ ║║║║ ║
 *    ╚═╝╚═╝╚═╝ ╩ ╚═╝╩ ╩╩╚═╝╚═╝  ╩ ╩╚═╝╝╚╝╚═╝
-*		   ----- Customize Menu ----- 
+*		       ----- Customize Menu ----- 
 */
 
 #customization-container {
@@ -625,7 +625,7 @@ tree.sidebar-placesTree {
 *    ╔═╗╦  ╔═╗╦═╗╔╦╗╔═╗  ╔═╗╔═╗╔═╗╦ ╦╔═╗
 *    ╠═╣║  ║╣ ╠╦╝ ║ ╚═╗  ╠═╝║ ║╠═╝║ ║╠═╝
 *    ╩ ╩╩═╝╚═╝╩╚═ ╩ ╚═╝  ╩  ╚═╝╩  ╚═╝╩
-*		 ----- Alerts Popup -----
+*		      ----- Alerts Popup -----
 */
 
 #alertBox {
@@ -660,4 +660,20 @@ tree.sidebar-placesTree {
 /* Screenshot Alert Image */
 #alertImage[src$="copied-notification.svg"] {
   filter: invert(0.75);
+}
+
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔╦╗╦╔═╗╦  ╔═╗╔═╗  ╔╗ ╔═╗═╗ ╦╔═╗╔═╗
+*     ║║║╠═╣║  ║ ║║ ╦  ╠╩╗║ ║╔╩╦╝║╣ ╚═╗
+*    ═╩╝╩╩ ╩╩═╝╚═╝╚═╝  ╚═╝╚═╝╩ ╚═╚═╝╚═╝
+*		      ----- Dialog Boxes ----- 
+*/
+
+#unknownContentTypeWindow,
+/* #SanitizeDialog, */
+#SiteDataRemoveSelectedDialog {
+  background: var(--bg) !important;
+  color: var(--text) !important;
 }
