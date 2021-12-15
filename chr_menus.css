@@ -22,27 +22,27 @@ tooltip {
 *		     ----- Checkboxes -----  
 */
 
-:is(#editBookmarkPanel, #unknownContentTypeWindow) .checkbox-check {
+:is(.browserContainer > findbar, #customization-container, #editBookmarkPanel) .checkbox-check {
   --checkbox-border-color: var(--cb-border);
   --checkbox-unchecked-bgcolor: var(--cb-bg);
 }
 
-:is(#editBookmarkPanel, #unknownContentTypeWindow) checkbox:not([disabled="true"]):hover > .checkbox-check {
-  background: var(--cb-hover-bg) var(--check) no-repeat center / 11px;
+:is(.browserContainer > findbar, #customization-container, #editBookmarkPanel) checkbox:not([disabled="true"]):hover > .checkbox-check {
+  --checkbox-border-color: var(--cb-hover-border);
 }
 
-:is(#editBookmarkPanel, #unknownContentTypeWindow) .checkbox-check[checked] {
+:is(.browserContainer > findbar, #customization-container, #editBookmarkPanel) .checkbox-check[checked] {
   --checkbox-checked-border-color: var(--cb-checked-border);
   --checkbox-checked-bgcolor: var(--cb-checked-bg);
   background-image: var(--check) !important;
   background-size: 11px;
 }
 
-:is(#editBookmarkPanel, #unknownContentTypeWindow) checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
+:is(.browserContainer > findbar, #customization-container, #editBookmarkPanel) checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
   --checkbox-checked-hover-bgcolor: var(--cb-checked-hover-bg);
 }
 
-:is(#editBookmarkPanel, #unknownContentTypeWindow) .checkbox-check[disabled] {
+:is(.browserContainer > findbar, #customization-container, #editBookmarkPanel) .checkbox-check[disabled] {
   background-color: var(--cb-disabled-background);
   border-color: var(--cb-disabled-border);
 }
@@ -72,7 +72,6 @@ tooltip {
 }
 
 :is(#unknownContentTypeWindow) radio:hover .radio-check {
-  background: var(--cb-checked-bg);
   border-color: var(--cb-hover-border);
 }
 
@@ -159,7 +158,9 @@ panel[type="arrow"] {
 *		       ----- Context Menus ----- 
 */
 
-:is(#mainPopupSet, #main-menubar) menupopup {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+{
   --panel-background: var(--bg) !important;
   --panel-color: var(--text) !important;
   appearance: none !important;
@@ -170,23 +171,27 @@ panel[type="arrow"] {
   border: 1px solid var(--border) !important;
 }
 
-menupopup#contentAreaContextMenu {
-  min-width: 240px !important;
-}
+/* menupopup > menugroup {
+  padding: 0 !important;
+  background-color: red !important;
+} */
 
-:is(#mainPopupSet, #main-menubar) menupopup > :is(menuitem, menu) {
+/* Menuitem */
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+> :is(menuitem, menu) 
+{
   appearance: none !important;
   min-height: 22px !important;
   margin: 0 !important;
   padding: 2px 0 !important;
 }
 
-:is(#mainPopupSet, #main-menubar) menupopup > menugroup {
-  padding: 0 !important;
-  background-color: transparent !important;
-}
-
-:is(#mainPopupSet, #main-menubar) menupopup menuseparator {
+/* Separator */
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+menuseparator 
+{
   appearance: none !important;
   margin: 3px 5px !important;
   padding: 0 !important;
@@ -195,17 +200,26 @@ menupopup#contentAreaContextMenu {
 }
 
 /* Disabled */
-:is(#mainPopupSet, #main-menubar) menupopup :is(menuitem, menu)[disabled="true"] {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+:is(menuitem, menu)[disabled="true"] 
+{
   background-color: var(--panel-background) !important;
   color: var(--disabled) !important;
 }
 
-:is(#mainPopupSet, #main-menubar) menupopup :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+:is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) 
+{
   background-color: var(--bg-dark) !important;
 }
 
 /* Hover */
-:is(#mainPopupSet, #main-menubar) menupopup :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+:is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) 
+{
   background-color: var(--bg-hover) !important;
   color: currentColor !important;
 }
@@ -216,12 +230,18 @@ menupopup#contentAreaContextMenu {
 }
 
 /* Keyboard Shortcut Text */
-:is(#mainPopupSet, #main-menubar) menupopup :is(.menu-accel, .menu-iconic-accel) {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+:is(.menu-accel, .menu-iconic-accel) 
+{
   color: var(--disabled);
 }
 
 /* Checkbox & Radio */
-:is(#mainPopupSet, #main-menubar) menupopup menuitem[checked="true"][type="checkbox"]>.menu-iconic-left {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+menuitem[checked="true"][type="checkbox"]>.menu-iconic-left 
+{
   appearance: none !important;
   margin-inline: 7px 6px !important;
   padding: 7px 0 0 !important;
@@ -230,7 +250,10 @@ menupopup#contentAreaContextMenu {
   transform: rotate(-45deg) scale(.75);
 }
 
-:is(#mainPopupSet, #main-menubar) menupopup menuitem[checked="true"][type="radio"] > .menu-iconic-left {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+menuitem[checked="true"][type="radio"] > .menu-iconic-left 
+{
   appearance: none !important;
   height: 17px !important;
   margin-inline: 7px 6px !important;
@@ -241,14 +264,20 @@ menupopup#contentAreaContextMenu {
 }
 
 /* Menu Left Icon */
-:is(#mainPopupSet, #main-menubar) menupopup .menuitem-iconic:not([hidden="true"]) .menu-iconic-left {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+.menuitem-iconic:not([hidden="true"]) .menu-iconic-left 
+{
   appearance: none !important;
   padding-block: 3px !important;
   padding-inline: 8px 6px !important;
 }
 
 /* Menu Right Arrow Icon */
-:is(#mainPopupSet, #main-menubar) menupopup .menu-right {
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+.menu-right 
+{
   appearance: none !important;
   margin-right: 6px !important;
   padding: 7.5px !important;
@@ -425,6 +454,31 @@ menupopup#contentAreaContextMenu {
 
 #editBMPanel_tagsAutocomplete richlistbox richlistitem[selected="true"] {
   background-color: var(--accent) !important;
+}
+
+/* -- Tags Panel Checkbox -- */
+#editBMPanel_tagsSelector > richlistitem {
+  display: flex;
+  align-items: center;
+}
+
+#editBMPanel_tagsSelector > richlistitem > image {
+  appearance: none !important;
+  height: 17px;
+  width: 17px;
+  background: var(--bg-dim) !important;
+  border: 1px solid var(--bg-dim) !important;
+  border-radius: 2px;
+}
+
+#editBMPanel_tagsSelector > richlistitem:not([checked="true"]):hover > image {
+  background-color: var(--disabled) !important;
+  border-color: var(--disabled) !important;
+} 
+
+#editBMPanel_tagsSelector > richlistitem[checked="true"] > image {
+  background: var(--disabled) var(--check) no-repeat center / 10px !important;
+  border-color: var(--disabled) !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -671,9 +725,66 @@ tree.sidebar-placesTree {
 *		      ----- Dialog Boxes ----- 
 */
 
-#unknownContentTypeWindow,
-/* #SanitizeDialog, */
-#SiteDataRemoveSelectedDialog {
+#unknownContentTypeWindow, #SiteDataRemoveSelectedDialog {
   background: var(--bg) !important;
   color: var(--text) !important;
+}
+
+/* -- Checkbox -- */
+#unknownContentType .checkbox-check {
+  appearance: none !important;
+  height: 15px;
+  width: 15px;
+  background: var(--cb-bg) !important;
+  border: 1px solid var(--cb-border) !important;
+}
+
+#unknownContentType checkbox:not([disabled="true"]):hover > .checkbox-check {
+  border-color: var(--cb-hover-border) !important;
+}
+
+#unknownContentType .checkbox-check[checked] {
+  background: var(--cb-checked-bg) var(--check) no-repeat center / 10px !important;
+  border-color: var(--cb-checked-border) !important;
+}
+
+#unknownContentType checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
+  background-color: var(--cb-checked-hover-bg) !important;
+}
+
+#unknownContentType .checkbox-check[disabled] {
+  background-color: var(--cb-disabled-background) !important;
+  border-color: var(--cb-disabled-border) !important;
+}
+
+/* -- Dropdown -- */
+#unknownContentType menulist {
+	appearance: none !important;
+	padding: 5px 7px;
+	background: var(--bg-darker);
+	border: 1px solid var(--bg-darker);
+  border-radius: 4px;
+}
+
+#unknownContentType menuseparator {
+  appearance: none !important;
+  margin: 3px 5px !important;
+  padding: 0 !important;
+  border-top: 1px solid var(--separator) !important;
+  border-bottom: none !important;
+}
+
+#unknownContentType menulist:is(:hover, [_moz-menuactive="true"], [open="true"]) {
+	background: var(--bg-dark-hover);
+}
+
+#unknownContentType menulist > menupopup {
+  --panel-background: var(--bg-dark) !important;
+  --panel-border-color: var(--border) !important;
+  --panel-color: var(--text) !important;
+  padding-top: 2px;
+}
+
+#unknownContentType menulist menuitem:is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) {
+  background-color: var(--accent) !important;
 }
