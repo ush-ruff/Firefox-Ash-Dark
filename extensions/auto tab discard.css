@@ -88,11 +88,15 @@
 		border-radius: 2px;
 	}
 	input[type="checkbox"]:hover, .hbox:hover input[type="checkbox"] {
-		background: var(--bg) var(--check) no-repeat center / 11px;
+		/* background: var(--bg) var(--check) no-repeat center / 11px; */
+		border-color: var(--text);
 	}
 	input[type="checkbox"]:checked {
 		background: var(--accent) var(--check) no-repeat center / 11px;
 		border-color: var(--accent);
+	}
+	input[type="checkbox"]:checked:hover {
+		background-color: var(--accent-light);
 	}
 
 	/* Radio button */
@@ -108,7 +112,7 @@
 	}
 	input[type="radio"]:hover {
 		background-color: var(--input-bg);
-		border-color: var(--accent);
+		border-color: var(--text);
 	}
 	input[type="radio"]:checked {
 		background-color: var(--accent);
@@ -165,5 +169,8 @@
 	}
 	#explore a {
 		color: var(--clr) !important;
+	}
+	.admin + table input {
+		min-width: 150px;
 	}
 }
