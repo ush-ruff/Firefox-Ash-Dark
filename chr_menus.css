@@ -227,6 +227,7 @@ menuseparator
 /* Main menu selected */
 #main-menubar > menu[_moz-menuactive="true"] {
   background-color: var(--bg-hover) !important;
+  color: var(--text) !important;
 }
 
 /* Keyboard Shortcut Text */
