@@ -73,12 +73,9 @@
     padding: 4px !important;
     padding-inline-start: 8px !important;
     background: var(--bg-hover) !important;
-    border-bottom: 1px solid var(--border) !important;
+    border-inline-color: var(--border) !important;
     color: var(--text) !important;
-  }
-
-  treecol:first-of-type {
-    border-right: 1px solid var(--border) !important;
+    box-shadow: inset 0 -1px var(--border) !important;
   }
 
   treecolpicker {
@@ -127,39 +124,74 @@
   /* Checkboxes */
   .checkbox-check {
     appearance: none !important;
+    height: 15px;
+    width: 15px;
+    background: var(--cb-bg) !important;
+    border: 1px solid var(--cb-border) !important;
   }
 
-  checkbox:not([disabled="true"]):hover > .checkbox-check, 
+  checkbox:not([disabled="true"]):hover > .checkbox-check:not([checked]) {
+    border-color: var(--cb-hover-border) !important;
+  }
+
   .checkbox-check[checked] {
-    background-size: 10px;
+    background: var(--cb-checked-bg) var(--check) no-repeat center / 10px !important;
+    border-color: var(--cb-checked-border) !important;
+  }
+
+  checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
+    background-color: var(--cb-checked-hover-bg) !important;
+  }
+
+  .checkbox-check[disabled] {
+    background-color: var(--cb-disabled-background) !important;
+    border-color: var(--cb-disabled-border) !important;
+  }
+
+  /* Radios */
+  .radio-check {
+    appearance: none !important;
+    margin-right: 2px !important;
+    padding: 6px;
+    background-color: var(--cb-bg);
+    border: 1px solid var(--cb-border);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px var(--cb-bg);
+  }
+
+  .radio-check[selected] {
+    background-color: var(--cb-checked-bg);
+    border-color: var(--cb-hover-border);
+  }
+
+  radio:hover .radio-check {
+    border-color: var(--cb-hover-border);
   }
 
   /* Buttons */
   button {
-    appearance: none;
-    min-width: 0;
-    font-weight: 600;
-    margin-inline: 8px 0;
-    padding: 8px 16px;
-    border: 0;
-    border-radius: 4px;
+    appearance: none !important;
+    min-width: 0 !important;
+    padding: 8px 16px !important;
+    border: 0 !important;
+    border-radius: 4px !important;
   }
   
   button:not([disabled]) {
-    background-color: var(--accent);
-    color: var(--text);
+    background-color: var(--accent) !important;
+    color: var(--text) !important;
   }
   
   button:not([disabled]):hover {
-    background-color: var(--accent-light);
+    background-color: var(--accent-light) !important;
   }
   
   button:not([disabled]):active {
-    background-color: var(--accent-dark);
+    background-color: var(--accent-dark) !important;
   }
   
   button[disabled] {
-    background-color: var(--disabled);
+    background-color: var(--disabled) !important;
     color: var(--bg) !important;
   }
 }
