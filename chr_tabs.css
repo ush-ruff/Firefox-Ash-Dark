@@ -17,6 +17,9 @@
   margin-inline-end: 7px !important;
 } /* Note 1 */
 
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
+  height: auto !important;
+} /* Note 2 */
 
 /* ------------------------------------------------------------------ */
 
@@ -84,9 +87,18 @@
 
 /* ------------------------------------------------------------------ */
 
-/*   ---- Note 1 ----
+/*   
+    ---- Note 1 ----
   In order to center the tab title all three of the rules need to be added.
   If the close icon does not occupy space, there is a "jump" when hovering tabs with short titles.
   Therefore, the close icon has a display area, but has been hidden with opacity only to be shown
   when the tab is hovered (unless the tab is selected or pinned) 
+  
+    ---- Note 2 ----
+  Firefox v96.0.2 added the following code. 
+    #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
+      height: 2.7em;
+    }
+  This code causes the text to be aligned to the top of the tab.
+  By setting height to auto fixes this bug
 */
