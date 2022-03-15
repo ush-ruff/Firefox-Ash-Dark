@@ -161,12 +161,14 @@ panel[type="arrow"] {
 :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 {
+  --panel-padding: 0 !important;
   --panel-background: var(--bg) !important;
+  --panel-border-color: transparent !important;
   --panel-color: var(--text) !important;
   appearance: none !important;
   min-width: 220px !important;
   margin: 0 !important;
-  padding: 4px 4px;
+  padding: 4px;
   background: var(--panel-background) !important;
   border: 1px solid var(--border) !important;
 }
@@ -184,7 +186,8 @@ panel[type="arrow"] {
   appearance: none !important;
   min-height: 22px !important;
   margin: 0 !important;
-  padding: 2px 0 !important;
+  /* padding: 2px 0 !important; */
+  padding-block: 4px !important;
 }
 
 /* Separator */
@@ -239,40 +242,42 @@ menuseparator
 }
 
 /* Checkbox & Radio */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
-  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
-menuitem[checked="true"][type="checkbox"]>.menu-iconic-left 
-{
-  appearance: none !important;
-  margin-inline: 7px 6px !important;
-  padding: 7px 0 0 !important;
-  border: solid var(--text);
-  border-width: 0 0 2px 2px;
-  transform: rotate(-45deg) scale(.75);
-}
+@media not (-moz-windows-non-native-menus) {
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+    :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+  menuitem[checked="true"][type="checkbox"]>.menu-iconic-left 
+  {
+    appearance: none !important;
+    margin-inline: 7px 6px !important;
+    padding: 6px 0 0 !important;
+    border: solid var(--text);
+    border-width: 0 0 2px 2px;
+    transform: rotate(-45deg) scale(.75);
+  }
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
-  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
-menuitem[checked="true"][type="radio"] > .menu-iconic-left 
-{
-  appearance: none !important;
-  height: 17px !important;
-  margin-inline: 7px 6px !important;
-  background: var(--text);
-  border: solid var(--text);
-  border-radius: 100%;
-  transform: scale(0.5);
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+    :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+  menuitem[checked="true"][type="radio"] > .menu-iconic-left 
+  {
+    appearance: none !important;
+    height: 17px !important;
+    margin-inline: 7px 6px !important;
+    background: var(--text);
+    border: solid var(--text);
+    border-radius: 100%;
+    transform: scale(0.5);
+  }
 }
 
 /* Menu Left Icon */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+/* :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 .menuitem-iconic:not([hidden="true"]) .menu-iconic-left 
 {
   appearance: none !important;
   padding-block: 3px !important;
   padding-inline: 8px 6px !important;
-}
+} */
 
 /* Menu Right Arrow Icon */
 :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
@@ -280,12 +285,17 @@ menuitem[checked="true"][type="radio"] > .menu-iconic-left
 .menu-right 
 {
   appearance: none !important;
-  margin-right: 6px !important;
+  -moz-context-properties: fill, fill-opacity;
+  margin-inline-end: 1em !important;
+  list-style-image: url("chrome://global/skin/icons/arrow-right.svg") !important;
+  fill: currentColor;
+  /* margin-right: 6px !important;
   padding: 7.5px !important;
   border: solid var(--text);
   border-width: 0 3px 3px 0;
   color: var(--text) !important;
-  transform: rotate(-45deg) scale(.4);
+  transform: rotate(-45deg) scale(.4); */
+  
 }
 
 /* ------------------------------------------------------------------ */
