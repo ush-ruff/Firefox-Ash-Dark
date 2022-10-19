@@ -1,179 +1,122 @@
-/*! Alters the webextension uBlock Origin
-  IMPORTANT: change the Internal UUID */
+/* --------------------------------------------------------------------------------------------
+
+Midnight Blue Theme for the webextension uBlock Origin
+
+author: ushruff
+version: 2.0.0
+
+IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
+
+--------------------------------------------------------------------------------------------- */
+
 @-moz-document url-prefix("moz-extension://cd24c6af-6733-4eb5-b9a2-cfec4ccd89de/") {
   :root {
-    /* Popup */
-    --default-ink: /*#d3d3f7*/ #c5d0da !important; /* text & icons */
-    --default-surface: /*#211640*/ #1F304B !important; /* background */
-    --default-surface-hover: /*#514f93*/ #7EA0B7 !important; /* hover */
-    --fg-0-60: #8686a4 !important; /* secondary font & icons */
-    --popup-border: /*#463c62*/ #aebcbd !important;
+    --ink-1: #c5d0da !important;                              /* text & icons - primary */
+    --ink-2: #121A21 !important;                              /* text & icons - secondary */
+    --surface-1: #1F304B !important;                          /* background - primary */
+    --surface-2: #7EA0B7 !important;                          /* background - secondary */
+    --popup-border: #aebcbd !important;                       /* border */
 
-    --bg-transient-notice: /*#f6f467*/ #9970D5 !important; /* refresh button background */
+    --popup-cell-surface: #b0d0db !important;                 /* firewall table background */
+    --popup-cell-cname-ink: #75BFFF !important;               /* firewall table accent text */
 
-    --bg-popup-cell-2: /*#312a65*/ #b0d0db !important; /* firewall table background */
-    --dark-text: #121A21 !important;
-
-    /* Classic style popup */
-    --bg-popup-cell-1: var(--bg-popup-cell-2) !important; /* firewall table background */
-    --fg-0-40: var(--selection-active) !important; /* icons */
-    --fg-0-70: var(--selection-active) !important; /* secondary text */
-    --fg-0-20: var(--fg-icon-info-lvl-0-dimmed) !important; /* disabled icon */
-
+    /* Scrollbars */
+    scrollbar-color: var(--surface-2) var(--surface-1) !important;
 
     /* Dashboard */
-    --dashboard-bar-shadow: 0px 0px 0px 1px #20123a8a, 0px 1px 2px 0px #2200338a, 0px 2px 1px -1px #0730729f, 0px 1px 6px 0px #0e0d1a9f !important;
-    --dashboard-tab-active-ink: #ac7cf2 !important;
-
-    --button-surface: var(--light-gray-60) !important; /* buttons */
-    --checkbox-checked-ink: /*#a98cd2*/ #f4dd46 !important; /* checkbox */
-    --fieldset-header-ink: /*#592acb*/ #9970D5 !important; /* headers */
-    --fg-0-50: hsla(261.8, 45.8%, 90.6%, 0.6) !important; /* icons */
-    --fg-icon-info-lvl-0-dimmed: #717E94 !important; /* info icon (?) */
-    --fg-icon-info-lvl-1-dimmed: hsla(240, 100%, 89.2%, 0.5) !important; /* info icon (i) */
-    --fg-icon-info-lvl-1: hsl(240, 100%, 89.2%) !important; /* info icon hover (i) */
-    --fg-icon-info-lvl-4-dimmed: hsla(0, 94.7%, 55.9%, 0.67) !important; /* delete icon */
-    --link-ink: #fdee72 !important; /* links */
+    --dashboard-bar-shadow: 
+      0px 0px 0px 1px #12143a8a, 
+      0px 1px 2px 0px #000a338a, 
+      0px 2px 1px -1px #2b508c9e, 
+      0px 1px 6px 0px #0e0d1a9f !important;                   /* header bar shadow */
+    --dashboard-tab-active-ink: #ac7cf2 !important;           /* active tab */
+    --dashboard-tab-hover-surface: var(--surface-1) !important; /* tab hover background */
+    --dashboard-tab-hover-border: var(--ink-1) !important;      /* tab hover border bottom */
+    
+    --fieldset-header-ink: #9970D5 !important;                /* headers */
+    --button-surface: rgb(var(--light-gray-90)) !important;     /* buttons */
+    --checkbox-checked-ink: #f4dd46 !important;               /* checkbox */
+    --info0-ink: #78758d !important;                          /* icons */
+    --info1-ink: #81b9f4 !important;                          /* info icon (i) */
+    --info3-ink: rgb(255, 82, 94) !important;                 /* delete icon */
 
     /* Logger UI */
-    --secondary-hover: #3A4766 !important;
-    --code-surface: #242B37 !important;
+    --surface-0: #242B37 !important;                          /* dropdown background */
+    --logger-bg: #3A4766 !important;
 
     /* CodeMirror */
-    --cm-gutter-surface: #34455D !important; /* search bar background */
-    --cm-gutter-border: #0b0b0c !important; /* search bar border */
-    --cm-gutter-ink: var(--default-surface-hover) !important; /* search input border */
-    --bg-code-pane: #272727 !important; /* code text area background */
-    --bg-code-gutter: #0b0b0c !important;
-    --bg-code-activeline: #3d4147 !important;
-
-    --theme-highlight-blue: #75BFFF !important;
+    --cm-gutter-surface: #0c0c0d !important;                  /* header bar background */
+    --cm-gutter-border: #38383d !important;                   /* header bar border */
+    --cm-gutter-ink: #8f8f9d !important;                      /* search input border */
+    --bg-code-pane: #232327 !important;                       /* textarea background */
+    --bg-code-gutter: #18181a !important;                     /* gutter background */
+    --bg-code-activeline: #353b48 !important;                 /* textarea active line */
+    --cm-searching-surface: #fee500b0 !important;             /* search element highlight */
+    
+    --theme-highlight-blue: #75bfff !important;
     --theme-highlight-purple: #b98eff !important;
-    --theme-highlight-red: #FF7DE9 !important;
-    --theme-highlight-grey: #939393 !important;
+    --theme-highlight-red: #ff7de9 !important;
+    --theme-highlight-grey: #a4a4a4 !important;
     --theme-highlight-indigo: #4d9fbf !important;
-    --theme-highlight-green: #2d9f2d !important;
-    --theme-highlight-search: #ffff0042 !important;
+    --theme-highlight-green: #00c559 !important;
+    
 
     --sf-keyword-ink: var(--theme-highlight-purple) !important;
     --df-allow-ink: var(--theme-highlight-green) !important;
     --df-noop-ink: var(--theme-highlight-grey) !important;
     --df-block-ink: var(--theme-highlight-red) !important;
 
-    --selection-active: #607092d9 !important;
     --selection: #353b48 !important;
-
-  }
-
-  code, .code {
-    background-color: var(--default-surface-hover) !important;
-  }
-  #parsed {
-    background-color: var(--bg-popup-cell-2) !important;
-  }
-  .cm-search-widget-input input {
-    background-color: var(--button-surface) !important;
+    --selection-active: #607092d9 !important;
   }
 
   /* ----- Popup ----- */
-  hr {
-    border-color: var(--popup-border) !important;
+  /* Firewall table */
+  #firewall {
+    scrollbar-width: thin;
   }
-  .rulesetTools [id] {
-    border-color: var(--bg-transient-notice) !important;
-  }
-  #firewall > div > span:first-of-type,
-  #firewallContainer > div > span:first-of-type {
+  #firewall > div > span:first-of-type {
     padding-right: 5px !important;
   }
-  #firewall > div > span, #actionSelector > #dynaCounts,
-  #firewall > div:first-of-type > span:first-of-type::before,
-  #firewallContainer > div > span,
-  #firewallContainer > div:first-of-type > span:first-of-type::before {
-    color: var(--dark-text) !important;
+  #firewall > div > span, #actionSelector > #dynaCounts {
+    color: var(--ink-2) !important;
+  }
+  #firewall > div:first-of-type > span:first-of-type::before, 
+  #firewall > div.isDomain.hasSubdomains > span:first-of-type > span::before {
+    color: #272727 !important;
   }
 
-  /* ----- Logger UI ----- */
-  .permatoolbar,
-  #netFilteringDialog > .headers > .tools > .fa-icon:hover,
-  #netFilteringDialog > div.panes > .dynamic .entry:hover {
-    background-color: var(--default-surface-hover) !important;
+  /* ----- Dashboard ----- */
+  hr {
+    border-top-color: var(--ink-2) !important;
   }
-  .permatoolbar .button:hover,
-  .permatoolbar .button.active {
-    background-color: var(--default-surface) !important;
+  #dashboard-nav {
+    border-bottom-color: var(--surface-1) !important;
+    box-shadow: var(--dashboard-bar-shadow) !important;
   }
-  .permatoolbar #info:hover {
-    fill: #fff !important;
-  }
-  #netInspector #filterExprPicker {
-    background-color: var(--secondary-hover) !important;
-    border-color: var(--default-ink) !important;
-  }
-  #netInspector #filterExprPicker span[data-filtex]:hover {
-    background-color: var(--default-surface-hover) !important;
-    border-color: var(--popup-border) !important;
-  }
-  /*! #modalOverlay */
-  #modalOverlay > div > div:nth-of-type(1) {
-    background-color: var(--default-surface) !important;
-  }
-  #modalOverlayClose {
-    stroke: var(--default-ink) !important;
-    background-color: var(--default-surface) !important;
-  }
-  #modalOverlayClose:hover,
-  #netFilteringDialog > .preview > span {
-    background-color: var(--default-surface-hover) !important;
-  }
-  /*! #netFilteringDialog */
-  #netFilteringDialog > .headers {
-    border-color: var(--popup-border) !important;
-  }
-  #netFilteringDialog[data-pane="details"] > .headers > [data-pane="details"],
-  #netFilteringDialog[data-pane="dynamic"] > .headers > [data-pane="dynamic"],
-  #netFilteringDialog[data-pane="static"] > .headers > [data-pane="static"] {
-    background-color: var(--default-surface) !important;
-    border-color: var(--popup-border) !important;
-    border-bottom: 1px solid var(--default-surface) !important;
-    color: var(--default-ink) !important;
-  }
-  #netFilteringDialog > .headers > .header {
-    background-color: var(--default-surface-hover) !important;
-    border: 1px solid var(--popup-border) !important;
-    border-bottom: 1px solid var(--popup-border) !important;
-    color: var(--fg-0-50) !important;
-  }
-  #netFilteringDialog > .panes > .details > div,
-  #netFilteringDialog > div.panes > .dynamic .entry {
-    background-color: var(--bg-popup-cell-2) !important;
-    border-color: var(--default-surface) !important;
-    color: var(--dark-text) !important;
-  }
-  #netFilteringDialog > .panes > .details > div > span:nth-of-type(1),
-  #netFilteringDialog > div.panes > .dynamic .row > span:nth-of-type(1) {
-    border-color: var(--default-surface) !important;
-  }
-  /*! #loggerExportDialog */
-  #loggerExportDialog .options span[data-i18n]:hover {
-    background-color: var(--secondary-hover) !important;
-  }
-  #loggerExportDialog .options span.on[data-i18n],
-  #loggerExportDialog .options span.pushbutton:active {
-    background-color: var(--default-surface-hover) !important;
-  }
-  #loggerExportDialog .options span[data-i18n] {
-    border-color: var(--default-surface-hover) !important;
-  }
-  /*! domInspector */
-  #domInspector ul {
-    background-color: var(--secondary-hover) !important;
-  }
-  #domInspector code, #domInspector .code {
-    background-color: var(--code-surface) !important;
+  #ruleFilter {
+    background-color: var(--cm-gutter-surface) !important;
+    border-block: 1px solid var(--cm-gutter-border);
   }
 
   /* ----- CodeMirror ----- */
+  code, .code {
+    background-color: var(--surface-2) !important;
+  }
+  #parsed {
+    background-color: var(--popup-cell-surface) !important;
+  }
+  .cm-search-widget {
+    border-top: 1px solid var(--cm-gutter-border);
+  }
+  .cm-search-widget-input input {
+    background-color: #2b2a33 !important;
+    border-radius: 0.1em;
+  }
+  .cm-search-widget-input input:focus-visible {
+    box-shadow: 0 0 0 2px var(--cm-gutter-surface), 0 0 0 4px var(--info1-ink);
+    outline: none !important;
+  }
   .CodeMirror-scroll {
     background-color: var(--bg-code-pane) !important;
   }
@@ -182,7 +125,7 @@
     background-color: var(--bg-code-gutter) !important;
   }
   .CodeMirror-merge {
-    border-color: var(--theme-highlight-grey) !important;
+    border-color: var(--cm-gutter-border) !important;
   }
   .CodeMirror-linenumber {
     color: var(--theme-highlight-grey) !important;
@@ -192,6 +135,10 @@
   }
   .CodeMirror-cursor {
     border-color: #fff !important;
+  }
+  .CodeMirror-vscrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #737373 #38383d;
   }
   /* code blocks */
   .cm-s-default .cm-def {
@@ -210,9 +157,9 @@
   .cm-s-default .cm-keyword:not(.cm-comment) {
     color: var(--theme-highlight-green) !important;
   }
-  /* .cm-staticnetAllow {
+  .cm-s-default .cm-tag {
     color: var(--theme-highlight-green) !important;
-  } */
+  }
   .cm-overlay {
     background-color: var(--theme-highlight-search) !important;
   }
@@ -235,10 +182,92 @@
   .CodeMirror-line > span > span::-moz-selection {
     background: var(--selection-active) !important;
   }
+
+  /* ----- Logger UI ----- */
+  .permatoolbar,
+  #netFilteringDialog > .headers > .tools > .fa-icon:hover,
+  #netFilteringDialog > div.panes > .dynamic .entry:hover {
+    background-color: var(--surface-2) !important;
+  }
+  .permatoolbar .button:hover,
+  .permatoolbar .button.active {
+    background-color: var(--surface-1) !important;
+  }
+  .permatoolbar #info:hover {
+    fill: #fff !important;
+  }
+  #netInspector #filterExprPicker {
+    background-color: var(--logger-bg) !important;
+    border-color: var(--ink-1) !important;
+  }
+  #netInspector #filterExprPicker span[data-filtex]:hover {
+    background-color: var(--surface-2) !important;
+    border-color: var(--popup-border) !important;
+  }
+  /* #modalOverlay */
+  #modalOverlay > div > div:nth-of-type(1) {
+    background-color: var(--surface-1) !important;
+  }
+  #modalOverlayClose {
+    background-color: var(--surface-1) !important;
+    stroke: var(--ink-1) !important;
+  }
+  #modalOverlayClose:hover,
+  #netFilteringDialog > .preview > span {
+    background-color: var(--surface-2) !important;
+  }
+  /* #netFilteringDialog */
+  #netFilteringDialog > .headers {
+    border-color: var(--popup-border) !important;
+  }
+  #netFilteringDialog[data-pane="details"] > .headers > [data-pane="details"],
+  #netFilteringDialog[data-pane="dynamic"] > .headers > [data-pane="dynamic"],
+  #netFilteringDialog[data-pane="static"] > .headers > [data-pane="static"] {
+    background-color: var(--surface-1) !important;
+    border-color: var(--popup-border) !important;
+    border-bottom: 1px solid var(--surface-1) !important;
+    color: var(--ink-1) !important;
+  }
+  #netFilteringDialog > .headers > .header {
+    background-color: var(--surface-2) !important;
+    border: 1px solid var(--popup-border) !important;
+    color: var(--ink-1) !important;
+  }
+  #netFilteringDialog > .panes > .details > div,
+  #netFilteringDialog > div.panes > .dynamic .entry {
+    background-color: var(--popup-cell-surface) !important;
+    border-color: var(--surface-1) !important;
+    color: var(--ink-2) !important;
+  }
+  #netFilteringDialog > .panes > .details > div > span:nth-of-type(1),
+  #netFilteringDialog > div.panes > .dynamic .row > span:nth-of-type(1) {
+    border-color: var(--surface-1) !important;
+  }
+  /* #loggerExportDialog */
+  #loggerExportDialog .options span[data-i18n]:hover {
+    background-color: var(--logger-bg) !important;
+  }
+  #loggerExportDialog .options span.on[data-i18n],
+  #loggerExportDialog .options span.pushbutton:active {
+    background-color: var(--surface-2) !important;
+  }
+  #loggerExportDialog .options span[data-i18n] {
+    border-color: var(--surface-2) !important;
+  }
+  #loggerExportDialog .output {
+    background: var(--surface-0) !important;
+  }
+  /* domInspector */
+  #domInspector ul {
+    background-color: var(--logger-bg) !important;
+  }
+  #domInspector code, #domInspector .code {
+    background-color: var(--surface-0) !important;
+  }
 }
 
 /* ----- Element Picker ----- */
-@-moz-document url-prefix("about:blank") {
+@-moz-document url-prefix("moz-extension://cd24c6af-6733-4eb5-b9a2-cfec4ccd89de/web_accessible_resources/epicker-ui.html") {
   html#ublock0-epicker, #ublock0-epicker body {
     color: #c5d0da !important;
   }
@@ -247,12 +276,11 @@
     border-color: #121A21 !important;
   }
   /* textarea */
+  #ublock0-epicker .CodeMirror,  #ublock0-epicker .CodeMirror-scroll {
+    background: #34455D !important;
+  }
   #ublock0-epicker section > div:first-child {
     border-color: #121A21 !important;
-  }
-  #ublock0-epicker section > div:first-child > textarea {
-    background-color: #34455D !important;
-    color: #c5d0da !important;
   }
   #ublock0-epicker #resultsetCount {
     background-color: #fdee72 !important;
