@@ -40,3 +40,5 @@
 /* Disable Accessibility - Helps reduce memory usage? */
   accessibility.force_disabled = 1
 
+/* Restore download prompt in Firefox 98 */
+  browser.download.improvements_to_download_panel = false.

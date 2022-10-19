@@ -158,7 +158,7 @@ panel[type="arrow"] {
 *		       ----- Context Menus ----- 
 */
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 {
   --panel-padding: 0 !important;
@@ -179,7 +179,7 @@ panel[type="arrow"] {
 } */
 
 /* Menuitem */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 > :is(menuitem, menu) 
 {
@@ -191,7 +191,7 @@ panel[type="arrow"] {
 }
 
 /* Separator */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 menuseparator 
 {
@@ -203,7 +203,7 @@ menuseparator
 }
 
 /* Disabled */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(menuitem, menu)[disabled="true"] 
 {
@@ -211,7 +211,7 @@ menuseparator
   color: var(--disabled) !important;
 }
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) 
 {
@@ -219,7 +219,7 @@ menuseparator
 }
 
 /* Hover */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) 
 {
@@ -234,7 +234,7 @@ menuseparator
 }
 
 /* Keyboard Shortcut Text */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(.menu-accel, .menu-iconic-accel) 
 {
@@ -243,7 +243,7 @@ menuseparator
 
 /* Checkbox & Radio */
 @media not (-moz-windows-non-native-menus) {
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
     :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
   menuitem[checked="true"][type="checkbox"]>.menu-iconic-left 
   {
@@ -255,7 +255,7 @@ menuseparator
     transform: rotate(-45deg) scale(.75);
   }
 
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
     :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
   menuitem[checked="true"][type="radio"] > .menu-iconic-left 
   {
@@ -280,7 +280,7 @@ menuseparator
 } */
 
 /* Menu Right Arrow Icon */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 .menu-right 
 {
