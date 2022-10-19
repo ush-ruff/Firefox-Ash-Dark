@@ -1,6 +1,18 @@
-/*! Alters the webextension Fast Forward
-IMPORTANT: change the Internal UUID */
+/* --------------------------------------------------------------------------------------------
+
+Dark Blue Theme for the webextension Fast Forward
+
+author: ushruff
+version: 1.0.0
+
+IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
+
+--------------------------------------------------------------------------------------------- */
+
 @-moz-document url-prefix("moz-extension://13d52b5a-2cb5-4172-bacf-d48fd3f13970/") {
+  :root {
+    scrollbar-width: thin;
+  }
   .uk-background-secondary {
     background-color: #1d3557 !important;
   }
