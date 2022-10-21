@@ -3,7 +3,7 @@
 Midnight Blue Theme for the webextension uBlock Origin
 
 author: ushruff
-version: 2.0.0
+version: 2.0.1
 
 IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
 
@@ -51,7 +51,8 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
     --bg-code-pane: #232327 !important;                       /* textarea background */
     --bg-code-gutter: #18181a !important;                     /* gutter background */
     --bg-code-activeline: #353b48 !important;                 /* textarea active line */
-    --cm-searching-surface: #fee500b0 !important;             /* search element highlight */
+    --cm-searching-surface: #fee5006c !important;             /* search element highlight */
+    --search-element-focus: #f2e047e6 !important;             /* search element in focus */
     
     --theme-highlight-blue: #75bfff !important;
     --theme-highlight-purple: #b98eff !important;
@@ -160,12 +161,11 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
   .cm-s-default .cm-tag {
     color: var(--theme-highlight-green) !important;
   }
-  .cm-overlay {
-    background-color: var(--theme-highlight-search) !important;
+  .cm-searching.cm-overlay {
+    color: var(--cm-searching-ink) !important;
   }
-  .cm-search-widget .fa-icon:not(.fa-icon-ro):hover,
-  .cm-search-widget .cm-search-widget-button:hover {
-    fill: var(--default-ink) !important;
+  .CodeMirror-activeline .cm-searching.cm-overlay {
+    background-color: var(--search-element-focus) !important;
   }
   .CodeMirror pre {
     color: var(--theme-highlight-indigo) !important;
