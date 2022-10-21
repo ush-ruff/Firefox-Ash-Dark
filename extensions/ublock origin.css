@@ -3,7 +3,7 @@
 Midnight Blue Theme for the webextension uBlock Origin
 
 author: ushruff
-version: 2.0.1
+version: 2.0.2
 
 IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
 
@@ -91,6 +91,12 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
   hr {
     border-top-color: var(--ink-2) !important;
   }
+  code, .code {
+    color: var(--ink-0) !important;
+  }
+  #parsed {
+    background-color: var(--popup-cell-surface) !important;
+  }
   #dashboard-nav {
     border-bottom-color: var(--surface-1) !important;
     box-shadow: var(--dashboard-bar-shadow) !important;
@@ -99,14 +105,8 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
     background-color: var(--cm-gutter-surface) !important;
     border-block: 1px solid var(--cm-gutter-border);
   }
-
+  
   /* ----- CodeMirror ----- */
-  code, .code {
-    background-color: var(--surface-2) !important;
-  }
-  #parsed {
-    background-color: var(--popup-cell-surface) !important;
-  }
   .cm-search-widget {
     border-top: 1px solid var(--cm-gutter-border);
   }
@@ -115,7 +115,8 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
     border-radius: 0.1em;
   }
   .cm-search-widget-input input:focus-visible {
-    box-shadow: 0 0 0 2px var(--cm-gutter-surface), 0 0 0 4px var(--info1-ink);
+    border-color: #0a84ff !important;
+    box-shadow: 0 0 0 1px #0060df, 0 0 0 2px var(--cm-gutter-surface), 0 0 0 4px #081d40;
     outline: none !important;
   }
   .CodeMirror-scroll {
