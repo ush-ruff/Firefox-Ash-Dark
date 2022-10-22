@@ -1,280 +1,398 @@
-/*! Alters the webextension Violentmonkey
-  IMPORTANT: change the Internal UUID */
+/* --------------------------------------------------------------------------------------------
+
+Ash Dark Theme for the webextension Violentmonkey
+
+author: ushruff
+version: 2.0.0
+
+IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
+
+--------------------------------------------------------------------------------------------- */
 @-moz-document url-prefix("moz-extension://da35a18a-74bc-438f-8c7c-e3d1eef31e9b/") {
   :root{
-    --back-1: #323030;
-    --back-2: #393838;
-    --back-3: #252525;
-    --border-1: #232323;
-    --border-2: #1e1e1e;
-    --border-3: #323030;
-    --text-1: #ccc;
-    --text-2: #555;
-    --accent-color: #F27121;
+    --bg-100: #131313;
+    --bg-200: #1e1e1e;
+    --bg-300: #252525;
+    --bg-350: #232323;
+    --bg-400: #323030;
+    --bg-500: #393838;
+
+    --cl-400: #ccc;
+    --cl-500: #aaa;
+    --cl-700: #555;
+
+    --accent: #F27121;
+    
+    /* CodeMirror */
+    --cm-gutter-surface: #0c0c0d;
+    --cm-gutter-border: #38383d;
+    --cm-gutter-ink: #8f8f9d;
+    --bg-code-pane: #232327;
+    --bg-code-gutter: #18181a;
+    --bg-code-activeline: #353b48;
+    --cm-searching-surface: #fee5002c;
+    --search-element-focus: #f2e047e6;
+    
+    --theme-highlight-blue: #75bfff;
+    --theme-highlight-purple: #b98eff;
+    --theme-highlight-red: #ff7de9;
+    --theme-highlight-grey: #a4a4a4;
+    --theme-highlight-green: #86de74;
+    --theme-highlight-indigo: #6b89ff;
+    --theme-highlight-white: #d7d7db;
+    
+    --selection: #353b48;
+    --selection-active: #607092d9;
   }
+  
   body, .tab, section > h3 {
-    color: var(--text-1) !important;
-    background-color: var(--back-2) !important;
+    background-color: var(--bg-500) !important;
+    color: var(--cl-400) !important;
   }
+  
+  /* Sidebar */
   .aside-content, .aside-toggle {
-    border-color: var(--border-2) !important;
-    background: var(--back-3) !important;
+    background: var(--bg-300) !important;
+    border-color: var(--bg-200) !important;
   }
   .aside-menu {
-    border-color: var(--border-3) !important;
+    border-color: var(--bg-400) !important;
   }
   .aside-menu > a.active, .aside-menu > a:hover, .aside-toggle {
-    color: var(--text-1) !important;
+    color: var(--cl-400) !important;
   }
   .aside-menu > a {
-    color: var(--text-2) !important;
+    color: var(--cl-500) !important;
   }
+  
+  /* ---- Installed Scripts ---- */
+  /* Header */
   .tab-installed header {
-    border-color: var(--border-1) !important;
+    border-color: var(--bg-350) !important;
   }
-  .filter-search > input {
-    margin-left: .5em !important;
+  .filter-search input, .filter-search select {
+    background-color: var(--bg-400) !important;
+    border-color: var(--bg-350) !important;
   }
-  input[type="password"], input[type="text"], textarea {
-    background-color: var(--back-1) !important;
-    border-color: var(--border-1) !important;
+  .filter-search input:focus, .filter-search select:focus {
+    border-color: var(--accent) !important;
   }
+  .trash-button, .filter-sort {
+    margin-inline-end: 0.5rem !important;
+  }
+  .trash-button, .filter-sort, .btn-ghost {
+    border-radius: 50% !important;
+  }
+  .btn-ghost:is(.active, :hover, :focus), .filter-sort:focus-within {
+    background-color: var(--bg-300) !important;
+    border-color: var(--bg-200) !important;
+  }
+  .vl-dropdown-menu {
+    margin-inline-end: 0.5rem !important;
+    background-color: var(--bg-300) !important;
+    border-color: var(--bg-200) !important;
+    box-shadow: 0 0 8px 2px rgb(0 0 0 / 0.2);
+  }
+  
+  /* Main */
   .script:not(.disabled) {
-    border-color: var(--border-1) !important;
-    background: var(--back-1) !important;
-    color: var(--text-1) !important;
+    background: var(--bg-400) !important;
+    border-color: var(--bg-350) !important;
+    color: var(--cl-400) !important;
   }
-  .vl-dropdown-right .btn-ghost, .btn-ghost.trash-button {
-    margin-right: .5em !important;
-  }
-  .script-buttons, .btn-ghost.active, .vl-dropdown-down.active .btn-ghost {
-    color: var(--accent-color) !important;
-  }
-  .btn-ghost.active, .btn-ghost:hover, .vl-dropdown-down.active .btn-ghost {
-    border-color: var(--border-2) !important;
-    background-color: var(--back-3) !important;
-    border-radius: 15px !important;
+  .scripts[data-table] .script:hover::after {
+    border-color: var(--accent) !important;
   }
   .script.disabled, .script.removed {
-    background-color: var(--back-2) !important;
-    color: var(--text-2) !important;
-    border-color:  var(--border-1) !important;
+    background-color: var(--bg-500) !important;
+    border-color:  var(--bg-350) !important;
+    color: var(--cl-700) !important;
+  }
+  .script-buttons, .btn-ghost.active, .vl-dropdown-down.active .btn-ghost {
+    color: var(--accent) !important;
   }
   .script-buttons .disabled, .script.disabled .script-buttons .disabled,
   .script.removed .script-buttons .disabled {
-    color: var(--text-2) !important;
+    color: var(--cl-700) !important;
   }
   .sep::after {
-    border-color: var(--border-1) !important;
+    border-color: var(--bg-350) !important;
   }
+  .scripts[data-table] .script-message:not(:empty) {
+    inset: auto 0.5rem 2px auto !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Trash */
+  .trash-hint a {
+    color: var(--accent) !important;
+  }
+  
+  /* ---- Settings ---- */
+  section > h3 {
+    background-image: linear-gradient(to right, var(--bg-200), var(--bg-350) 10%, var(--bg-300) 40%, var(--bg-400) 70%, transparent 100%) !important;
+    border: none !important;
+  }
+  .tab-settings a {
+    color: var(--accent) !important;
+  }
+  code {
+    background-color: var(--cm-searching-surface) !important;
+  }
+  
+  /* ---- Buttons and Inputs ---- */
+  /* Buttons */
   button {
-    border-color: var(--border-1) !important;
-    background-color: var(--back-3) !important;
-    color: var(--text-1) !important;
-    border-radius: 5px !important;
+    background-color: var(--bg-300) !important;
+    border-color: var(--bg-350) !important;
+    color: var(--cl-400) !important;
+  }
+  button:not(:last-child) {
+    margin-inline-end: 0.5rem !important;
   }
   button:hover {
-    background: #131313 !important;
+    background: var(--bg-100) !important;
   }
   button[disabled] {
-    border-color: var(--border-3) !important;
-    background-color: var(--back-1) !important;
-    color: var(--text-2) !important;
+    background-color: var(--bg-400) !important;
+    border-color: var(--bg-400) !important;
+    color: var(--cl-700) !important;
   }
-  section {
-    border-top: 1px solid var(--border-1) !important;
+  /* Text Inputs */
+  input[type="password"], input[type="text"], input[type="search"], input[type="number"], textarea {
+    background-color: var(--bg-400) !important;
+    border-color: var(--bg-350) !important;
   }
-  .show-advanced svg {
-    margin-left: 2px !important;
-    vertical-align: -2px !important;
+  input[type="password"]:focus-visible, input[type="text"]:focus-visible, input[type="search"]:focus-visible, input[type="number"]:focus-visible, textarea:focus-visible {
+    border-color: var(--accent) !important;
   }
-  .mb-1 a, p a, .text-right a {
-    color: #3498db !important;
+  /* Dropdowns */
+  select {
+    background: var(--bg-300) !important;
   }
-  .mb-1 a:not(:hover), p a:not(:hover), .text-right a:not(:hover) {
-    text-decoration: none !important;
+  select:is(:hover, :focus-within, :active) {
+    background: var(--bg-200) !important;
+    border-color: var(--accent) !important;
   }
-  .filter-search input, .filter-search select {
-    background-color: var(--back-1) !important;
-    border-color: var(--border-1) !important;
+  /* Radios and Checkboxes */
+  input[type="checkbox"], input[type="radio"] {
+    appearance: none !important;
+    width: 14px;
+    aspect-ratio: 1;
+    margin-inline-end: 0.5rem !important;
+    background-color: var(--bg-300);
+    border: 1px solid var(--cl-700);
   }
-  input[type="search"]:focus, .filter-search select:focus {
-    border-color: var(--border-1) !important;
+  input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background: url(../check.svg) center no-repeat;
+    background-color: var(--accent);
+    border-color: var(--accent);
   }
-
-  /* Edit Page */
-  .frame {
-    background-color: var(--back-3) !important;
+  input[type="checkbox"]:not(:checked):hover, input[type="radio"]:not(:checked):hover {
+    background-color: var(--bg-400);
+    border-color: var(--accent);
   }
+  input[type="checkbox"]:not(:checked), input[type="radio"]:not(:checked) {
+    filter: unset !important;
+  }
+  
+  /* ---- Edit ---- */
+  .edit-body {
+    background-color: var(--bg-300) !important;
+  }
+  
+  /* Code */
   .edit-header {
-    background: var(--back-2) !important;
-    padding: 3px !important;
-    position: relative !important;
+    background-color: var(--bg-400) !important;
   }
-  .edit-header::after {
-    content: "" !important;
-    position: absolute !important;
-    background: var(--back-1) !important;
-    height: 3px !important;
-    width: 100% !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    z-index: 2 !important;
-    border-top: 1px solid var(--border-2) !important;
+  .edit-header a {
+    color: var(--accent) !important;
   }
   .edit-nav-item {
-    color: #aaa !important;
-  }
-  .edit-nav-item.active, .edit-body {
-    background: var(--back-1) !important;
-    color: var(--text-1) !important;
-  }
-  .edit-nav-item.active, .edit-nav-item:hover, .edit-nav-item:not(.active):hover {
-    box-shadow: 0 -1px 1px black !important;
-    border-top: 1px solid var(--accent-color) !important;
-  }
-  .edit-nav-item:not(.active):hover {
-    background-color: var(--back-2) !important;
+    position: relative;
+    color: var(--cl-500) !important;
   }
   .edit-nav-item.active {
-    position: relative !important;
+    background-color: var(--bg-300) !important;
+    color: var(--cl-400) !important;
   }
-  .edit-nav-item.active::after {
-    content: "" !important;
-    position: absolute !important;
-    height: 2px !important;
-    width: 100% !important;
-    background: var(--back-1) !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    z-index: 3 !important;
+  .edit-nav-item:is(.active, :hover) {
+    box-shadow: 0 -1px 1px transparent !important;
+  }
+  .edit-nav-item:not(.active):hover {
+    background-color: var(--bg-500) !important;
+    box-shadow: 0 -1px 1px black !important;
+  }
+  .edit-nav-item:is(.active, :hover)::before {
+    --p: 7px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(var(--p) / 2);
+    width: calc(100% - var(--p));
+    height: 2px;
+    background-color: var(--accent);
+    box-shadow: 0 0 5px 0.25px var(--accent);
+  }
+  
+  /* Settings */
+  .edit-settings .form-group input[type="text"], .edit-settings .form-group > textarea {
+    background-color: var(--bg-500) !important;
+    border-color: var(--bg-350) !important;
+  }
+  .edit-settings code {
+    background: none !important;
+  }
+  
+  /* Values */
+  .edit-values-row {
+    background-color: var(--bg-400) !important;
+    color: var(--accent) !important;
+  }
+  .edit-values-row:is(:hover, :focus) {
+    background-color: var(--bg-500) !important;
   }
   .edit-values-panel {
-    background-color: var(--back-2) !important;
-    box-shadow: -5px 0 5px var(--border-2) !important;
+    background-color: var(--bg-500) !important;
+    box-shadow: -5px 0 5px var(--bg-200) !important;
   }
-  .edit-settings .form-group input[type="text"], .edit-settings .form-group > textarea {
-    background-color: var(--back-2) !important;
-    border-color: var(--border-1) !important;
+  
+  /* Help */
+  .edit-help a {
+    color: var(--accent) !important;
   }
-    /* Editor */
-    .CodeMirror {
-      border-color: var(--border-1) !important;
-      background-color: var(--back-1) !important;
-      color: var(--text-1) !important;
-    }
-    .CodeMirror-gutters, .CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler {
-      border-color: var(--border-3) !important;
-      background-color: var(--text-2) !important;
-    }
-    .cm-s-eclipse .CodeMirror-activeline-background {
-      background-color: var(--back-2) !important;
-    }
-    .cm-s-eclipse span.cm-comment, .cm-s-eclipse span.cm-number {
-      color: #27ae60 !important;
-    }
-    .cm-s-eclipse span.cm-variable, .cm-s-eclipse span.cm-operator, .cm-s-eclipse span.cm-property {
-      color: var(--text-1) !important;
-    }
-    .cm-s-eclipse span.cm-string, .cm-s-eclipse span.cm-def,
-    .cm-s-eclipse span.cm-type, .cm-s-eclipse span.cm-variable-2,
-    .cm-s-eclipse span.cm-variable-3, .cm-s-eclipse span.cm-atom {
-      color: #75bfff !important;
-    }
-    .cm-s-eclipse span.cm-keyword {
-      color: #e06e95 !important;
-    }
-    div.CodeMirror span.CodeMirror-matchingbracket {
-      color: #2ecc71 !important;
-    }
-
-    /* --------------------------------------- */
-
-  .modal-content {
-    background-color: var(--back-2) !important;
-    box-shadow: 0 0 .2rem black !important;
+  
+  /* CodeMirror */
+  .CodeMirror {
+    background-color: var(--bg-code-pane) !important;
   }
-  .vl-dropdown-menu {
-    border-color: var(--border-2) !important;
-    background: var(--back-3) !important;
+  .CodeMirror-vscrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #737373 #38383d;
   }
-  .dropdown-menu-item:hover {
-    background: var(--back-2) !important;
-    color: var(--text-1) !important;
+  .CodeMirror .CodeMirror-gutters {
+    background-color: var(--bg-code-gutter) !important;
+    border-color: var(--cm-gutter-border) !important;
   }
-  .dropdown-menu-item {
-    color: var(--text-1) !important;
+  .CodeMirror .CodeMirror-linenumber {
+    color: var(--cm-gutter-ink) !important;
   }
-  input[disabled] ~ * {
-    color: var(--text-2) !important;
+  .CodeMirror .CodeMirror-activeline-background {
+    background-color: var(--bg-code-activeline) !important;
   }
-  .edit-values-btn {
-    background: var(--back-2) !important;
-    box-shadow: -5px 0 5px var(--back-2) !important;
-    cursor: pointer !important;
+  .editor-search {
+    background-color: var(--cm-gutter-surface) !important;
+    border-block: 1px solid var(--cm-gutter-border);
   }
-  .edit-values-row, .edit-values-row > :not(:first-child) {
-    border-color: var(--border-1) !important;
-    background: var(--back-1) !important;
-    padding: 1px !important;
+  .editor-search input {
+    background-color: #2b2a33 !important;
+    border-radius: 0.1em;
+    color: var(--theme-highlight-white) !important;
   }
-  .edit-values-row > :not(:first-child) {
-    text-indent: 1em !important;
+  .editor-search input:focus-visible {
+    border-color: #0a84ff !important;
+    box-shadow: 0 0 0 1px #0060df, 0 0 0 2px var(--cm-gutter-surface), 0 0 0 4px #081d40;
+    outline: none !important;
   }
-  .edit-buttons button, .tab-settings > section:nth-child(3) > button:nth-child(3),
-  .tab-settings > div:nth-child(7) > section:nth-child(2) > button:nth-child(4),
-  .edit-values-panel > div:nth-child(1) > div:nth-child(2) > button {
-    margin-left: .5em !important;
+  .editor-search .is-error, .editor-search .is-error:focus {
+    border-color: #cc2828 !important;
   }
-  .tab-settings > div:nth-child(7) > section:not(:first-child) button {
-    margin-top: .5em !important;
+  .editor-search button {
+    margin-inline-start: 0.25rem !important;
+    padding: 0 0.4rem !important;
+    background-color: #2b2a33 !important;
+    border-color: #4b4b4b !important;
+    color: var(--cl-400) !important;
   }
-  select option, select label {
-    background: var(--back-1) !important;
+  .toggle-button {
+    background-color: #2b2a33 !important;
+    color: var(--cl-400) !important;
   }
-  button:not([disabled]) {
-    margin-right: .5em !important;
+  .toggle-button.active {
+    background-color: #0a84ff !important;
+    color: #fff !important;
+  }  
+  /* code blocks */
+  .cm-s-default .cm-comment {
+    color: var(--theme-highlight-grey) !important;
   }
-
-  /* Popup Toolbar */
+  .cm-s-default .cm-keyword {
+    color: var(--theme-highlight-red) !important;
+  }
+  .cm-s-default .cm-def {
+    color: var(--theme-highlight-blue) !important;
+  }
+  .cm-s-default .cm-attribute, .cm-s-default .cm-property {
+    color: var(--theme-highlight-green) !important;
+  }
+  .cm-s-default .cm-variable-2 {
+    color: var(--theme-highlight-blue) !important;
+  }
+  .cm-s-default .cm-variable {
+    color: var(--theme-highlight-white) !important;
+  }
+  .cm-s-default .cm-string, .cm-s-default .cm-string-2 {
+    color: var(--theme-highlight-indigo) !important;
+  }
+  .cm-s-default .cm-string-2.cm-regexp {
+    color: var(--theme-highlight-indigo) !important;
+  }
+  .CodeMirror .CodeMirror-matchingbracket {
+    background-color: var(--selection) !important;
+    color: var(--theme-highlight-green) !important;
+    outline: 1px solid var(--theme-highlight-grey) !important;
+  }
+  .cm-matchhighlight {
+    background-color: var(--cm-searching-surface) !important;
+    border-bottom: 1px solid var(--search-element-focus) !important;
+  }
+  .CodeMirror-selected {
+    background: var(--selection) !important;
+  }  
+  
+  /* ---- Popup ---- */
   body, .page-popup body {
-    background-color: var(--back-2) !important;
-    color: var(--text-1) !important;
+    background-color: var(--bg-500) !important;
+    color: var(--cl-400) !important;
   }
   .menu-buttons, .menu.expand, .submenu-button {
-    background: var(--back-2) !important;
+    background: var(--bg-500) !important;
   }
   .menu, .submenu {
-    background: var(--back-2) !important;
-    border-color: var(--border-3) !important;
+    background: var(--bg-500) !important;
+    border-color: var(--bg-400) !important;
   }
   .menu:nth-child(2) > .menu-area:not(:hover) {
-    background: var(--back-1) !important;
+    background: var(--bg-400) !important;
   }
   .menu-area:hover {
-    background-color: var(--accent-color) !important;
-  }
-  .submenu-button, .submenu-button:hover {
-    background-color: var(--accent-color) !important;
+    background-color: var(--accent) !important;
   }
   .menu-area.disabled {
-    color: var(--text-2) !important;
+    color: var(--cl-700) !important;
+  }
+  .submenu-button {
+    background-color: var(--bg-400) !important;
+  }
+  .submenu-button:hover {
+    background-color: var(--accent) !important;
+  }
+  .extras-menu {
+    background-color: var(--bg-400) !important;
+    border-color: var(--bg-350) !important;
+  }
+  .extras-menu > div:hover {
+    background-color: var(--accent) !important;
+    color: var(--bg-350) !important;
   }
   footer {
-    background: var(--back-3) !important;
-  }
-  footer > span:hover {
-    color: #ddd !important;
+    background: var(--bg-300) !important;
+    color: var(--cl-400) !important;
   }
   .message {
-    background: var(--back-2) !important;
-    color: var(--text-1) !important;
-    border-color: var(--accent-color) !important;
-  }
-  .submenu-commands {
-    color: var(--text-2) !important;
-  }
-  .submenu .menu-item > .icon:first-child {
-    margin-left: 1em !important;
+    background: var(--bg-500) !important;
+    border-color: var(--accent) !important;
+    color: var(--cl-400) !important;
   }
 }
