@@ -147,6 +147,13 @@ panel[type="arrow"] {
   --button-bgcolor: var(--bg-hover);
   --button-hover-bgcolor: var(--bg-dark-hover);
   --button-active-bgcolor: var(--border);
+  
+  --panel-border-radius: 0 !important;
+  --arrowpanel-menuitem-border-radius: 0 !important;
+}
+
+#downloadsListBox > richlistitem {
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -158,13 +165,14 @@ panel[type="arrow"] {
 *		       ----- Context Menus ----- 
 */
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 {
   --panel-padding: 0 !important;
   --panel-background: var(--bg) !important;
   --panel-border-color: transparent !important;
   --panel-color: var(--text) !important;
+  --panel-shadow: 0 !important;
   appearance: none !important;
   min-width: 220px !important;
   margin: 0 !important;
@@ -179,7 +187,7 @@ panel[type="arrow"] {
 } */
 
 /* Menuitem */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 > :is(menuitem, menu) 
 {
@@ -187,23 +195,34 @@ panel[type="arrow"] {
   min-height: 22px !important;
   margin: 0 !important;
   /* padding: 2px 0 !important; */
-  padding-block: 2px !important;
+  padding-block: 4px !important;
+  border-radius: 0 !important;
+}
+
+menupopup[needsgutter] menu:not([icon], .menu-iconic), 
+menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) {
+	padding-inline-start: 1rem !important;
 }
 
 /* Separator */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 menuseparator 
 {
   appearance: none !important;
   margin: 3px 5px !important;
   padding: 0 !important;
-  border-top: 1px solid var(--separator) !important;
-  border-bottom: none !important;
+}
+
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
+menuseparator::before
+{
+  border-top: 1px solid var(--separator) !important; 
 }
 
 /* Disabled */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(menuitem, menu)[disabled="true"] 
 {
@@ -211,7 +230,7 @@ menuseparator
   color: var(--disabled) !important;
 }
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) 
 {
@@ -219,7 +238,7 @@ menuseparator
 }
 
 /* Hover */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) 
 {
@@ -234,7 +253,7 @@ menuseparator
 }
 
 /* Keyboard Shortcut Text */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 :is(.menu-accel, .menu-iconic-accel) 
 {
@@ -243,7 +262,7 @@ menuseparator
 
 /* Checkbox & Radio */
 @media not (-moz-windows-non-native-menus) {
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
     :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
   menuitem[checked="true"][type="checkbox"]>.menu-iconic-left 
   {
@@ -255,7 +274,7 @@ menuseparator
     transform: rotate(-45deg) scale(.75);
   }
 
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
     :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
   menuitem[checked="true"][type="radio"] > .menu-iconic-left 
   {
@@ -270,7 +289,7 @@ menuseparator
 }
 
 /* Menu Left Icon */
-/* :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+/* :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 .menuitem-iconic:not([hidden="true"]) .menu-iconic-left 
 {
@@ -280,7 +299,7 @@ menuseparator
 } */
 
 /* Menu Right Arrow Icon */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup) 
 .menu-right 
 {
@@ -315,6 +334,11 @@ menuseparator
   border-bottom: 1px solid var(--border) !important;
 }
 
+.panel-header + toolbarseparator, 
+#appMenu-multiView .panel-header + toolbarseparator {
+  border: none !important;
+}
+
 .PanelUI-subView .panel-header .subviewbutton {
   cursor: pointer;
 }
@@ -343,19 +367,24 @@ menuseparator
 }
 
 /* -- Zoom & Fullscreen Buttons -- */
-#appMenu-zoomReset-button {
+#appMenu-zoomReset-button2 {
   background-color: var(--bg) !important;
   border-color: var(--text) !important;
 }
 
-#appMenu-zoomReduce-button2:not(:hover) > .toolbarbutton-icon, 
-#appMenu-zoomEnlarge-button2:not(:hover) > .toolbarbutton-icon {
-  background-color: var(--bg-dim) !important;
-  stroke: none !important;
+#appMenu-fullscreen-button2:not(:hover) > .toolbarbutton-icon {
+  background-color: var(--bg) !important;
 }
 
-#appMenu-fullscreen-button2:not(:hover) > .toolbarbutton-icon {
-  background-color: var(--bg-dim) !important;
+#appMenu-zoomReduce-button2:not([disabled]) > .toolbarbutton-icon, 
+#appMenu-zoomEnlarge-button2:not([disabled]) > .toolbarbutton-icon {
+  stroke: var(--bg) !important;
+}
+
+#appMenu-zoomReduce-button2:not([disabled]):hover > .toolbarbutton-icon, 
+#appMenu-zoomEnlarge-button2:not([disabled]):hover > .toolbarbutton-icon {
+  fill: var(--text) !important;
+  stroke: var(--bg-darker) !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -376,17 +405,22 @@ menuseparator
 }
 
 /* -- Inputs -- */
-#editBookmarkPanelRows input {
+#editBookmarkPanelRows input, 
+#editBMPanel_namePicker, #editBMPanel_tagsField {
   --input-bgcolor: var(--bg-dim);
   --input-border-color: var(--bg-hover);
 }
 
 #editBookmarkPanelRows input:hover,
-#editBMPanel_tagsField::selection {
+#editBMPanel_namePicker:hover, #editBMPanel_tagsField:hover {
   --input-border-color: var(--accent) !important;
 }
 
-#editBMPanel_tagsField::selection {
+#editBMPanel_namePicker:focus-visible, #editBMPanel_tagsField:focus-visible {
+  outline: 2px solid var(--accent) !important;
+}
+
+#editBMPanel_namePicker::selection, #editBMPanel_tagsField::selection {
   background-color: var(--accent) !important;
 }
 
@@ -402,6 +436,7 @@ menuseparator
 
 #editBMPanel_folderMenuList menupopup menuitem {
   background-color: transparent !important;
+  color: var(--text) !important;
 }
 
 #editBMPanel_folderMenuList menuitem:is(:hover, :active) {
@@ -620,21 +655,37 @@ tree.sidebar-placesTree {
   color: var(--text) !important;
 }
 
-.sidebar-placesTree treechildren::-moz-tree-row(hover) {
-  background: var(--bg-darker) !important;
-  border-block-color: var(--accent) !important;
-}
-
-.sidebar-placesTree treechildren::-moz-tree-row(selected) {
-  background-color: var(--accent-dark) !important;
-}
-
-.sidebar-placesTree treechildren::-moz-tree-row(selected, focus) {
-  background-color: var(--accent) !important;
-}
-
+.sidebar-placesTree treechildren::-moz-tree-row(hover), 
+.sidebar-placesTree treechildren::-moz-tree-row(selected), 
+.sidebar-placesTree treechildren::-moz-tree-row(selected, focus), 
 .sidebar-placesTree treechildren::-moz-tree-row(selected, current, focus) {
-  border-color: currentColor !important;
+  background: transparent !important;
+  border-color: transparent!important;
+  outline: none !important;
+}
+
+.sidebar-placesTree treechildren::-moz-tree-cell(hover) {
+  background: var(--bg-darker) !important;
+  border-block: 1px solid var(--bg-darker) !important;
+}
+
+.sidebar-placesTree treechildren::-moz-tree-cell(selected) {
+  background-color: var(--accent-dark) !important;
+  border-color: var(--accent-dark) !important;
+}
+
+.sidebar-placesTree treechildren::-moz-tree-cell(selected, focus) {
+  background-color: var(--accent) !important;
+  outline: none !important;
+}
+
+.sidebar-placesTree treechildren::-moz-tree-cell(selected, current, focus) {
+  border-color: var(--accent) !important;
+}
+
+.sidebar-placesTree treechildren::-moz-tree-cell(separator) {
+  background-color: var(--bg) !important;
+  border-color: var(--bg) !important;
 }
 
 .sidebar-placesTree treechildren::-moz-tree-cell-text(selected),
