@@ -1,12 +1,7 @@
 /* extensions */
 @import "extensions/auto tab discard.css";
-/* @import "extensions/clearurls.css"; */
-/* @import "extensions/dashlane.css"; */
-/* @import "extensions/fast forward.css"; */
-/* @import "extensions/https everywhere.css"; */
 @import "extensions/panorama tab groups.css";
 @import "extensions/ublock origin.css";
-@import "extensions/universal bypass.css";
 @import "extensions/violentmonkey.css";
 
 
@@ -15,7 +10,6 @@
 	* Remove white loading page
   * about:addons Options tab white flash fix
   * view-source pages
-  * about:newtab & about:home
   * about:webrtc
   * about:debugging
 */

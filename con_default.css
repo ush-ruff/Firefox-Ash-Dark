@@ -19,7 +19,7 @@
 *    ╩ ╩╚═╝╚═╝╚═╝ ╩   ╩ ╩═╩╝═╩╝╚═╝╝╚╝╚═╝
 */
 /* about:addons Options tab white flash fix */
-@-moz-document url-prefix(chrome: //) {
+@-moz-document url-prefix(chrome://) {
 
     addon-details .inline-options-stack {
         background: var(--in-content-box-background) !important;
@@ -98,8 +98,7 @@
 *    ╚═╝╚═╝╩═╝╚═╝╩╚═╚═╝
 */
 
-@-moz-document url-prefix(about:newtab), url-prefix(about:home),
-url-prefix(about:webrtc), url-prefix(about:debugging) {
+@-moz-document url-prefix(about:debugging), url-prefix(about:webrtc) {
     :root {
         --back-1: #2f2f2f;
         --back-2: #3f3f3f;
@@ -125,79 +124,6 @@ url-prefix(about:webrtc), url-prefix(about:debugging) {
 }
 
 /* ------------------------------------------------------------------ */
-
-/*
-*    ╔═╗╔╗ ╔═╗╦ ╦╔╦╗  ╔╗╔╔═╗╦ ╦╔╦╗╔═╗╔╗
-*    ╠═╣╠╩╗║ ║║ ║ ║   ║║║║╣ ║║║ ║ ╠═╣╠╩╗
-*    ╩ ╩╚═╝╚═╝╚═╝ ╩   ╝╚╝╚═╝╚╩╝ ╩ ╩ ╩╚═╝
-*/
-/* about:newtab */
-@-moz-document url-prefix(about:newtab), url-prefix(about:home) {
-    body {
-        --newtab-background-color: var(--back-3) !important;
-        --newtab-border-primary-color: var(--border-2) !important;
-        --newtab-border-secondary-color: var(--border-4) !important;
-        --newtab-element-active-color: var(--border-2) !important;
-        --newtab-element-hover-color: var(--back-5) !important;
-        --newtab-link-primary-color: var(--accent-1) !important;
-        --newtab-text-primary-color: var(--text-1) !important;
-        --newtab-text-secondary-color: var(--text-3) !important;
-        --newtab-icon-primary-color: var(--text-1) !important;
-        --newtab-icon-secondary-color: var(--text-3) !important;
-        --newtab-inner-box-shadow-color: var(--border-2) !important;
-        --newtab-section-header-text-color: var(--text-2) !important;
-        --newtab-section-active-contextmenu-color: var(--text-2) !important;
-        --newtab-snippets-background-color: var(--back-2) !important;
-        --newtab-contextmenu-background-color: var(--back-4) !important;
-        --newtab-contextmenu-button-color: var(--back-2) !important;
-        --newtab-modal-color: var(--back-1) !important;
-        --newtab-overlay-color: rgba(68, 68, 68, 0.8) !important;
-        --newtab-textbox-background-color: var(--back-5) !important;
-        --newtab-button-secondary-color: var(--back-6) !important;
-        --newtab-search-icon-color: var(--text-3) !important;
-        --newtab-topsites-background-color: var(--back-6) !important;
-        --newtab-search-dropdown-color: var(--back-6) !important;
-        --newtab-search-dropdown-header-color: var(--back-4) !important;
-        --newtab-search-header-background-color: var(--back-1) !important;
-        --newtab-topsites-icon-shadow: inset 0 0 0 1px var(--border-2) !important;
-        --newtab-card-active-outline-color: var(--accent-2) !important;
-        --newtab-card-background-color: var(--back-2) !important;
-        --newtab-card-shadow: 0 1px 4px 0 var(--border-1) !important;
-
-        --size: 150px !important;
-    }
-
-    .ds-header, .ds-layout .section-title span {
-        color: var(--newtab-text-secondary-color) !important;
-    }
-
-    .ds-top-sites .top-sites .top-site-outer .top-site-inner > a:-moz-any(:hover) .tile {
-        box-shadow: 0 0 0 5px var(--newtab-card-active-outline-color) !important;
-    }
-
-    body:not(.inline-onboarding) .fixed-search .search-wrapper {
-        border-bottom: solid 1px var(--newtab-border-primary-color) !important;
-    }
-
-    .ds-outer-wrapper-breakpoint-override main {
-        width: calc(calc(var(--size) + 38px) * 8) !important;
-    }
-
-    .top-site-outer .top-site-inner,
-    .top-site-outer .tile {
-        width: var(--size) !important;
-        height: var(--size) !important;
-    }
-
-    .ds-top-sites .top-sites .top-site-outer {
-        padding: 0px 17px !important;
-    }
-
-    .top-site-outer .tile, .top-site-outer .screenshot, .top-site-outer .top-site-icon,
-    .ds-top-sites .top-sites .top-site-outer .top-site-inner > a:-moz-any(:hover) .tile {
-        border-radius: 0 !important;
-    }
-}
 
 /*
 *    ╔═╗╔╗ ╔═╗╦ ╦╔╦╗  ╔╦╗╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔╗╔╔═╗
