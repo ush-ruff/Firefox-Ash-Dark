@@ -23,6 +23,10 @@
   --accent-light: #3E98F3;
   --accent-dark: #0D6AC8;
 
+  accent-color: var(--accent) !important;
+  --color-accent-primary: var(--accent) !important;
+  --color-accent-primary-hover: var(--accent-light) !important;
+
   --cb-bg: var(--bg-dim);
   --cb-border: #777;
   --cb-hover-bg: var(--bg);
