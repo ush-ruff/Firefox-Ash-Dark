@@ -165,12 +165,13 @@ panel[type="arrow"] {
 *		       ----- Context Menus ----- 
 */
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu), 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu), 
+:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup
 {
   --panel-padding: 0 !important;
   --panel-background: var(--bg) !important;
   --panel-border-color: transparent !important;
+  --panel-border-radius: 0 !important;
   --panel-color: var(--text) !important;
   --panel-shadow: 0 !important;
   appearance: none !important;
@@ -187,7 +188,7 @@ panel[type="arrow"] {
 } */
 
 /* Menuitem */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) > :is(menuitem, menu), 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) > :is(menuitem, menu), 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup > :is(menuitem, menu) 
 {
   appearance: none !important;
@@ -204,7 +205,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 }
 
 /* Separator */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuseparator, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuseparator, 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuseparator 
 {
   appearance: none !important;
@@ -212,28 +213,28 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
   padding: 0 !important;
 }
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuseparator::before, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuseparator::before, 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuseparator::before
 {
   border-top: 1px solid var(--separator) !important; 
 }
 
 /* Disabled */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menuitem, menu)[disabled="true"], 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menuitem, menu)[disabled="true"], 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(menuitem, menu)[disabled="true"] 
 {
   background-color: var(--panel-background) !important;
   color: var(--disabled) !important;
 }
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]), 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]), 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) 
 {
   background-color: var(--bg-dark) !important;
 }
 
 /* Hover */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) , 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) , 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) 
 {
   background-color: var(--bg-hover) !important;
@@ -247,7 +248,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 }
 
 /* Keyboard Shortcut Text */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(.menu-accel, .menu-iconic-accel), 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(.menu-accel, .menu-iconic-accel), 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(.menu-accel, .menu-iconic-accel) 
 {
   color: var(--disabled);
@@ -255,7 +256,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 
 /* Checkbox & Radio */
 @media not (-moz-windows-non-native-menus) {
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuitem[checked="true"][type="checkbox"]>.menu-iconic-left, 
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuitem[checked="true"][type="checkbox"]>.menu-iconic-left, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuitem[checked="true"][type="checkbox"]>.menu-iconic-left 
   {
     appearance: none !important;
@@ -266,7 +267,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
     transform: rotate(-45deg) scale(.75);
   }
 
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuitem[checked="true"][type="radio"] > .menu-iconic-left, 
+  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuitem[checked="true"][type="radio"] > .menu-iconic-left, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuitem[checked="true"][type="radio"] > .menu-iconic-left 
   {
     appearance: none !important;
@@ -280,7 +281,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 }
 
 /* Menu Left Icon */
-/* :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) .menuitem-iconic:not([hidden="true"]) .menu-iconic-left, 
+/* :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) .menuitem-iconic:not([hidden="true"]) .menu-iconic-left, 
   :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup .menuitem-iconic:not([hidden="true"]) .menu-iconic-left 
 {
   appearance: none !important;
@@ -289,7 +290,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 } */
 
 /* Menu Right Arrow Icon */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) .menu-right, 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) .menu-right, 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup .menu-right 
 {
   appearance: none !important;
@@ -665,6 +666,7 @@ tree.sidebar-placesTree {
 
 .sidebar-placesTree treechildren::-moz-tree-cell(selected, focus) {
   background-color: var(--accent) !important;
+  color: var(--text-bright) !important;
   outline: none !important;
 }
 
@@ -680,7 +682,31 @@ tree.sidebar-placesTree {
 .sidebar-placesTree treechildren::-moz-tree-cell-text(selected),
 .sidebar-placesTree treechildren::-moz-tree-image(selected),
 .sidebar-placesTree treechildren::-moz-tree-twisty(selected) {
-  color: var(--text) !important;
+  color: var(--text-bright) !important;
+}
+
+/* -- Synced Tabs -- */
+@-moz-document url("chrome://browser/content/syncedtabs/sidebar.xhtml") {
+  .content-container {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+  }
+
+  .sidebar-search-container .tabsFilter {
+    appearance: none !important;
+    margin: 5px 2px !important;
+    padding: 5px 10px !important;
+    background-color: var(--bg-darker) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 4px;
+    color: var(--text) !important;
+  }
+
+  .item.selected > .item-title-container {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: var(--text-bright) !important;
+  }
 }
 
 /* ------------------------------------------------------------------ */
