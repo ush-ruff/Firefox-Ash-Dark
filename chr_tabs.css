@@ -69,7 +69,7 @@
 *    ╚═╝╚═╝╩  ╩ ╩╩╚═╩ ╩ ╩ ╚═╝╩╚═
 */
 /* Tab separators */
-.tabbrowser-tab:not([pinned], [first-visible-unpinned-tab])::before {
+/* .tabbrowser-tab:not([pinned], [first-visible-unpinned-tab])::before {
   content: "";
   display: inherit;
   position: absolute;
@@ -84,9 +84,18 @@
   [selected], [selected] + .tabbrowser-tab, [selected] + .tabbrowser-tab[hidden] + .tabbrowser-tab
   [multiselected], [multiselected] + .tabbrowser-tab, [multiselected] + .tabbrowser-tab[hidden] + .tabbrowser-tab)::before {
   opacity: 0;
-}
+} */
 
 /* ------------------------------------------------------------------ */
+
+/* Tab size fix for FF v136 */
+.tabbrowser-tab {
+  &:is([muted], [soundplaying], [activemedia-blocked]) {
+    #tabbrowser-tabs[orient="horizontal"] &:not([pinned]) {
+      --tab-min-width: unset !important;
+    }
+  }
+}
 
 /*   
     ---- Note 1 ----
