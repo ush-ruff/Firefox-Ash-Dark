@@ -9,33 +9,40 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 
 --------------------------------------------------------------------------------------------- */
 
-@-moz-document url-prefix("moz-extension://e174e885-e716-4f14-b75c-b71b59fd087d/options") {
+@-moz-document url-prefix("moz-extension://3f1ba85a-1317-4969-a313-9acbc6add762/options") {
   html, body {
     background: #202023 !important;
     color: #ccc !important;
   }
+
   h2, h3 {
     border-color: #4c4c4e !important;
     color: #ddd !important;
   }
+
   a:link {
     color: #3498db !important;
   }
+
   a:is(:hover, :focus-visible, :active) {
     color: #0a8dff !important;
   }
+
   a:visited {
     color: #9b59b6 !important;
   }
+
   .keyboardShortcuts input {
     appearance: none !important;
     background-color: #444 !important;
     border-color: #5c5c5e !important;
     color: #ddd !important;
   }
+
   .keyboardShortcuts button {
     appearance: none !important;
   }
+
   .keyboardShortcuts button, 
   #saveBackupButton, #resetAddon {
     padding: 0.3em 0.75em !important;
@@ -45,6 +52,7 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
     color: #eee !important;
     cursor: pointer !important;
   }
+  
   .keyboardShortcuts button:is(:hover, :focus-visible), 
   #saveBackupButton:is(:hover, :focus-visible), 
   #resetAddon:is(:hover, :focus-visible) {

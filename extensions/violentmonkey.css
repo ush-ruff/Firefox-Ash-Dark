@@ -8,7 +8,7 @@ version: 2.0.0
 IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
 
 --------------------------------------------------------------------------------------------- */
-@-moz-document url-prefix("moz-extension://da35a18a-74bc-438f-8c7c-e3d1eef31e9b/") {
+@-moz-document url-prefix("moz-extension://bec3f96b-1a66-4e15-a829-7b24928237ec/") {
   :root{
     --bg-100: #131313;
     --bg-200: #1e1e1e;

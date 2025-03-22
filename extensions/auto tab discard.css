@@ -10,7 +10,7 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 --------------------------------------------------------------------------------------------- */
 
 /* Popup */
-@-moz-document url-prefix("moz-extension://57ab5f62-ff54-46ac-b76a-f82c15140ed5/") {
+@-moz-document url-prefix("moz-extension://07e5d169-985a-49ea-88c0-dc44a5c22261/") {
 	:root {
 		--bg: #383838 !important;
 		--clr: #ccc !important;
@@ -31,19 +31,24 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 	header {
 		border-bottom-color: var(--border) !important; 
 	}
+
 	span[data-cmd]:hover svg {
 		stroke: var(--text-bright) !important;
 	}
+
 	[data-cmd="close"]::before, [data-cmd="close"]::after, .mlt span:last-child::before {
 		background-color: var(--separator) !important;
 	}
+
 	.button:hover, [data-cmd]:hover, .hbox:not([data-disabled="true"]):hover,
 	.nav > span:hover, .mlt > span[data-cmd]:hover {
 		background-color: var(--button-hover) !important;
 	}
+
 	.hbox:not([data-disabled="true"]) .flex:hover {
 		cursor: pointer !important;
 	}
+
 	#rate {
 		color: var(--accent) !important;
 	}
@@ -57,13 +62,16 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 		border-radius: 2px;
 		color: var(--clr);
 	}
+
 	input[type="number"]:focus-visible {
 		border-color: var(--text) !important;
 		outline: none !important;
 	}
+
 	input[type=number]::-moz-number-spin-box {
 		height: 100%;
 	}
+
 	input[type=number]::-moz-number-spin-up, 
 	input[type=number]::-moz-number-spin-down {
 		appearance: none !important;
@@ -74,14 +82,17 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 		border-color: var(--separator) !important;
 		border-radius: 0;
 	}
+
 	input[type=number]::-moz-number-spin-up {
 		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="5"><path d="M1,4 L3,0 5,4" fill="%23fff"/></svg>');
 		background-position: center bottom 1px;
 	}
+
 	input[type=number]::-moz-number-spin-down {
 		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="5"><path d="M1,1 L3,5 5,1" fill="%23fff"/></svg>');
 		background-position: center top 1px;
 	}
+
 	input[type=number]::-moz-number-spin-up:hover, 
 	input[type=number]::-moz-number-spin-down:hover {
 		background-color: var(--accent-light);
@@ -96,22 +107,28 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 		border: 1px solid var(--input-border) !important;
 		border-radius: 2px;
 	}
+
 	input[type="checkbox"]:hover, .hbox:hover input[type="checkbox"] {
 		border-color: var(--text) !important;
 	}
+
 	input[type="checkbox"]:checked {
 		background: var(--accent) var(--check) no-repeat center / 11px !important;
 		border-color: var(--accent) !important;
 	}
+
 	input[type="checkbox"]:checked:hover {
 		background-color: var(--accent-light) !important;
 	}
+
 	input[type="checkbox"]:focus {
 		border-color: var(--text) !important;
 	}
+
 	input[type="checkbox"]:not(:checked):focus {
 		background-color: var(--input-bg) !important;
 	}
+
 	input[type="checkbox"]:checked:focus {
 		background-color: var(--accent) !important;
 	}
@@ -127,14 +144,17 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 		border-radius: 50%;
 		box-shadow: inset 0 0 0 2px var(--input-bg);
 	}
+
 	input[type="radio"]:hover {
 		background-color: var(--input-bg) !important;
 		border-color: var(--text);
 	}
+
 	input[type="radio"]:checked {
 		background-color: var(--accent) !important;
 		border-color: var(--clr) !important;
 	}
+
 	radio[disabled], checkbox[disabled] {
 		opacity: 0.8;
 	}
@@ -147,12 +167,15 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 		border-radius: 4px;
 		color: #ccc;
 	}
+
 	input[type="text"] {
 		padding: 4px;
 	}
+
 	textarea:hover, input[type="text"]:hover {
 		border-color: var(--accent) !important;
 	}
+
 	textarea:focus {
 		background-color: var(--dark) !important;
 		border-color: var(--accent) !important;
@@ -170,6 +193,7 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 		box-shadow: none !important;
 		line-height: 0;
 	}
+
 	input[type="button"]:hover {
 		background: var(--accent-light) !important;
 	}
@@ -178,19 +202,23 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 	th {
 		background-color: var(--button-hover) !important;
 	}
+
 	.admin {
 		background-color: #e6e6c8 !important;
 		color: var(--border);
 	}
+
 	#explore {
 		background-color: var(--dark) !important;
 		border-color: var(--border) !important;
 		color: var(--clr) !important;
 		box-shadow: 0 0 4px var(--border) !important;
 	}
+
 	#explore a {
 		color: var(--clr) !important;
 	}
+	
 	.admin + table input {
 		min-width: 150px;
 	}

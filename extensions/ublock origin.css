@@ -9,7 +9,7 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 
 --------------------------------------------------------------------------------------------- */
 
-@-moz-document url-prefix("moz-extension://cd24c6af-6733-4eb5-b9a2-cfec4ccd89de/") {
+@-moz-document url-prefix("moz-extension://2c242a66-df36-49fd-b136-390823627825/") {
   :root {
     --ink-1: #c5d0da !important;                              /* text & icons - primary */
     --ink-2: #121A21 !important;                              /* text & icons - secondary */
@@ -268,7 +268,7 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 }
 
 /* ----- Element Picker ----- */
-@-moz-document url-prefix("moz-extension://cd24c6af-6733-4eb5-b9a2-cfec4ccd89de/web_accessible_resources/epicker-ui.html") {
+@-moz-document url-prefix("moz-extension://2c242a66-df36-49fd-b136-390823627825/web_accessible_resources/epicker-ui.html") {
   html#ublock0-epicker, #ublock0-epicker body {
     color: #c5d0da !important;
   }
