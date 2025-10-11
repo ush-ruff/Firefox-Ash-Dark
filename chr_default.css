@@ -41,11 +41,11 @@ browser[type=content-primary], browser[type=content] > html,
 *    ╚═╝╩╚═╩═╝╚═╝╩ ╩╩╚═
 */
 /* Rounded URLbar */
-#urlbar-background {
+.urlbar-background {
   --toolbarbutton-border-radius: 100vw;
 }
 
-#urlbar[open] #urlbar-background {
+#urlbar[open] .urlbar-background {
   --toolbarbutton-border-radius: 0;
 }
 
@@ -53,38 +53,27 @@ browser[type=content-primary], browser[type=content] > html,
   padding-inline: calc((var(--urlbar-height) / 2) - 3px) !important;
 }
 
-#urlbar[breakout][breakout-extend] > #urlbar-background {
+#urlbar[breakout][breakout-extend] > .urlbar-background {
   animation: none !important;
   border-color: var(--lwt-toolbar-field-border-color, rgb(18, 18, 18)) !important;
 }
 
-/*
 #urlbar[breakout][breakout-extend] {
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-}
-
-#urlbar[breakout][breakout-extend] > #urlbar-input-container {
-  height: 100% !important;
-  padding-block: 0 !important;
-  padding-inline: calc((var(--urlbar-height) / 2) - 3px) !important;
-}
-*/
-
-#urlbar[breakout][breakout-extend] {
-  margin-top: 2px !important;
+  width: var(--urlbar-width) !important;
+  margin-top: var(--urlbar-margin-inline) !important;
+  margin-inline: 0 !important;
 }
 
 #urlbar[breakout][breakout-extend] > .urlbar-input-container {
-  --urlbar-container-height: 36px !important;
+  --urlbar-container-height: 31px !important;
+  padding: var(--urlbar-container-padding) !important;
 }
 
-#urlbar[breakout][breakout-extend] > #urlbar-input-container[pageproxystate="invalid"] {
+#urlbar[breakout][breakout-extend] > .urlbar-input-container[pageproxystate="invalid"] {
   height: var(--urlbar-height) !important;
 }
 
-#urlbar[breakout][breakout-extend][open] > #urlbar-input-container {
+#urlbar[breakout][breakout-extend][open] > .urlbar-input-container {
   margin-bottom: 5px;
 }
 
@@ -97,7 +86,7 @@ browser[type=content-primary], browser[type=content] > html,
 }
 
 /* URLbar text selection fix for Dark Vintage Theme */
-#urlbar-input-container:focus-within #urlbar-input::selection {
+.urlbar-input-container:focus-within #urlbar-input::selection {
   background-color: var(--accent-dark) !important;
   color: var(--text) !important;
 }
