@@ -1,4 +1,34 @@
 /*
+*    ╔╦╗╔═╗╔═╗╔═╗╦ ╦╦ ╔╦╗  ╔═╗╔═╗╔╗╔╔╦╗
+*     ║║║╣ ╠╣ ╠═╣║ ║║  ║   ╠╣ ║ ║║║║ ║ 
+*    ═╩╝╚═╝╚  ╩ ╩╚═╝╩═╝╩   ╚  ╚═╝╝╚╝ ╩ 
+*/
+/* Set default UI font across Firefox */
+:root {
+  --ff-main: Lexend, sans-serif !important;
+}
+
+body, 
+menubar, 
+menupopup, 
+.panel-body, 
+#tab-group-default-header, 
+#tabgroup-preview-panel, 
+#appMenu-popup, 
+#editBookmarkPanel {
+   font-family: var(--ff-main) !important;
+}
+
+@-moz-document url-prefix("chrome://browser/content/places") {
+   :root {
+     --ff-main: Lexend, sans-serif;
+     font-family: var(--ff-main) !important;
+   }
+}
+
+/* ------------------------------------------------------------------ */
+
+/*
 *    ╔═╗╔═╗╔╗╔╔╦╗╔═╗═╗ ╦╔╦╗  ╔╦╗╔═╗╔╗╔╦ ╦  ╦╔╦╗╔═╗╔╦╗╔═╗
 *    ║  ║ ║║║║ ║ ║╣ ╔╩╦╝ ║   ║║║║╣ ║║║║ ║  ║ ║ ║╣ ║║║╚═╗
 *    ╚═╝╚═╝╝╚╝ ╩ ╚═╝╩ ╚═ ╩   ╩ ╩╚═╝╝╚╝╚═╝  ╩ ╩ ╚═╝╩ ╩╚═╝
@@ -160,3 +190,4 @@ browser[type=content-primary], browser[type=content] > html,
 .ctrlTab-favicon[src] {
   background-color: var(--panel-background) !important;
 }
+
