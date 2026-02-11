@@ -138,7 +138,6 @@ panel[type="arrow"] {
   --panel-banner-item-active-bgcolor: var(--bg-darkest) !important;
   --panel-banner-item-color: var(--text) !important;
   
-  
   --button-primary-bgcolor: var(--accent);
   --button-primary-hover-bgcolor: var(--accent-light);
   --button-primary-active-bgcolor: var(--accent-dark);
@@ -149,13 +148,24 @@ panel[type="arrow"] {
   --button-bgcolor: var(--bg-hover);
   --button-hover-bgcolor: var(--bg-dark-hover);
   --button-active-bgcolor: var(--border);
+  --button-background-color-hover: var(--bg-hover);
+  --button-background-color-ghost-hover: var(--bg-hover);
   
   --panel-border-radius: 0 !important;
   --arrowpanel-menuitem-border-radius: 0 !important;
+  --button-border-radius: 0.3rem !important;
+  
+  --input-bgcolor: var(--bg-dim);
+  --input-color: var(--text);
+  --input-border-color: var(--bg-hover);
 }
 
 #downloadsListBox > richlistitem {
   border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+}
+
+input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), textarea {
+  border-radius: var(--button-border-radius) !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -315,7 +325,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 *    ╦ ╦╔═╗╔╦╗╔╗ ╦ ╦╦═╗╔═╗╔═╗╦═╗  ╔╦╗╔═╗╔╗╔╦ ╦
 *    ╠═╣╠═╣║║║╠╩╗║ ║╠╦╝║ ╦║╣ ╠╦╝  ║║║║╣ ║║║║ ║
 *    ╩ ╩╩ ╩╩ ╩╚═╝╚═╝╩╚═╚═╝╚═╝╩╚═  ╩ ╩╚═╝╝╚╝╚═╝
-*		        ----- Hamburger menu -----
+*		       ----- Hamburger menu -----
 */
 
 #appMenu-multiView panelview {
@@ -377,13 +387,75 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
   stroke: var(--bg-darker) !important;
 }
 
+/* -- Adds icons to main menu items which were removed in Proton -- */
+/* Code from forked from https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/iconized_main_menu.css */
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/iconized_main_menu.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+#appMenu-zoom-controls::before,
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before,
+:where(#appMenu-mainView) > .panel-subview-body > .subviewbutton > .toolbarbutton-icon {
+  fill: currentColor;
+  -moz-context-properties: fill;
+  margin-inline: 0 8px !important;
+}
+
+#appMenu-zoom-controls::before,
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before {
+  display: flex;
+  content: "";
+  width: 16px;
+  height: 16px;
+}
+
+#appMenu-new-tab-button2 { list-style-image: url("chrome://browser/skin/new-tab.svg") }
+#appMenu-new-window-button2 { list-style-image: url("chrome://browser/skin/window.svg") }
+#appMenu-new-private-window-button2 { list-style-image: url("chrome://browser/skin/privateBrowsing.svg") }
+#appMenu-bookmarks-button { list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") }
+#appMenu-history-button { list-style-image: url("chrome://browser/skin/history.svg") }
+#appMenu-downloads-button { list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
+#appMenu-passwords-button { list-style-image: url("chrome://browser/skin/login.svg") }
+#appMenu-extensions-themes-button { list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
+#appMenu-print-button2 { list-style-image: url("chrome://global/skin/icons/print.svg") }
+#appMenu-save-file-button2 { list-style-image: url("chrome://browser/skin/save.svg") }
+#appMenu-find-button2 { list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
+#appMenu-settings-button { list-style-image: url("chrome://global/skin/icons/settings.svg") }
+#appMenu-more-button2 { list-style-image: url("chrome://global/skin/icons/developer.svg") }
+#appMenu-report-broken-site-button { list-style-image: url("chrome://global/skin/icons/warning.svg") }
+#appMenu-help-button2 { list-style-image: url("chrome://global/skin/icons/info.svg") }
+#appMenu-quit-button2 {
+  list-style-image: url("chrome://devtools/skin/images/search-clear.svg");
+
+  & > .toolbarbutton-icon {
+    -moz-context-properties: fill, stroke;
+    stroke: transparent;
+  }
+}
+
+#appMenu-translate-button { list-style-image: url("chrome://browser/skin/translations.svg") }
+#appMenu-zoom-controls::before { background-image: url("chrome://browser/skin/fullscreen.svg") }
+
+/* Use account-button icon for signed in sync item */
+#appMenu-fxa-status2[fxastatus] > toolbarbutton::before { background-image: var(--avatar-image-url) }
+
+/* Add somewhat hacky separator to zoom controls so it looks consistent */
+#appMenu-mainView > .panel-subview-body::after {
+  content: "";
+  display: flex;
+  border-bottom: 1px solid var(--panel-separator-color);
+  margin: 0.325rem 0.65rem;
+}
+
+#appMenu-translate-button ~ * {
+  order: 2;
+}
+
 /* ------------------------------------------------------------------ */
 
 /*
 *    ╔╗ ╔═╗╔═╗╦╔═╔╦╗╔═╗╦═╗╦╔═╔═╗  ╔═╗╔═╗╔═╗╦ ╦╔═╗
 *    ╠╩╗║ ║║ ║╠╩╗║║║╠═╣╠╦╝╠╩╗╚═╗  ╠═╝║ ║╠═╝║ ║╠═╝
 *    ╚═╝╚═╝╚═╝╩ ╩╩ ╩╩ ╩╩╚═╩ ╩╚═╝  ╩  ╚═╝╩  ╚═╝╩
-*		        ----- Bookmarks Popup -----
+*		       ----- Bookmarks Popup -----
 */
 
 #editBookmarkPanelFavicon[src] {
@@ -534,7 +606,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 *    ╔═╗╦ ╦╔═╗╔╦╗╔═╗╔╦╗╦╔═╗╔═╗  ╔╦╗╔═╗╔╗╔╦ ╦
 *    ║  ║ ║╚═╗ ║ ║ ║║║║║╔═╝║╣   ║║║║╣ ║║║║ ║
 *    ╚═╝╚═╝╚═╝ ╩ ╚═╝╩ ╩╩╚═╝╚═╝  ╩ ╩╚═╝╝╚╝╚═╝
-*		       ----- Customize Menu ----- 
+*		      ----- Customize Menu ----- 
 */
 
 #customization-container {
@@ -719,7 +791,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 *    ╔═╗╦  ╔═╗╦═╗╔╦╗╔═╗  ╔═╗╔═╗╔═╗╦ ╦╔═╗
 *    ╠═╣║  ║╣ ╠╦╝ ║ ╚═╗  ╠═╝║ ║╠═╝║ ║╠═╝
 *    ╩ ╩╩═╝╚═╝╩╚═ ╩ ╚═╝  ╩  ╚═╝╩  ╚═╝╩
-*		      ----- Alerts Popup -----
+*		     ----- Alerts Popup -----
 */
 
 #alertBox {
@@ -762,7 +834,7 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
 *    ╔╦╗╦╔═╗╦  ╔═╗╔═╗  ╔╗ ╔═╗═╗ ╦╔═╗╔═╗
 *     ║║║╠═╣║  ║ ║║ ╦  ╠╩╗║ ║╔╩╦╝║╣ ╚═╗
 *    ═╩╝╩╩ ╩╩═╝╚═╝╚═╝  ╚═╝╚═╝╩ ╚═╚═╝╚═╝
-*		      ----- Dialog Boxes ----- 
+*		     ----- Dialog Boxes ----- 
 */
 
 #unknownContentTypeWindow, #SiteDataRemoveSelectedDialog {
@@ -801,9 +873,9 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
   /* -- Dropdown -- */
   menulist {
     appearance: none !important;
-    padding: 5px 7px !important;;
+    padding: 5px 7px !important;
     background: var(--bg-hover) !important;
-    border: 1px solid var(--bg-darker) !important;;
+    border: 1px solid var(--bg-darker) !important;
     border-radius: 4px;
   }
 

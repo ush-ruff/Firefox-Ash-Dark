@@ -11,19 +11,20 @@
 body, 
 menubar, 
 menupopup, 
+popupnotification, 
 .panel-body, 
 #tab-group-default-header, 
 #tabgroup-preview-panel, 
 #appMenu-popup, 
 #editBookmarkPanel {
-   font-family: var(--ff-main) !important;
+  font-family: var(--ff-main) !important;
 }
 
 @-moz-document url-prefix("chrome://browser/content/places") {
-   :root {
-     --ff-main: Lexend, sans-serif;
-     font-family: var(--ff-main) !important;
-   }
+  :root {
+    --ff-main: Lexend, sans-serif;
+    font-family: var(--ff-main) !important;
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -61,6 +62,23 @@ menupopup,
 browser[type=content-primary], browser[type=content] > html,
 .browserContainer, .tabbrowser tabpanels {
   background-color: #2a2a2a !important;
+}
+
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔═╗╦ ╦╔╦╗╔═╗╦ ╦╦╔╦╗╔═╗  ╔╦╗╔═╗╔╗╔╦ ╦╔╗ ╔═╗╦═╗
+*    ╠═╣║ ║ ║ ║ ║╠═╣║ ║║║╣   ║║║║╣ ║║║║ ║╠╩╗╠═╣╠╦╝
+*    ╩ ╩╚═╝ ╩ ╚═╝╩ ╩╩═╩╝╚═╝  ╩ ╩╚═╝╝╚╝╚═╝╚═╝╩ ╩╩╚═
+*/
+/* Autohide menubar when window is maximized */
+#main-window[sizemode="maximized"] #navigator-toolbox > #toolbar-menubar:not(:hover) {
+  height: 1px;
+  margin-block-start: -19px;
+  
+  > * {
+    display: none;
+  }
 }
 
 /* ------------------------------------------------------------------ */
