@@ -1,6 +1,7 @@
 /* extensions */
 @import "extensions/auto tab discard.css";
 @import "extensions/panorama tab groups.css";
+@import "extensions/sponsorblock.css";
 @import "extensions/ublock origin.css";
 @import "extensions/violentmonkey.css";
 

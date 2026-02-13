@@ -34,9 +34,10 @@ popupnotification,
 *    ║  ║ ║║║║ ║ ║╣ ╔╩╦╝ ║   ║║║║╣ ║║║║ ║  ║ ║ ║╣ ║║║╚═╗
 *    ╚═╝╚═╝╝╚╝ ╩ ╚═╝╩ ╚═ ╩   ╩ ╩╚═╝╝╚╝╚═╝  ╩ ╩ ╚═╝╩ ╩╚═╝
 */
-/* Remove Navigation & Bookmark Buttons, "Open Link in New Window", 
-   "Email Image", "Email Video", "Email Audio",
-   "Inspect Accessibility Properties" from context menu.
+/* 
+  Remove Navigation & Bookmark Buttons, "Open Link in New Window", 
+  "Email Image", "Email Video", "Email Audio",
+  "Inspect Accessibility Properties" from context menu.
 */
 /* Navigation & Bookmark */
 #context-sep-navigation, #context-navigation,
@@ -79,6 +80,11 @@ browser[type=content-primary], browser[type=content] > html,
   > * {
     display: none;
   }
+}
+
+#main-window[sizemode="maximized"] #navigator-toolbox > #toolbar-menubar {
+  transition-property: opacity, margin !important;
+  transition-duration: 250ms !important;
 }
 
 /* ------------------------------------------------------------------ */

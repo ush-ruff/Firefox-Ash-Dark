@@ -1,0 +1,17 @@
+/* --------------------------------------------------------------------------------------------
+
+Minor style changes for the webextension SponsorBlock
+
+author: ushruff
+version: 0.1.0
+
+IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
+
+--------------------------------------------------------------------------------------------- */
+
+/* Popup */
+@-moz-document url-prefix("moz-extension://8425838a-3bf9-4ea7-90fb-d3651d42bfa7/") {
+  #sponsorBlockPopupHTML {
+    scrollbar-width: thin;
+  }
+}
