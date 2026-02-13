@@ -3,7 +3,7 @@
 Ash Dark Theme for the webextension Violentmonkey
 
 author: ushruff
-version: 2.0.0
+version: 2.0.1
 
 IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
 
@@ -304,6 +304,9 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
     background-color: #2b2a33 !important;
     border-color: #4b4b4b !important;
     color: var(--cl-400) !important;
+  }
+  .editor-search button:focus-visible {
+    border-color: #0a84ff !important;
   }
   .toggle-button {
     background-color: #2b2a33 !important;
