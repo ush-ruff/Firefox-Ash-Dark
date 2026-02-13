@@ -88,13 +88,9 @@
 
 /* ------------------------------------------------------------------ */
 
-/* Tab size fix for FF v136 */
-.tabbrowser-tab {
-  &:is([muted], [soundplaying], [activemedia-blocked]) {
-    #tabbrowser-tabs[orient="horizontal"] &:not([pinned]) {
-      --tab-min-width: unset !important;
-    }
-  }
+/* Tab size fix for FF v147 */
+#tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned]):is([muted], [soundplaying], [activemedia-blocked]):not([tab-note]) {
+  --tab-min-width-extra-icons: unset !important;
 }
 
 /*   
