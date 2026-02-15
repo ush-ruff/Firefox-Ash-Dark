@@ -88,10 +88,146 @@
 
 /* ------------------------------------------------------------------ */
 
+/*
+*    ╔╦╗╔═╗╔╗   ╔═╗╦╔═╗╔═╗
+*     ║ ╠═╣╠╩╗  ╚═╗║╔═╝║╣ 
+*     ╩ ╩ ╩╚═╝  ╚═╝╩╚═╝╚═╝
+*/
 /* Tab size fix for FF v147 */
 #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned]):is([muted], [soundplaying], [activemedia-blocked]):not([tab-note]) {
   --tab-min-width-extra-icons: unset !important;
 }
+
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔═╗╦ ╦╔═╗╦═╗╔═╗  ╔╦╗╔═╗╔╗ ╔═╗
+*    ╚═╗╠═╣╠═╣╠╦╝╠═╝   ║ ╠═╣╠╩╗╚═╗
+*    ╚═╝╩ ╩╩ ╩╩╚═╩     ╩ ╩ ╩╚═╝╚═╝
+*/
+/* Restore tabs to the former Firefox style with sharp corners */
+:root {
+  --tab-block-margin: 0px !important;
+  --tabs-shadow-size: 1px !important;
+  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
+}
+
+toolbarbutton {
+  --tab-border-radius: 0.2rem;
+}
+
+.tabbrowser-tab {
+  padding-inline: 0 !important;
+}
+
+.tabbrowser-tab[selected] {
+  position: relative;
+  z-index: 1;
+}
+
+.tab-content[pinned] {
+  padding-inline: 12px !important;
+}
+
+.tab-background {
+  border-top: 0 !important;
+  border-radius: 0.5rem 0.5rem 0 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔╦╗╔═╗╔╗ ╦  ╦╔╗╔╔═╗╔═╗
+*     ║ ╠═╣╠╩╗║  ║║║║║╣ ╚═╗
+*     ╩ ╩ ╩╚═╝╩═╝╩╝╚╝╚═╝╚═╝
+*/
+/* Tablines */
+/* Selected tab */
+.tab-background[selected]::before, 
+.tabbrowser-tab:hover > stack > .tab-background::before {
+  content: "";
+  height: 2.5px;
+  display: flex;
+  background: var(--lwt-tab-line-color);
+  border-radius: inherit;
+}
+
+.tab-stack:hover > .tab-background::before {
+  background-color: inherit;
+  animation: --tabline-hover-animation 175ms cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.tabbrowser-tab:is([pinned], [selected]) > .tab-stack > .tab-background::before {
+  animation: none;
+}
+
+/* These next two rules set a color for border around tabs and between tabs & navigation toolbars. Set to transparent to remove the border.*/
+#nav-bar {
+  border-top: none !important;
+  box-shadow: 0 -1px 0 0 color-mix(in srgb, var(--lwt-tab-line-color) 70%, transparent) !important;
+}
+
+.tab-background[selected] {
+  border-bottom-color: transparent !important;
+  border-inline: 1px solid color-mix(in srgb, var(--lwt-tab-line-color) 70%, transparent) !important;
+}
+
+@keyframes --tabline-hover-animation {
+  from {
+    margin-inline: 50%;
+  }
+
+  to {
+    margin-inline: 0;
+  }
+}
+
+/* Container type */
+.tab-context-line {
+  order: 2;
+  height: 4px !important;
+  margin-block: 0px !important;
+  margin-inline: 10px !important;
+  border-radius: 100vw !important;
+}
+
+.tab-background:not([selected]) .tab-context-line {
+  opacity: 0.5;
+}
+
+/* Group */
+#tabbrowser-tabs {
+  --tab-group-line-thickness: 2px;
+}
+
+.tab-group-label-container::after, 
+#tabbrowser-tabs[orient="horizontal"] .tab-group-line, 
+#tabbrowser-tabs[orient="horizontal"] tab-group[hasactivetab][hasmultipletabs] > .tab-group-overflow-count-container::after {
+  inset-block: 0 auto !important;
+}
+
+#tabbrowser-tabs[orient="horizontal"] .tab-group-line {
+  z-index: -1;
+}
+
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔╦╗╦═╗╔═╗╔╗╔╔═╗╔═╗╔═╗╦═╗╔═╗╔╗╔╔═╗╦ ╦
+*     ║ ╠╦╝╠═╣║║║╚═╗╠═╝╠═╣╠╦╝║╣ ║║║║  ╚╦╝
+*     ╩ ╩╚═╩ ╩╝╚╝╚═╝╩  ╩ ╩╩╚═╚═╝╝╚╝╚═╝ ╩ 
+*/
+/* Disable transparency effect when focus is lost from the browser */
+:where(#navigator-toolbox) > #TabsToolbar {
+  will-change: unset !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
+
+/* ------------------------------------------------------------------ */
 
 /*   
     ---- Note 1 ----
