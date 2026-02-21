@@ -168,6 +168,10 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
   border-radius: var(--button-border-radius) !important;
 }
 
+#unified-extensions-panel .panel-header + toolbarseparator {
+  color: transparent !important;
+}
+
 /* ------------------------------------------------------------------ */
 
 /*
@@ -177,7 +181,7 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
 *		       ----- Context Menus ----- 
 */
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu), 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebar-synced-tabs-context-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu), 
 :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup
 {
   --panel-padding: 0 !important;
@@ -192,131 +196,103 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
   padding: 4px;
   background: var(--panel-background) !important;
   border: 1px solid var(--border) !important;
+
+  /* Menuitem */
+  > :is(menuitem, menu) {
+    appearance: none !important;
+    min-height: 28px !important;
+    margin: 0 !important;
+    padding: 4px 12px !important;
+    border-radius: 0 !important;
+  }
+  
+  &[needsgutter] > :is(menuitem, menu) {
+    padding-inline-start: 6px !important;
+    
+    .menu-icon {
+      margin-inline-end: 6px !important
+    }
+  }
+
+  /* Separator */
+  menuseparator {
+    appearance: none !important;
+    margin: 3px 5px !important;
+    padding: 0 !important;
+  }
+
+  menuseparator::before {
+    border-top: 1px solid var(--separator) !important; 
+  }
+
+  /* Disabled */
+  :is(menuitem, menu)[disabled="true"] {
+    background-color: var(--panel-background) !important;
+    color: var(--disabled) !important;
+
+    &:is(:hover, [_moz-menuactive="true"]) {
+      background-color: var(--bg-dark) !important;
+    }
+  }
+
+  /* Hover */
+  :is(menu, menuitem):not([disabled="true"]):is(:hover, [_moz-menuactive="true"]) {
+    background-color: var(--bg-hover) !important;
+    color: currentColor !important;
+  }
+
+  /* Keyboard Shortcut Text */
+  .menu-accel, .menu-iconic-accel {
+    color: var(--disabled);
+  }
+
+  /* Checkbox & Radio */
+/*   @media not (-moz-windows-non-native-menus) {
+    menuitem[checked="true"][type="checkbox"] > .menu-iconic-left {
+      appearance: none !important;
+      margin-inline: 7px 6px !important;
+      padding: 6px 0 0 !important;
+      border: solid var(--text);
+      border-width: 0 0 2px 2px;
+      transform: rotate(-45deg) scale(.75);
+      outline: 2px solid lime !important;
+    }
+
+    menuitem[checked="true"][type="radio"] > .menu-iconic-left {
+      appearance: none !important;
+      height: 17px !important;
+      margin-inline: 7px 6px !important;
+      background: var(--text);
+      border: solid var(--text);
+      border-radius: 100%;
+      transform: scale(0.5);
+    }
+  } */
+
+  /* Menu Right Arrow Icon */
+  .menu-right, > menu::after {
+    appearance: none !important;
+    -moz-context-properties: fill, fill-opacity;
+    list-style-image: url("chrome://global/skin/icons/arrow-right.svg") !important;
+    fill: currentColor !important;
+  }
 }
 
-/* menupopup > menugroup {
+menupopup > menugroup {
   padding: 0 !important;
   background-color: red !important;
-} */
-
-/* Menuitem */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) > :is(menuitem, menu), 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup > :is(menuitem, menu) 
-{
-  appearance: none !important;
-  min-height: 22px !important;
-  margin: 0 !important;
-  /* padding: 2px 0 !important; */
-  padding-block: 4px !important;
-  border-radius: 0 !important;
 }
 
+/* Menuitem */
 menupopup[needsgutter] menu:not([icon], .menu-iconic), 
 menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) {
 	padding-inline-start: 1rem !important;
-}
-
-/* Separator */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuseparator, 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuseparator 
-{
-  appearance: none !important;
-  margin: 3px 5px !important;
-  padding: 0 !important;
-}
-
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuseparator::before, 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuseparator::before
-{
-  border-top: 1px solid var(--separator) !important; 
-}
-
-/* Disabled */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menuitem, menu)[disabled="true"], 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(menuitem, menu)[disabled="true"] 
-{
-  background-color: var(--panel-background) !important;
-  color: var(--disabled) !important;
-}
-
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]), 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(menuitem, menu)[disabled="true"]:is(:hover, [_moz-menuactive="true"]) 
-{
-  background-color: var(--bg-dark) !important;
-}
-
-/* Hover */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) , 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(menu, menuitem):is(:hover, [_moz-menuactive="true"]):not([disabled="true"]) 
-{
-  background-color: var(--bg-hover) !important;
-  color: currentColor !important;
 }
 
 /* Main menu selected */
 #main-menubar > menu[_moz-menuactive="true"] {
   background-color: var(--bg-hover) !important;
   color: var(--text) !important;
-}
-
-/* Keyboard Shortcut Text */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) :is(.menu-accel, .menu-iconic-accel), 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup :is(.menu-accel, .menu-iconic-accel) 
-{
-  color: var(--disabled);
-}
-
-/* Checkbox & Radio */
-@media not (-moz-windows-non-native-menus) {
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext,#sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuitem[checked="true"][type="checkbox"]>.menu-iconic-left, 
-  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuitem[checked="true"][type="checkbox"]>.menu-iconic-left 
-  {
-    appearance: none !important;
-    margin-inline: 7px 6px !important;
-    padding: 6px 0 0 !important;
-    border: solid var(--text);
-    border-width: 0 0 2px 2px;
-    transform: rotate(-45deg) scale(.75);
-  }
-
-  :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) menuitem[checked="true"][type="radio"] > .menu-iconic-left, 
-  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup menuitem[checked="true"][type="radio"] > .menu-iconic-left 
-  {
-    appearance: none !important;
-    height: 17px !important;
-    margin-inline: 7px 6px !important;
-    background: var(--text);
-    border: solid var(--text);
-    border-radius: 100%;
-    transform: scale(0.5);
-  }
-}
-
-/* Menu Left Icon */
-/* :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) .menuitem-iconic:not([hidden="true"]) .menu-iconic-left, 
-  :is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup .menuitem-iconic:not([hidden="true"]) .menu-iconic-left 
-{
-  appearance: none !important;
-  padding-block: 3px !important;
-  padding-inline: 8px 6px !important;
-} */
-
-/* Menu Right Arrow Icon */
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu) .menu-right, 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup .menu-right 
-{
-  appearance: none !important;
-  -moz-context-properties: fill, fill-opacity;
-  margin-inline-end: 1em !important;
-  list-style-image: url("chrome://global/skin/icons/arrow-right.svg") !important;
-  fill: currentColor;
-  /* margin-right: 6px !important;
-  padding: 7.5px !important;
-  border: solid var(--text);
-  border-width: 0 3px 3px 0;
-  color: var(--text) !important;
-  transform: rotate(-45deg) scale(.4); */
-  
 }
 
 /* ------------------------------------------------------------------ */
