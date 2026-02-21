@@ -69,22 +69,22 @@
 *    ╚═╝╚═╝╩  ╩ ╩╩╚═╩ ╩ ╩ ╚═╝╩╚═
 */
 /* Tab separators */
-/* .tabbrowser-tab:not([pinned], [first-visible-unpinned-tab])::before {
+.tabbrowser-tab:not([pinned])::before {
   content: "";
-  display: inherit;
-  position: absolute;
   width: 1px;
-  background-image: linear-gradient(transparent 30%, currentColor 30%, currentColor 70%, transparent 70%);
-  opacity: 0.4;
-  transform: translateX(-2px);
+  height: 36px;
+  background-image: linear-gradient(transparent 18%, currentColor 18%, currentColor 82%, transparent 82%);
+  opacity: 0.2;
   transition: opacity 180ms linear;
 }
 
-.tabbrowser-tab:is(:hover, :hover + .tabbrowser-tab, :hover + .tabbrowser-tab[hidden] + .tabbrowser-tab,
-  [selected], [selected] + .tabbrowser-tab, [selected] + .tabbrowser-tab[hidden] + .tabbrowser-tab
-  [multiselected], [multiselected] + .tabbrowser-tab, [multiselected] + .tabbrowser-tab[hidden] + .tabbrowser-tab)::before {
-  opacity: 0;
-} */
+.tabbrowser-tab:is(:hover, [selected], [multiselected])::before, 
+.tabbrowser-tab:is(:hover, [selected], [multiselected]) + .tabbrowser-tab::before, 
+.tabbrowser-tab:is(:hover, [selected], [multiselected]) + .tabbrowser-tab[hidden] + .tabbrowser-tab::before, 
+tab-group + .tabbrowser-tab::before, 
+tab-group > .tabbrowser-tab[aria-posinset="1"]::before {
+  opacity: 0 !important;
+}
 
 /* ------------------------------------------------------------------ */
 

@@ -215,3 +215,19 @@ browser[type=content-primary], browser[type=content] > html,
   background-color: var(--panel-background) !important;
 }
 
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔═╗╦╔╦╗╦ ╦╦ ╦╔╗   ╦╔═╗╔═╗╔╗╔
+*    ║ ╦║ ║ ╠═╣║ ║╠╩╗  ║║  ║ ║║║║
+*    ╚═╝╩ ╩ ╩ ╩╚═╝╚═╝  ╩╚═╝╚═╝╝╚╝
+*/
+/* Change github icon in bookmarks bar to white color one */
+/* Original Source: https://github.com/datguypiko/Firefox-Mod-Blur/blob/master/EXTRA%20MODS/Icon%20and%20Button%20Mods/White%20github%20icon/white_github_icon_in_bookmarks.css */
+.bookmark-item[image^="page-icon:https://github.com/"] > :is(.toolbarbutton-icon, .menu-icon) {
+	width: 0px !important;
+	height: 0px !important;
+	padding: 0 0 16px 16px !important;
+	background-image: url("./icons/github-icon.svg") !important;
+	background-size: cover !important;
+}
