@@ -3,7 +3,7 @@
 Dark Theme for the webextension Auto Tab Discard
 
 author: ushruff
-version: 1.0.0
+version: 1.0.1
 
 IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Internal-UUID/)
 
@@ -25,7 +25,7 @@ IMPORTANT: change the Internal-UUID within the url-prefix("moz-extension://Inter
 		--accent: #1e87f0;
 		--accent-light: #3E98F3;
 		--a: var(--accent) !important;
-		--check: url("../check.svg");
+		--check: url("../icons/check.svg");
 	}
 
 	header {
