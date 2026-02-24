@@ -213,6 +213,15 @@ toolbarbutton {
   z-index: -1;
 }
 
+/* Show darker highlight color when tab group is collapsed */
+tab-group[collapsed] {
+  --tab-group-line-color: var(--tab-group-color) !important;
+  
+  .tab-group-overflow-count {
+    --tab-group-line-color: light-dark(var(--tab-group-color), var(--tab-group-color-invert)) !important;
+  }
+}
+
 /* ------------------------------------------------------------------ */
 
 /*
