@@ -152,6 +152,7 @@ panel[type="arrow"] {
   --button-background-color-ghost-hover: var(--bg-hover);
   
   --panel-border-radius: 0 !important;
+  --arrowpanel-border-radius: 0 !important;
   --arrowpanel-menuitem-border-radius: 0 !important;
   --button-border-radius: 0.3rem !important;
   
