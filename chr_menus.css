@@ -169,6 +169,7 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
   border-radius: var(--button-border-radius) !important;
 }
 
+.panel-header + toolbarseparator, 
 #unified-extensions-panel .panel-header + toolbarseparator {
   color: transparent !important;
 }
@@ -182,8 +183,8 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
 *		       ----- Context Menus ----- 
 */
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, .new-tab-popup, #new-tab-button-popup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebar-synced-tabs-context-menu, #sidebarMenu-popup, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu), 
-:is([data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, #maintenanceButtonPopup, .new-tab-popup, #new-tab-button-popup, #organizeButtonPopup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebar-synced-tabs-context-menu, #sidebarMenu-popup, #split-view-menu, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu, #viewMenuPopup), 
+:is([data-l10n-id="places-cmd-restore"], [data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], [data-l10n-id^="places-view-"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup
 {
   --panel-padding: 0 !important;
   --panel-background: var(--bg) !important;
@@ -296,6 +297,13 @@ menupopup[needsgutter] menuitem:not([checked="true"], [icon], .menuitem-iconic) 
   color: var(--text) !important;
 }
 
+/* Active menuitem focus lost */
+menu, menuitem {
+  &:where([_moz-menuactive]:not([disabled="true"], :hover, :focus-visible)) {
+    background-color: var(--bg-dark) !important;
+  }
+}
+
 /* ------------------------------------------------------------------ */
 
 /*
@@ -384,21 +392,23 @@ See the above repository for updates as well as full license text. */
   height: 16px;
 }
 
-#appMenu-new-tab-button2 { list-style-image: url("chrome://browser/skin/new-tab.svg") }
-#appMenu-new-window-button2 { list-style-image: url("chrome://browser/skin/window.svg") }
+#appMenu-new-tab-button2            { list-style-image: url("chrome://browser/skin/new-tab.svg") }
+#appMenu-new-window-button2         { list-style-image: url("chrome://browser/skin/window.svg") }
 #appMenu-new-private-window-button2 { list-style-image: url("chrome://browser/skin/privateBrowsing.svg") }
-#appMenu-bookmarks-button { list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") }
-#appMenu-history-button { list-style-image: url("chrome://browser/skin/history.svg") }
-#appMenu-downloads-button { list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
-#appMenu-passwords-button { list-style-image: url("chrome://browser/skin/login.svg") }
-#appMenu-extensions-themes-button { list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
-#appMenu-print-button2 { list-style-image: url("chrome://global/skin/icons/print.svg") }
-#appMenu-save-file-button2 { list-style-image: url("chrome://browser/skin/save.svg") }
-#appMenu-find-button2 { list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
-#appMenu-settings-button { list-style-image: url("chrome://global/skin/icons/settings.svg") }
-#appMenu-more-button2 { list-style-image: url("chrome://global/skin/icons/developer.svg") }
-#appMenu-report-broken-site-button { list-style-image: url("chrome://global/skin/icons/warning.svg") }
-#appMenu-help-button2 { list-style-image: url("chrome://global/skin/icons/info.svg") }
+#appMenu-bookmarks-button           { list-style-image: url("chrome://browser/skin/bookmark-star-on-tray.svg") }
+#appMenu-history-button             { list-style-image: url("chrome://browser/skin/history.svg") }
+#appMenu-downloads-button           { list-style-image: url("chrome://browser/skin/downloads/downloads.svg") }
+#appMenu-passwords-button           { list-style-image: url("chrome://browser/skin/login.svg") }
+#appMenu-extensions-themes-button   { list-style-image: url("chrome://mozapps/skin/extensions/extension.svg") }
+#appMenu-print-button2              { list-style-image: url("chrome://global/skin/icons/print.svg") }
+#appMenu-save-file-button2          { list-style-image: url("chrome://browser/skin/save.svg") }
+#appMenu-find-button2               { list-style-image: url("chrome://global/skin/icons/search-glass.svg") }
+#appMenu-settings-button            { list-style-image: url("chrome://global/skin/icons/settings.svg") }
+#appMenu-more-button2               { list-style-image: url("chrome://global/skin/icons/developer.svg") }
+#appMenu-report-broken-site-button  { list-style-image: url("chrome://global/skin/icons/warning.svg") }
+#appMenu-help-button2               { list-style-image: url("chrome://global/skin/icons/info.svg") }
+#appMenu-translate-button           { list-style-image: url("chrome://browser/skin/translations.svg") }
+
 #appMenu-quit-button2 {
   list-style-image: url("chrome://devtools/skin/images/search-clear.svg");
 
@@ -408,7 +418,6 @@ See the above repository for updates as well as full license text. */
   }
 }
 
-#appMenu-translate-button { list-style-image: url("chrome://browser/skin/translations.svg") }
 #appMenu-zoom-controls::before { background-image: url("chrome://browser/skin/fullscreen.svg") }
 
 /* Use account-button icon for signed in sync item */
@@ -435,11 +444,14 @@ See the above repository for updates as well as full license text. */
 *		       ----- Bookmarks Popup -----
 */
 
-#editBookmarkPanelFavicon[src] {
+#editBookmarkPanelFavicon[src], 
+#bookmarkproperties {
+  --background-color-canvas: var(--bg) !important;
+  --border-radius-medium: 0.3rem !important;
   background-color: var(--bg) !important;
 }
 
-#editBookmarkPanel .expander-up, #editBookmarkPanel .expander-down {
+#editBookmarkPanel :is(.expander-up, .expander-down) {
   border: none !important;
   border-radius: var(--arrowpanel-menuitem-border-radius);
 }
@@ -448,52 +460,63 @@ See the above repository for updates as well as full license text. */
   color: transparent !important;
 }
 
+#bookmarkproperties button {
+  --button-background-color: var(--bg-hover);
+  --button-background-color-hover: var(--bg-dark-hover);
+  --button-background-color-active: var(--border);
+}
+
 /* -- Inputs -- */
 #editBookmarkPanelRows input, 
-#editBMPanel_namePicker, #editBMPanel_tagsField {
+#editBMPanel_namePicker, 
+#editBMPanel_locationField, 
+#editBMPanel_tagsField, 
+#editBMPanel_keywordField {
   --input-bgcolor: var(--bg-dim);
   --input-border-color: var(--bg-hover);
-}
-
-#editBookmarkPanelRows input:hover,
-#editBMPanel_namePicker:hover, #editBMPanel_tagsField:hover {
-  --input-border-color: var(--accent) !important;
-}
-
-#editBMPanel_namePicker:focus-visible, #editBMPanel_tagsField:focus-visible {
-  outline: 2px solid var(--accent) !important;
-}
-
-#editBMPanel_namePicker::selection, #editBMPanel_tagsField::selection {
-  background-color: var(--accent) !important;
+  
+  --background-color-box: var(--input-bgcolor) !important;
+  --border-color: var(--input-border-color) !important;
+  
+  &:hover {
+    --input-border-color: var(--accent) !important;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--accent) !important;
+  }
+  
+  &::selection {
+    background-color: var(--accent) !important;
+  }
 }
 
 /* -- Dropdown -- */
-#editBookmarkPanel {
+#editBMPanel_folderMenuList {
   --button-background-color: var(--bg-darker);
   --button-background-color-hover: var(--bg-darkest);
-}
+  
+  &[open="true"] {
+    background-color: var(--bg-darkest) !important;
+  }
 
-#editBMPanel_folderMenuList[open="true"] {
-  background-color: var(--bg-darkest) !important;
-}
+  menupopup {
+    --panel-background: var(--bg-darker) !important;
+    --panel-border-color: var(--border) !important;
+  }
 
-#editBMPanel_folderMenuList menupopup {
-  --panel-background: var(--bg-darker) !important;
-  --panel-border-color: var(--border) !important;
-}
+  menupopup menuitem {
+    background-color: transparent !important;
+    color: var(--text) !important;
+  }
 
-#editBMPanel_folderMenuList menupopup menuitem {
-  background-color: transparent !important;
-  color: var(--text) !important;
-}
+  menuitem:is(:hover, :active) {
+    background-color: var(--accent-light) !important;
+  }
 
-#editBMPanel_folderMenuList menuitem:is(:hover, :active) {
-  background-color: var(--accent-light) !important;
-}
-
-#editBMPanel_folderMenuList menuitem[_moz-menuactive="true"] {
-  background: var(--accent) !important;
+  menuitem[_moz-menuactive="true"] {
+    background: var(--accent) !important;
+  }
 }
 
 /* -- Location & Tags Expanded Panels -- */
@@ -504,6 +527,7 @@ See the above repository for updates as well as full license text. */
   border: 1px solid var(--border) !important;
   color: var(--text) !important;
 }
+
 #editBMPanel_tagsSelectorRow richlistitem {
   border: 1px solid var(--bg-dark);
 }
@@ -597,7 +621,7 @@ See the above repository for updates as well as full license text. */
 }
 
 /* -- Overflow Menu -- */
-#customization-panelWrapper>.panel-arrowbox>.panel-arrow[side="top"] {
+#customization-panelWrapper > .panel-arrowbox > .panel-arrow[side="top"] {
   fill: var(--bg-dark) !important;
   stroke: var(--border) !important;
 }
@@ -609,7 +633,7 @@ See the above repository for updates as well as full license text. */
   box-shadow: 0 0 4px var(--border) !important;
 }
 
-#customization-panelHolder>#widget-overflow-fixed-list:not(:empty) {
+#customization-panelHolder > #widget-overflow-fixed-list:not(:empty) {
   border-color: var(--separator) !important;
 }
 
@@ -641,16 +665,16 @@ See the above repository for updates as well as full license text. */
   background-color: var(--accent) !important;
   border-color: var(--accent) !important;
   color: var(--text) !important;
-}
 
-#customization-done-button:not([disabled]):hover {
-  background-color: var(--accent-light) !important;
-  border-color: var(--accent-light) !important;
-}
+  &:not([disabled]):hover {
+    background-color: var(--accent-light) !important;
+    border-color: var(--accent-light) !important;
+  }
 
-#customization-done-button:not([disabled]):active {
-  background-color: var(--accent-dark) !important;
-  border-color: var(--accent-dark) !important;
+  &:not([disabled]):active {
+    background-color: var(--accent-dark) !important;
+    border-color: var(--accent-dark) !important;
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -744,22 +768,20 @@ See the above repository for updates as well as full license text. */
 .findbar-find-previous,
 .findbar-find-next {
   background-color: var(--bg-darker) !important;
+
+  &[disabled="true"] > .toolbarbutton-icon {
+    opacity: 1 !important;
+    fill: var(--disabled) !important;
+  }
+
+  &:not([disabled="true"]):hover {
+    background-color: var(--bg-dark-hover) !important;
+    fill: #fff !important;
+  }
 }
 
 .findbar-find-previous {
   margin-right: 5px !important;
-}
-
-.findbar-find-previous[disabled="true"] > .toolbarbutton-icon,
-.findbar-find-next[disabled="true"] > .toolbarbutton-icon {
-  opacity: 1 !important;
-  fill: var(--disabled) !important;
-}
-
-.findbar-find-previous:not([disabled="true"]):hover,
-.findbar-find-next:not([disabled="true"]):hover {
-  background-color: var(--bg-dark-hover) !important;
-  fill: #fff !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -782,14 +804,13 @@ See the above repository for updates as well as full license text. */
   -moz-context-properties: fill, fill-opacity !important;
   margin: 0px 2px -3px 0px !important;
   padding: 3px !important;
-  color: inherit !important;
   border-radius: 2px !important;
+  color: inherit !important;
   transform: scale(0.91, 0.91) !important;
-}
 
-#alertSettings:hover,
-#alertSettings[open] {
-  background-color: var(--hover) !important;
+  &:is(:hover, [open]) {
+    background-color: var(--hover) !important;
+  }
 }
 
 /* Close Icons */
@@ -813,6 +834,20 @@ See the above repository for updates as well as full license text. */
 *    ═╩╝╩╩ ╩╩═╝╚═╝╚═╝  ╚═╝╚═╝╩ ╚═╚═╝╚═╝
 *		     ----- Dialog Boxes ----- 
 */
+
+.dialog-button-box {
+  --button-background-color: var(--bg-dim);
+  --button-background-color-hover: var(--bg-hover);
+  --button-background-color-ghost-hover: var(--bg-hover);
+  --button-background-color-primary: var(--accent);
+  --button-background-color-primary-hover: var(--accent-light);
+  --button-text-color-primary: var(--text-bright);
+  --button-text-color-primary-hover: var(--text-bright);
+}
+
+.dialogBox:not(.spotlightBox) {
+  border-radius: 0.3rem !important;
+}
 
 #unknownContentTypeWindow, #SiteDataRemoveSelectedDialog {
   background: var(--bg) !important;
@@ -899,14 +934,14 @@ See the above repository for updates as well as full license text. */
   button:not([disabled]) {
     background-color: var(--accent) !important;
     color: var(--text) !important;
-  }
-  
-  button:not([disabled]):hover {
-    background-color: var(--accent-light) !important;
-  }
-  
-  button:not([disabled]):active {
-    background-color: var(--accent-dark) !important;
+
+    &:hover {
+      background-color: var(--accent-light) !important;
+    }
+
+    &:active {
+      background-color: var(--accent-dark) !important;
+    }
   }
   
   button[disabled] {
