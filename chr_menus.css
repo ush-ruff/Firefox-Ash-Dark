@@ -183,7 +183,7 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
 *		       ----- Context Menus ----- 
 */
 
-:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, #maintenanceButtonPopup, .new-tab-popup, #new-tab-button-popup, #organizeButtonPopup, #pageActionContextMenu, #placesContext, #sidebar-history-menu, #sidebar-synced-tabs-context-menu, #sidebarMenu-popup, #split-view-menu, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu, #viewMenuPopup), 
+:is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, #maintenanceButtonPopup, .new-tab-popup, #new-tab-button-popup, #organizeButtonPopup, #pageActionContextMenu, #placesContext, #saved-tab-group-context-menu, #sidebar-history-menu, #sidebar-synced-tabs-context-menu, #sidebarMenu-popup, #split-view-menu, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu, #viewMenuPopup), 
 :is([data-l10n-id="places-cmd-restore"], [data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], [data-l10n-id^="places-view-"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup
 {
   --panel-padding: 0 !important;
@@ -691,6 +691,9 @@ See the above repository for updates as well as full license text. */
   --sidebar-text-color: var(--text) !important;
   --sidebar-box-background: var(--bg-darkest) !important;
   --sidebar-box-border-color: var(--bg-darkest) !important;
+  
+  --toolbarbutton-hover-background: var(--bg-dark) !important;
+  --toolbarbutton-active-background: var(--bg-darker) !important;
 }
 
 #sidebar-box {
@@ -702,8 +705,10 @@ See the above repository for updates as well as full license text. */
   border-radius: 0 !important;
 }
 
-@-moz-document url-prefix("chrome://browser/content/sidebar") {
-  :root {
+@-moz-document url-prefix("chrome://browser/content/sidebar"), 
+  url-prefix("chrome://browser/content/places/"),
+  url-prefix("chrome://browser/content/syncedtabs/sidebar") {
+  :root, .content-scrollable {
     scrollbar-width: thin;
   }
   
@@ -719,6 +724,21 @@ See the above repository for updates as well as full license text. */
     
     &:focus-visible {
       outline: 2px solid var(--accent-light) !important;
+    }
+  }
+    
+  #viewButton {
+    background-color: var(--bg-darker) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 0.3rem !important;
+    color: var(--text-bright) !important;
+    
+    &:is(:hover, :focus-visible, [open="true"])   {
+      background-color: var(--bg-dark-hover) !important;
+    }
+    
+    &:active {
+      background-color: var(--border) !important;
     }
   }
   
@@ -738,9 +758,18 @@ See the above repository for updates as well as full license text. */
   #content {
     background: var(--bg-darker) !important;
   }
+    
+  summary:is(:hover, :focus-visible) {
+    background-color: var(--bg-dark) !important;
+  }
   
-  sidebar-tab-row:is(:hover, :focus-visible) {
+  sidebar-tab-row:is(:hover, :focus-visible), 
+  .item.selected > .item-title-container {
     background-color: var(--bg-darkest) !important;
+  }
+    
+  .item:is(:hover, :focus-visible) > .item-title-container {
+    background-color: var(--bg-darker) !important;
   }
 }
 
@@ -839,17 +868,20 @@ See the above repository for updates as well as full license text. */
   --button-background-color: var(--bg-dim);
   --button-background-color-hover: var(--bg-hover);
   --button-background-color-ghost-hover: var(--bg-hover);
+  
   --button-background-color-primary: var(--accent);
   --button-background-color-primary-hover: var(--accent-light);
   --button-text-color-primary: var(--text-bright);
   --button-text-color-primary-hover: var(--text-bright);
+  
+  --button-border-radius: 0.3rem;
 }
 
 .dialogBox:not(.spotlightBox) {
   border-radius: 0.3rem !important;
 }
 
-#unknownContentTypeWindow, #SiteDataRemoveSelectedDialog {
+#commonDialog, #unknownContentTypeWindow, #SiteDataRemoveSelectedDialog {
   background: var(--bg) !important;
   color: var(--text) !important;
 }

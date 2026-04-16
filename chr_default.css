@@ -218,11 +218,16 @@ browser[type=content-primary], browser[type=content] > html,
 /* ------------------------------------------------------------------ */
 
 /*
-*    ╔═╗╔═╗╦  ╦╔╦╗  ╦  ╦╦╔═╗╦ ╦
-*    ╚═╗╠═╝║  ║ ║   ╚╗╔╝║║╣ ║║║
-*    ╚═╝╩  ╩═╝╩ ╩    ╚╝ ╩╚═╝╚╩╝
+*    ╔╗ ╔═╗╦═╗╔╦╗╔═╗╦═╗  ╦═╗╔═╗╔╦╗╦╦ ╦╔═╗  ╔═╗╦═╗ ╦
+*    ╠╩╗║ ║╠╦╝ ║║║╣ ╠╦╝  ╠╦╝╠═╣ ║║║║ ║╚═╗  ╠╣ ║╔╩╦╝
+*    ╚═╝╚═╝╩╚══╩╝╚═╝╩╚═  ╩╚═╩ ╩═╩╝╩╚═╝╚═╝  ╚  ╩╩ ╚═
 */
-/* Split view */
+/* Fix border radius of toolbar buttons */
+:root {
+  --toolbarbutton-border-radius: 0.3rem !important;
+}
+
+/* Fix border radius of pages in Split view */
 .browserContainer {
 	border-radius: 0 !important;
 }

@@ -12,6 +12,8 @@
    * Navbar bottom border
    * Full screen message on HTML5 videos
    * Ctrl-Tab tweaks
+   * Fix border radius of toolbar buttons and pages in split view
+   * Change github icon in bookmarks bar to white
 */
 
 @import "chr_menus.css";
@@ -28,6 +30,7 @@
    * Sidebar
    * Findbar
    * Alerts Popup
+   * Dialog Boxes
 */
 
 @import "chr_pages.css";
@@ -42,4 +45,8 @@
    * Close button auto-hide
    * Reduce favicons opacity of inactive tabs
    * Added tab separators
+   * Fix sizing for tabs with media icons
+   * Sharp tabs
+   * Change tabline colors
+   * Diable transparency effect
 */
