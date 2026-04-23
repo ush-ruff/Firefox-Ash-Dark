@@ -445,9 +445,9 @@ See the above repository for updates as well as full license text. */
 */
 
 #editBookmarkPanelFavicon[src], 
-#bookmarkproperties {
+#bookmarkpropertiesdialog {
   --background-color-canvas: var(--bg) !important;
-  --border-radius-medium: 0.3rem !important;
+  --button-border-radius: 0.3rem !important;
   background-color: var(--bg) !important;
 }
 
