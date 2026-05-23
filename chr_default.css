@@ -97,6 +97,8 @@ browser[type=content-primary], browser[type=content] > html,
 /* Rounded URLbar */
 .urlbar-background {
   --toolbarbutton-border-radius: 100vw;
+  --urlbar-border-radius: 100vw;
+  --urlbarview-border-radius: 0;
 }
 
 #urlbar[open] .urlbar-background {
@@ -104,7 +106,7 @@ browser[type=content-primary], browser[type=content] > html,
 }
 
 #urlbar:not([focused="true"]):not([open="true"])  {
-  padding-inline: calc((var(--urlbar-height) / 2) - 3px) !important;
+  padding-inline: calc((var(--urlbar-height, var(--urlbar-container-height)) / 2) - 3px) !important;
 }
 
 #urlbar[breakout][breakout-extend] > .urlbar-background {
@@ -113,7 +115,8 @@ browser[type=content-primary], browser[type=content] > html,
 }
 
 #urlbar[breakout][breakout-extend] {
-  width: var(--urlbar-width) !important;
+  top: 36px !important;
+  width: var(--urlbar-width, var(--urlbar-container-width)) !important;
   margin-top: var(--urlbar-margin-inline) !important;
   margin-inline: 0 !important;
 }
@@ -124,7 +127,7 @@ browser[type=content-primary], browser[type=content] > html,
 }
 
 #urlbar[breakout][breakout-extend] > .urlbar-input-container[pageproxystate="invalid"] {
-  height: var(--urlbar-height) !important;
+  height: var(--urlbar-height, var(--urlbar-container-height)) !important;
 }
 
 #urlbar[breakout][breakout-extend][open] > .urlbar-input-container {
@@ -133,6 +136,7 @@ browser[type=content-primary], browser[type=content] > html,
 
 .urlbarView-row {
   padding-inline: 3px !important;
+  border-radius: 0 !important;
 }
 
 #urlbar-results {

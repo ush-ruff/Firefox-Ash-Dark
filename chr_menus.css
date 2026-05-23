@@ -125,12 +125,16 @@ panel[type="arrow"] {
   --arrowpanel-dimmed-even-further: var(--bg-darkest) !important;
   --arrowpanel-border-color: var(--border) !important;
   
+  --panel-background: var(--bg) !important;
+  
+  --panel-color: var(--text) !important;
   --panel-description-color: var(--text-light) !important;
   --panel-disabled-color: var(--disabled) !important;
   
   --panel-item-hover-bgcolor: var(--arrowpanel-dimmed);
   --panel-item-active-bgcolor: var(--arrowpanel-dimmed-further);
   
+  --panel-border-color: var(--border) !important;
   --panel-separator-color: var(--separator) !important;
   
   --panel-banner-item-background-color: var(--bg-darker) !important;
@@ -151,14 +155,16 @@ panel[type="arrow"] {
   --button-background-color-hover: var(--bg-hover);
   --button-background-color-ghost-hover: var(--bg-hover);
   
-  --panel-border-radius: 0 !important;
   --arrowpanel-border-radius: 0 !important;
   --arrowpanel-menuitem-border-radius: 0 !important;
+  --panel-border-radius: 0 !important;
+  --panel-menuitem-border-radius: 0 !important;
   --button-border-radius: 0.3rem !important;
   
   --input-bgcolor: var(--bg-dim);
   --input-color: var(--text);
   --input-border-color: var(--bg-hover);
+  
 }
 
 #downloadsListBox > richlistitem {
