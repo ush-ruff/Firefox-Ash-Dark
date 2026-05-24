@@ -78,11 +78,16 @@
   transition: opacity 180ms linear;
 }
 
+tab-split-view-wrapper:is(:hover, [selected], [multiselected], [hasactivetab]) + .tabbrowser-tab::before, 
 .tabbrowser-tab:is(:hover, [selected], [multiselected])::before, 
 .tabbrowser-tab:is(:hover, [selected], [multiselected]) + .tabbrowser-tab::before, 
+.tabbrowser-tab:is(:hover, [selected], [multiselected]) + tab-split-view-wrapper .tabbrowser-tab::before, 
 .tabbrowser-tab:is(:hover, [selected], [multiselected]) + .tabbrowser-tab[hidden] + .tabbrowser-tab::before, 
+.tabbrowser-tab:is(:hover, [selected], [multiselected]) + .tabbrowser-tab[hidden] + tab-split-view-wrapper .tabbrowser-tab::before, 
 tab-group + .tabbrowser-tab::before, 
-tab-group > .tabbrowser-tab[aria-posinset="1"]::before {
+tab-group + tab-split-view-wrapper .tabbrowser-tab::before, 
+tab-group > .tabbrowser-tab[aria-posinset="1"]::before, 
+tab-group > tab-splitter-view-wrapper .tabbrowser-tab[aria-posinset="1"]::before {
   opacity: 0 !important;
 }
 
@@ -120,6 +125,7 @@ toolbarbutton {
   padding-inline: 0 !important;
 }
 
+tab-split-view-wrapper[hasactivetab], 
 .tabbrowser-tab[selected] {
   position: relative;
   z-index: 1;
@@ -129,12 +135,31 @@ toolbarbutton {
   padding-inline: 12px !important;
 }
 
+tab-split-view-wrapper, 
 .tab-background {
   border-top: 0 !important;
   border-radius: 0.5rem 0.5rem 0 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   outline: none !important;
+}
+
+tab-split-view-wrapper {
+  align-items: stretch !important;
+  padding-block: 0 !important;
+  background-size: calc(100% - 40px) 2px;
+  background-position-x: center;
+}
+
+tab-split-view-wrapper .tab-background {
+  margin-inline: 0 !important;
+}
+
+tab-split-view-wrapper:is(:hover, [hasactivetab]) {
+  background-image: linear-gradient(90deg, var(--tab-hover-background-color));
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 160ms ease !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -160,6 +185,7 @@ toolbarbutton {
   animation: --tabline-hover-animation 175ms cubic-bezier(0, 0.55, 0.45, 1);
 }
 
+tab-split-view-wrapper > .tabbrowser-tab > .tab-stack > .tab-background::before, 
 .tabbrowser-tab:is([pinned], [selected]) > .tab-stack > .tab-background::before {
   animation: none;
 }
