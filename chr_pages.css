@@ -1,4 +1,47 @@
 /*
+*    ╦  ╦╔╗ ╦═╗╔═╗╦═╗╦ ╦
+*    ║  ║╠╩╗╠╦╝╠═╣╠╦╝╚╦╝
+*    ╩═╝╩╚═╝╩╚═╩ ╩╩╚═ ╩ 
+*    ----- Library -----
+*/
+@-moz-document url(chrome://browser/content/places/places.xhtml) {
+  :root {
+    --organizer-color: var(--text) !important;
+    --organizer-deemphasized-color: var(--text-light) !important;
+    --organizer-toolbar-background: var(--bg) !important;
+    --organizer-pane-background: var(--bg-dark) !important;
+    --organizer-content-background: var(--bg) !important;
+    --organizer-hover-background: var(--bg-hover) !important;
+    --organizer-hover-color: var(--text) !important;
+    --organizer-selected-background: var(--bg-darkest) !important;
+    --organizer-selected-color: var(--text-bright) !important;
+    --organizer-focus-selected-background: var(--accent) !important;
+    --organizer-focus-selected-color: var(--text-bright) !important;
+    --organizer-outline-color: var(--accent) !important;
+    --organizer-separator-color: blue !important;
+    --organizer-border-color: var(--border) !important;
+    --organizer-pane-field-border-color: var(--border) !important;
+
+    --icon-color: yellow !important;
+
+    --button-border-radius: 0.3rem !important;
+  }
+
+  treecol, .tree-columnpicker-button {
+    background-color: var(--bg-darker) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+  }
+
+  #input {
+    background-color: var(--bg-dim) !important;
+    border-color: var(--bg-hover) !important;
+    color: var(--text) !important;
+  }
+}
+
+
+/*
 *    ╔═╗╔═╗╔═╗╔═╗  ╦╔╗╔╔═╗╔═╗
 *    ╠═╝╠═╣║ ╦║╣   ║║║║╠╣ ║ ║
 *    ╩  ╩ ╩╚═╝╚═╝  ╩╝╚╝╚  ╚═╝
