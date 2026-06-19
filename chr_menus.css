@@ -126,6 +126,7 @@ panel[type="arrow"] {
   --arrowpanel-border-color: var(--border) !important;
   
   --panel-background: var(--bg) !important;
+  --panel-background-color: var(--bg) !important;
   
   --panel-color: var(--text) !important;
   --panel-description-color: var(--text-light) !important;
@@ -194,6 +195,7 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
 {
   --panel-padding: 0 !important;
   --panel-background: var(--bg) !important;
+  --panel-background-color: var(--bg) !important;
   --panel-border-color: transparent !important;
   --panel-border-radius: 0 !important;
   --panel-color: var(--text) !important;
@@ -289,6 +291,11 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), text
 menupopup > menugroup {
   padding: 0 !important;
   background-color: red !important;
+}
+
+.menupopup-arrowscrollbox {
+  color: var(--panel-color) !important;
+  box-shadow: unset !important;
 }
 
 /* Menuitem */
