@@ -35,6 +35,7 @@
 
 @import "chr_pages.css";
 /* - PAGES -
+   * Library
    * Page Info
 */
 
@@ -49,4 +50,5 @@
    * Sharp tabs
    * Change tabline colors
    * Diable transparency effect
+   * Change hover style on split tabs
 */

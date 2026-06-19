@@ -881,6 +881,7 @@ See the above repository for updates as well as full license text. */
   --button-background-color: var(--bg-dim);
   --button-background-color-hover: var(--bg-hover);
   --button-background-color-ghost-hover: var(--bg-hover);
+  --button-text-color: var(--text-bright);
   
   --button-background-color-primary: var(--accent);
   --button-background-color-primary-hover: var(--accent-light);
@@ -897,6 +898,34 @@ See the above repository for updates as well as full license text. */
 #commonDialog, #unknownContentTypeWindow, #SiteDataRemoveSelectedDialog {
   background: var(--bg) !important;
   color: var(--text) !important;
+}
+
+@-moz-document url(chrome://global/content/commonDialog.xhtml) {
+  .dialog-button-box button[part="dialog-button"] {
+    appearance: none !important;
+    min-height: var(--button-min-height, 32px);
+    font-size: 1em !important;
+    font-weight: normal !important;
+    text-decoration: none !important;
+    margin: var(--space-xsmall) var(--space-small) !important;
+    padding: var(--button-padding) !important;
+    background-color: var(--button-background-color) !important;
+    border: unset !important;
+    border-radius: var(--button-border-radius);
+    color: var(--button-text-color) !important;
+    
+    &:is(:hover, :focus-visible) {
+      background-color: var(--button-background-color-hover) !important;
+      color: var(--button-text-color-hover, var(--button-text-color)) !important;
+    }
+    
+    &[dlgtype="accept"] {
+      --button-background-color: var(--button-background-color-primary);
+      --button-background-color-hover: var(--button-background-color-primary-hover);
+      --button-text-color: var(--button-text-color-primary);
+      --button-text-color-hover: var(--button-text-color-primary-hover);
+    }
+  }
 }
 
 @-moz-document url(chrome://mozapps/content/downloads/unknownContentType.xhtml) {
