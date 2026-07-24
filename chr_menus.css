@@ -908,6 +908,7 @@ menu, menuitem {
 }
 
 #commonDialog, #unknownContentTypeWindow, #SiteDataRemoveSelectedDialog, #clearDataForSiteDialog {
+  --background-color-canvas: var(--bg);
   background: var(--bg) !important;
   color: var(--text) !important;
 }
