@@ -163,6 +163,7 @@ panel[type="arrow"] {
   --button-border-radius: 0.3rem !important;
   
   --input-bgcolor: var(--bg-dim);
+  --input-text-background-color: var(--bg-dim);
   --input-color: var(--text);
   --input-border-color: var(--bg-hover);
   
@@ -485,6 +486,7 @@ menu, menuitem {
 #editBMPanel_tagsField, 
 #editBMPanel_keywordField {
   --input-bgcolor: var(--bg-dim);
+  --input-text-background-color: var(--bg-dim);
   --input-border-color: var(--bg-hover);
   
   --background-color-box: var(--input-bgcolor) !important;
@@ -787,6 +789,12 @@ menu, menuitem {
     
   .item:is(:hover, :focus-visible) > .item-title-container {
     background-color: var(--bg-darker) !important;
+  }
+}
+
+@-moz-document url-prefix("chrome://browser/content/webext-panels") {
+  sidebar-panel-header {
+    background-color: var(--bg-darkest);
   }
 }
 
