@@ -173,7 +173,7 @@ panel[type="arrow"] {
   border-radius: var(--arrowpanel-menuitem-border-radius) !important;
 }
 
-input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i])), textarea {
+input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i], .urlbar-input)), textarea {
   border-radius: var(--button-border-radius) !important;
 }
 

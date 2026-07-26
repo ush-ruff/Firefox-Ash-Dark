@@ -98,11 +98,13 @@ browser[type=content-primary], browser[type=content] > html,
 .urlbar-background {
   --toolbarbutton-border-radius: 100vw;
   --urlbar-border-radius: 100vw;
+  --urlbar-background-border-radius: 100vw;
   --urlbarview-border-radius: 0;
 }
 
 #urlbar[open] .urlbar-background {
   --toolbarbutton-border-radius: 0;
+  --urlbar-background-border-radius: 0;
 }
 
 #urlbar:not([focused="true"]):not([open="true"])  {
@@ -122,20 +124,15 @@ browser[type=content-primary], browser[type=content] > html,
 }
 
 #urlbar[breakout][breakout-extend] > .urlbar-input-container {
-  --urlbar-container-height: 31px !important;
-  padding: var(--urlbar-container-padding) !important;
+  --urlbar-container-height: 32px !important;
+  padding: 0 2px !important;
 }
 
-#urlbar[breakout][breakout-extend] > .urlbar-input-container[pageproxystate="invalid"] {
-  height: var(--urlbar-height, var(--urlbar-container-height)) !important;
-}
-
-#urlbar[breakout][breakout-extend][open] > .urlbar-input-container {
-  margin-bottom: 5px;
+.urlbarView {
+  margin: unset !important;
 }
 
 .urlbarView-row {
-  padding-inline: 3px !important;
   border-radius: 0 !important;
 }
 
