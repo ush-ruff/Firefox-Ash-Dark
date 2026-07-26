@@ -102,6 +102,14 @@ browser[type=content-primary], browser[type=content] > html,
   --urlbarview-border-radius: 0;
 }
 
+#urlbar-container {
+  anchor-name: --url;
+}
+
+#urlbar {
+  position-anchor: --url;
+}
+
 #urlbar[open] .urlbar-background {
   --toolbarbutton-border-radius: 0;
   --urlbar-background-border-radius: 0;
@@ -117,7 +125,7 @@ browser[type=content-primary], browser[type=content] > html,
 }
 
 #urlbar[breakout][breakout-extend] {
-  top: 36px !important;
+  top: calc(anchor(top) - 1px) !important;
   width: var(--urlbar-width, var(--urlbar-container-width)) !important;
   margin-top: var(--urlbar-margin-inline) !important;
   margin-inline: 0 !important;
