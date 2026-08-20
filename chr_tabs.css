@@ -124,6 +124,7 @@ tab-split-view-wrapper > .tabbrowser-tab[aria-posinset="2"] {
 /* Restore tabs to the former Firefox style with sharp corners */
 :root {
   --tab-block-margin: 0px !important;
+  --tab-margin-block: 0px !important;
   --tabs-shadow-size: 1px !important;
   --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
 }
