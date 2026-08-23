@@ -86,18 +86,11 @@ tooltip {
 
 #PopupAutoComplete {
   --panel-border-color: var(--border) !important;
-  --panel-border-radius: 0 !important;
-  --button-background-color-hover: transparent !important;
-  --button-background-color-ghost-hover: transparent !important;
-  --focus-outline-width: 0 !important;
-  
-  --_row-item-padding-block: 2px;
 }
 
 #PopupAutoComplete > richlistbox {
   background: var(--bg) !important;
   color: var(--text) !important;
-  scrollbar-width: thin;
 }
 
 #PopupAutoComplete > richlistbox richlistitem {
@@ -111,16 +104,6 @@ tooltip {
 
 #PopupAutoComplete > richlistbox richlistitem[selected="true"] {
   background-color: var(--accent) !important;
-}
-
-#PopupAutoComplete > richlistbox > richlistitem.autocomplete-row-item > autocomplete-row-item {
-  padding: calc(var(--_row-item-padding-block) / 2) 0 !important;
-  border-radius: unset !important;
-}
-
-.row-item {
-  padding: inherit !important;
-  border-radius: inherit !important;
 }
 
 /* ------------------------------------------------------------------ */
