@@ -58,7 +58,7 @@
 *    ╚  ╩ ╩ ╚╝ ╩╚═╝╚═╝╝╚╝╚═╝
 */
 /* Inactive tabs favicons */
-.tabbrowser-tab:not([selected="true"]):not([pinned]) .tab-icon-image {
+.tabbrowser-tab:not([selected="true"], [selected]):not([pinned]) .tab-icon-image {
   filter: opacity(0.5) !important;
 }
 
