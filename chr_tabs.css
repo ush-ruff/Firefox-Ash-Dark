@@ -125,10 +125,10 @@ tab-split-view-wrapper > .tabbrowser-tab[aria-posinset="2"] {
 .tab-group-label-hover-highlight {
   tab-group[collapsed]:not([movingtabgroup]) &:hover, 
   tab-group[previewpanelactive] & {
-    --tab-background-color-hover: oklch(from var(--tab-group-color) l c h / 0.5);
+    --tab-background-color-hover: oklch(from var(--tab-group-color) l c h / 0.25);
     box-shadow: unset !important;
     border-radius: 0 !important;
-    outline: 3px solid var(--tab-background-color-hover);
+    outline: 4px solid var(--tab-background-color-hover);
   }
 }
 

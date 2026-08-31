@@ -335,6 +335,12 @@ menu, menuitem {
   }
 }
 
+/* Fix tab group icon colors */
+.tab-group-icon.tab-group-icon {
+  --menuitem-icon-fill: var(--tab-group-color) !important;
+  stroke: var(--tab-group-color) !important;
+}
+
 /* ------------------------------------------------------------------ */
 
 /*
