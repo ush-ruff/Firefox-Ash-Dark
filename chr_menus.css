@@ -109,7 +109,7 @@ tooltip {
   background-color: var(--accent-light) !important;
 }
 
-#PopupAutoComplete > richlistbox richlistitem[selected="true"] {
+#PopupAutoComplete > richlistbox richlistitem:is([selected], [selected="true"]) {
   background-color: var(--accent) !important;
 }
 
@@ -118,9 +118,19 @@ tooltip {
   border-radius: unset !important;
 }
 
+.autocomplete-richlistbox {
+  scrollbar-width: none !important;
+}
+
 .row-item {
   padding: inherit !important;
   border-radius: inherit !important;
+  
+  .icon {
+    width: auto !important;
+    height: auto !important;
+    aspect-ratio: 1;
+  }
 }
 
 /* ------------------------------------------------------------------ */
