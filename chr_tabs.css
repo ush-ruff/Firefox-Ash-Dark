@@ -93,7 +93,7 @@ tab-group > tab-splitter-view-wrapper .tabbrowser-tab[aria-posinset="1"]::before
 }
 
 /* Split tabs separator */
-tab-split-view-wrapper > .tabbrowser-tab:nth-child(2) {
+tab-split-view-wrapper > .tabbrowser-tab[aria-posinset="2"] {
   border-inline: unset !important;
   
   &::before {
