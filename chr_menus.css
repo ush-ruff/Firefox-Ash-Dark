@@ -10,6 +10,7 @@ tooltip {
   padding: 4px 10px;
   background: var(--bg-dark);
   border-color: var(--bg-dark-hover);
+  border-radius: 0;
   color: var(--text);
 }
 
