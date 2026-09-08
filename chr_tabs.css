@@ -87,13 +87,13 @@ tab-split-view-wrapper:is(:hover, [selected], [multiselected], [hasactivetab]) +
 .tabbrowser-tab:is(:hover, [selected], [multiselected]) + .tabbrowser-tab[hidden] + tab-split-view-wrapper .tabbrowser-tab::before, 
 tab-group + .tabbrowser-tab::before, 
 tab-group + tab-split-view-wrapper .tabbrowser-tab::before, 
-tab-group > .tabbrowser-tab[aria-posinset="1"]::before, 
-tab-group > tab-splitter-view-wrapper .tabbrowser-tab[aria-posinset="1"]::before {
+tab-group > .tabbrowser-tab:nth-child(1)::before, 
+tab-group > tab-splitter-view-wrapper .tabbrowser-tab:nth-child(1)::before {
   opacity: 0 !important;
 }
 
 /* Split tabs separator */
-tab-split-view-wrapper > .tabbrowser-tab[aria-posinset="2"] {
+tab-split-view-wrapper > .tabbrowser-tab:nth-child(2) {
   border-inline: unset !important;
   
   &::before {
