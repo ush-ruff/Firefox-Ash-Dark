@@ -76,6 +76,11 @@ tooltip {
   border-color: var(--cb-hover-border);
 }
 
+:is(#unknownContentTypeWindow) radiogroup:focus-visible radio[focused] > .radio-check {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+}
+
 /* ------------------------------------------------------------------ */
 
 /*
@@ -174,7 +179,7 @@ panel[type="arrow"] {
   --button-primary-bgcolor: var(--accent);
   --button-primary-hover-bgcolor: var(--accent-light);
   --button-primary-active-bgcolor: var(--accent-dark);
-  --button-primary-color: var(--text);
+  --button-primary-color: var(--text-bright);
   --button-text-color-primary: var(--text-bright);
   --button-text-color-primary-hover: var(--text-bright);
   
@@ -941,7 +946,7 @@ menu, menuitem {
   border-radius: 0.3rem !important;
 }
 
-#commonDialog, #unknownContentTypeWindow, #SiteDataRemoveSelectedDialog, #clearDataForSiteDialog {
+#app-picker, #commonDialog, #unknownContentTypeWindow, #SiteDataRemoveSelectedDialog, #clearDataForSiteDialog {
   --background-color-canvas: var(--bg);
   background: var(--bg) !important;
   color: var(--text) !important;
@@ -1045,7 +1050,8 @@ menu, menuitem {
 }
 
 @-moz-document url(chrome://mozapps/content/downloads/unknownContentType.xhtml), 
-  url(chrome://browser/content/preferences/dialogs/siteDataRemoveSelected.xhtml) {
+  url(chrome://browser/content/preferences/dialogs/siteDataRemoveSelected.xhtml), 
+  url(chrome://global/content/appPicker.xhtml) {
   /* -- Buttons -- */
   button {
     appearance: none !important;
@@ -1057,7 +1063,7 @@ menu, menuitem {
   
   button:not([disabled]) {
     background-color: var(--accent) !important;
-    color: var(--text) !important;
+    color: var(--text-bright) !important;
 
     &:hover {
       background-color: var(--accent-light) !important;
@@ -1071,5 +1077,17 @@ menu, menuitem {
   button[disabled] {
     background-color: var(--disabled) !important;
     color: var(--bg) !important;
+  }
+}
+
+/* -- Richlistbox -- */
+#app-picker richlistbox {
+  background-color: var(--bg-darker) !important;
+  border-color: var(--border) !important;
+  scrollbar-width: thin;
+    
+  richlistitem[selected] {
+    background-color: var(--accent) !important;
+    color: var(--text-bright) !important;
   }
 }
