@@ -215,6 +215,16 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i], .urlba
   color: transparent !important;
 }
 
+.panel-subview-body:has(> toolbarbutton[checked]) {
+  .toolbarbutton-icon {
+    min-width: 16px;
+  }
+  
+  .toolbarbutton-text {
+    padding-inline-start: var(--space-small) !important;
+  }
+}
+
 /* ------------------------------------------------------------------ */
 
 /*
@@ -225,7 +235,8 @@ input:where(:not([type="radio" i], [type="checkbox" i], [type="range" i], .urlba
 */
 
 :is(#autohide-context, #backForwardMenu, #contentAreaContextMenu, #downloadsContextMenu, #maintenanceButtonPopup, .new-tab-popup, #new-tab-button-popup, #organizeButtonPopup, #pageActionContextMenu, #placesContext, #saved-tab-group-context-menu, #sidebar-history-menu, #sidebar-synced-tabs-context-menu, #sidebarMenu-popup, #split-view-menu, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #unified-extensions-context-menu, #viewMenuPopup), 
-:is([data-l10n-id="places-cmd-restore"], [data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], [data-l10n-id^="places-view-"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup
+:is([data-l10n-id="places-cmd-restore"], [data-l10n-id="page-info-page"], [data-l10n-id="places-library"], [data-l10n-id="places-open-in-container-tab"], [data-l10n-id^="places-view-"], #contentAreaContextMenu, #customization-container, #main-menubar, .sidebar-panel, #SyncedTabsSidebarContext, #tabContextMenu, #textbox-contextmenu, #toolbar-context-menu, #urlbar) menupopup, 
+menupopup[menu-api]
 {
   --panel-padding: 0 !important;
   --panel-background: var(--bg) !important;
