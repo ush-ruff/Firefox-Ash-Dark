@@ -38,6 +38,18 @@
     border-color: var(--bg-hover) !important;
     color: var(--text) !important;
   }
+  
+  richlistitem[selected] {
+    background-color: var(--bg-hover) !important;
+    color: inherit !important;
+  }
+  
+  #downloadsListBox:focus > richlistitem[selected] {
+    background-color: var(--accent-dark) !important;
+    background-image: unset !important;
+    border-radius: 0 !important;
+    outline: 2px solid var(--accent-light) !important;
+  }
 }
 
 

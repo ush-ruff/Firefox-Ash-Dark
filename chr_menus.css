@@ -188,6 +188,7 @@ panel[type="arrow"] {
   --button-active-bgcolor: var(--border);
   --button-background-color-hover: var(--bg-hover);
   --button-background-color-ghost-hover: var(--bg-hover);
+  --button-background-color-menu-hover: var(--bg-hover);
   
   --arrowpanel-border-radius: 0 !important;
   --arrowpanel-menuitem-border-radius: 0 !important;
