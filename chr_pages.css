@@ -45,10 +45,19 @@
   }
   
   #downloadsListBox:focus > richlistitem[selected] {
-    background-color: var(--accent-dark) !important;
     background-image: unset !important;
     border-radius: 0 !important;
-    outline: 2px solid var(--accent-light) !important;
+    outline: 2px solid var(--bg-darkest) !important;
+  }
+  
+  .downloadProgress {
+    height: 5px !important;
+    border-radius: 0 !important;
+  }
+  
+  .downloadProgress:indeterminate::-moz-progress-bar {
+    --download-progress-fill-color: var(--accent) !important;
+    --download-progress-flare-color: oklch(from var(--accent) calc(l + 0.5) c h / 1) !important;
   }
 }
 
