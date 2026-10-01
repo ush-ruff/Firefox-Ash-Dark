@@ -95,63 +95,52 @@ browser[type=content-primary], browser[type=content] > html,
 *    ╚═╝╩╚═╩═╝╚═╝╩ ╩╩╚═
 */
 /* Rounded URLbar */
-.urlbar-background {
-  --toolbarbutton-border-radius: 100vw;
-  --urlbar-border-radius: 100vw;
-  --urlbar-background-border-radius: 100vw;
-  --urlbarview-border-radius: 0;
-}
-
 #urlbar-container {
-  anchor-name: --url;
-}
+  --urlbar-border-radius: 100vw !important;
+  --urlbar-input-container-padding: 1rem !important;
+  --urlbarView-margin-inline: 0 !important;
+  
+  .urlbar-background, 
+  .urlbarView-background {
+    display: none !important;
+  }
+  
+  .urlbar-input-container {
+    background-color: var(--urlbar-background-color);
+    
+    .urlbar[popover-open] > & {
+      margin: unset !important;
+      padding: 0 var(--urlbar-input-container-padding) !important;
+      border-radius: 0 !important;
+      outline: unset !important;
+    }
+  }
+  
+  .urlbarView {
+    overflow-clip-margin: unset !important;
 
-#urlbar {
-  position-anchor: --url;
-}
-
-#urlbar[open] .urlbar-background {
-  --toolbarbutton-border-radius: 0;
-  --urlbar-background-border-radius: 0;
-}
-
-#urlbar:not([focused="true"]):not([open="true"])  {
-  padding-inline: calc((var(--urlbar-height, var(--urlbar-container-height)) / 2) - 3px) !important;
-}
-
-#urlbar[breakout][breakout-extend] > .urlbar-background {
-  animation: none !important;
-  border-color: var(--lwt-toolbar-field-border-color, rgb(18, 18, 18)) !important;
-}
-
-#urlbar[breakout][breakout-extend] {
-  top: calc(anchor(top) - 1px) !important;
-  width: var(--urlbar-width, var(--urlbar-container-width)) !important;
-  margin-top: var(--urlbar-margin-inline) !important;
-  margin-inline: 0 !important;
-}
-
-#urlbar[breakout][breakout-extend] > .urlbar-input-container {
-  --urlbar-container-height: 32px !important;
-  padding: 0 2px !important;
-}
-
-.urlbarView {
-  margin: unset !important;
-}
-
-.urlbarView-row {
-  border-radius: 0 !important;
-}
-
-#urlbar-results {
-  padding-block: 0 !important;
+    .urlbarView-body-inner {
+      background-color: var(--urlbar-background-color);
+    }
+    
+    .urlbarView-row {
+      border-radius: 0 !important;
+    }
+    
+    .urlbarView-row-inner {
+      padding-inline: var(--urlbar-input-container-padding) !important;
+    }
+  }
 }
 
 /* URLbar text selection fix for Dark Vintage Theme */
 .urlbar-input-container:focus-within #urlbar-input::selection {
   background-color: var(--accent-dark) !important;
-  color: var(--text) !important;
+/*   color: var(--text) !important; */
+}
+
+.urlbar-input:not(:focus)::selection {
+  background-color: var(--accent-dark) !important;
 }
 
 /* URLbar Separators */
@@ -168,7 +157,19 @@ browser[type=content-primary], browser[type=content] > html,
 */
 /* Navbar bottom border */
 #navigator-toolbox {
-  border-bottom: 1px solid var(--toolbar-bgcolor) !important;
+  border-bottom: 1px solid var(--toolbar-background-color) !important;
+}
+
+/* ------------------------------------------------------------------ */
+
+/*
+*    ╔╗ ╔═╗╔═╗╦╔═╔╦╗╔═╗╦═╗╦╔═╔═╗  ╔╦╗╔═╗╔═╗╦  ╔╗ ╔═╗╦═╗
+*    ╠╩╗║ ║║ ║╠╩╗║║║╠═╣╠╦╝╠╩╗╚═╗   ║ ║ ║║ ║║  ╠╩╗╠═╣╠╦╝
+*    ╚═╝╚═╝╚═╝╩ ╩╩ ╩╩ ╩╩╚═╩ ╩╚═╝   ╩ ╚═╝╚═╝╩═╝╚═╝╩ ╩╩╚═
+*/
+/* Bookmarks toolbar padding */
+#PersonalToolbar {
+  padding-block-end: 2px !important;
 }
 
 /* ------------------------------------------------------------------ */
@@ -231,9 +232,10 @@ browser[type=content-primary], browser[type=content] > html,
 *    ╠╩╗║ ║╠╦╝ ║║║╣ ╠╦╝  ╠╦╝╠═╣ ║║║║ ║╚═╗  ╠╣ ║╔╩╦╝
 *    ╚═╝╚═╝╩╚══╩╝╚═╝╩╚═  ╩╚═╩ ╩═╩╝╩╚═╝╚═╝  ╚  ╩╩ ╚═
 */
-/* Fix border radius of toolbar buttons */
+/* Fix border radius of buttons */
 :root {
-  --toolbarbutton-border-radius: 0.3rem !important;
+  --toolbarbutton-border-radius: 0.2rem !important;
+  --button-border-radius: 0.3rem !important;
 }
 
 /* Fix border radius of pages in Split view */
@@ -256,4 +258,8 @@ browser[type=content-primary], browser[type=content] > html,
 	padding: 0 0 16px 16px !important;
 	background-image: url("./icons/github-icon.svg") !important;
 	background-size: cover !important;
+}
+
+.fxview-tab-row-main .fxview-tab-row-favicon[style*="page-icon:https://github.com/"] {
+	background-image: url("./icons/github-icon.svg") !important;
 }
