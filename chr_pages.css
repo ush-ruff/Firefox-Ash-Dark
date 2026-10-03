@@ -18,7 +18,7 @@
     --organizer-focus-selected-background: var(--accent) !important;
     --organizer-focus-selected-color: var(--text-bright) !important;
     --organizer-outline-color: var(--accent) !important;
-    --organizer-separator-color: blue !important;
+    --organizer-separator-color: var(--separator) !important;
     --organizer-border-color: var(--border) !important;
     --organizer-pane-field-border-color: var(--border) !important;
 
