@@ -67,7 +67,7 @@
 	#viewsource {
 		color: var(--theme-highlight-white) !important;
 		
-		.start-tag {
+		.start-tag, .end-tag, .doctype {
 			color: var(--theme-highlight-blue) !important;
 		}
 
@@ -77,6 +77,14 @@
 
 		.attribute-value {
 			color: var(--theme-highlight-purple) !important;
+		}
+
+		.entity, .markupdeclaration {
+			color: var(--theme-highlight-indigo) !important;
+		}
+
+		.comment {
+			color: var(--theme-highlight-green) !important;
 		}
 	}
 
