@@ -52,11 +52,32 @@
 @-moz-document url-prefix(view-source) {
 	:root {
 		--theme-highlight-pink: #ff7de9;
-		--theme-highlight-blue: #75BFFF;
-		--theme-highlight-purple: #B98EFF;
-		--theme-highlight-red: #FF7DE9;
+		--theme-highlight-blue: #75bfff;
+		--theme-highlight-purple: #b98eff;
+		--theme-highlight-red: #ff7de9;
+		--theme-highlight-grey: #a4a4a4;
+		--theme-highlight-green: #86de74;
+		--theme-highlight-indigo: #6b89ff;
+		--theme-highlight-white: #d7d7db;
+
 		background-color: #2a2a2a !important;
-		color: #ddd !important;
+		color: var(--theme-highlight-white) !important;
+	}
+
+	#viewsource {
+		color: var(--theme-highlight-white) !important;
+		
+		.start-tag {
+			color: var(--theme-highlight-blue) !important;
+		}
+
+		.attribute-name {
+			color: var(--theme-highlight-pink) !important;
+		}
+
+		.attribute-value {
+			color: var(--theme-highlight-purple) !important;
+		}
 	}
 
 	pre[id]:before, span[id]:before {
@@ -64,31 +85,31 @@
 	}
 
 	.highlight .end-tag, .highlight .start-tag {
-			color: var(--theme-highlight-blue) !important;
+		color: var(--theme-highlight-blue) !important;
 	}
 
 	.highlight .comment {
-			color: var(--theme-highlight-pink) !important;
+		color: var(--theme-highlight-pink) !important;
 	}
 
 	.highlight .cdata {
-			color: #c06 !important;
+		color: #c06 !important;
 	}
 
 	.highlight .doctype {
-			color: #86DE74 !important;
+		color: #86DE74 !important;
 	}
 
 	.highlight .pi {
-			color: var(--theme-highlight-red) !important;
+		color: var(--theme-highlight-red) !important;
 	}
 
 	.highlight .entity {
-			color: #27ae60 !important;
+		color: #27ae60 !important;
 	}
 
 	.highlight .attribute-name {
-			color: var(--theme-highlight-pink) !important;
+		color: var(--theme-highlight-pink) !important;
 	}
 
 	.highlight .attribute-value {
