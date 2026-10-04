@@ -60,14 +60,13 @@
 		--theme-highlight-indigo: #6b89ff;
 		--theme-highlight-white: #d7d7db;
 
-		background-color: #2a2a2a !important;
+		/* background-color: #2a2a2a !important; */
+		background-color: #232327 !important;
 		color: var(--theme-highlight-white) !important;
 	}
-
+	
 	#viewsource {
-		color: var(--theme-highlight-white) !important;
-		
-		.start-tag, .end-tag, .doctype {
+		.start-tag, .end-tag {
 			color: var(--theme-highlight-blue) !important;
 		}
 
@@ -79,11 +78,11 @@
 			color: var(--theme-highlight-purple) !important;
 		}
 
-		.entity, .markupdeclaration {
+		.markupdeclaration {
 			color: var(--theme-highlight-indigo) !important;
 		}
 
-		.comment {
+		.comment, .doctype, .entity {
 			color: var(--theme-highlight-green) !important;
 		}
 	}
@@ -91,7 +90,7 @@
 	pre[id]:before, span[id]:before {
 		color: #aaa !important;
 	}
-
+	/*
 	.highlight .end-tag, .highlight .start-tag {
 		color: var(--theme-highlight-blue) !important;
 	}
@@ -132,6 +131,7 @@
 	.highlight .error > :-moz-any(.start-tag, .end-tag, .comment, .cdata, .doctype, .pi, .entity, .attribute-name, .attribute-value) {
 		color: #de7474 !important;
 	}
+	*/
 }
 
 /* ------------------------------------------------------------------ */
